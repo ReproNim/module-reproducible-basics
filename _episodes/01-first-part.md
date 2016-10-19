@@ -15,16 +15,16 @@ keypoints:
 
 ---
 
-### Neurohackweek is *open*
+### ReproNim is *open*
 
-The Neurohackweek event can only accomodate a limited number of participants.
-Nevertheless, we are committed to openess and we are committed to providing our
+The ReproNim event can only accommodate a limited number of participants.
+Nevertheless, we are committed to openness and we are committed to providing our
 materials in an open format, through a publicly accessible website.
 
 ### Using a template allows to create websites for each of the lectures
 
 To enable access to the materials in an open format, but allow different
-instructors freedom in construcing their own materials, we provide a template
+instructors freedom in constructing their own materials, we provide a template
 (you're looking at it!), that can be relatively easily adapted to create lesson
 materials for many different lessons
 
@@ -57,7 +57,7 @@ affine = img.affine
 
 Images can be embedded into the lesson plan, by using the following syntax:
 
-![an image]({{site.root}}/fig/nhw-logo.png)
+![an image]({{site.root}}/fig/rn-logo.png)
 
 To embed images, you will also want to copy the image file into the
 `fig` folder of the repo, and add that.

@@ -1,14 +1,17 @@
 # Contributing
 
-[Neurohackweek][nhw-site] is an open source project, and we welcome
-contributions of all kinds: new lessons, fixes to existing material, bug
+[ReproNim][rn-site] is a center working on a number of open source
+projects, and this collection of training materials is being developed
+to support educating aiming for improving reproducibility in
+Neuroimaging.  We welcome contributions of all kinds: contributions to
+software projects, new lessons, fixes to existing material, bug
 reports, and reviews of proposed changes are all welcome.
 
 ## Contributor Agreement
 
 By contributing, you agree that we may redistribute your work under [our license](LICENSE.md). In exchange, we will address your issues and/or assess
 your change proposal as promptly as we can, and help you become a member of our
-community. Everyone involved in [Neurohackweek][nhw-site] agrees to abide by our
+community. Everyone involved in [ReproNim][rn-site] agrees to abide by our
 [code of conduct](CONDUCT.md).
 
 ## How to Contribute
@@ -60,7 +63,7 @@ In brief:
 
 You can [reach us by email][contact].
 
-[contact]: mailto:arokem@uw.edu
+[contact]: David.Kennedy@umassmed.edu
 [github]: http://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join

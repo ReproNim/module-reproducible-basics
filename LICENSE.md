@@ -6,7 +6,8 @@ permalink: /license/
 
 ## Instructional Material
 
-All Neurohackweek instructional material is made available under the [Creative Commons Attribution license][cc-by-human]. The following is a human-readable
+ReproNim instructional material here and thus all derived forms is based on excellent [NeuroHackWeek](https://neurohackweek.github.io) instructional materials, and any derivative work is released under the same license (authors' copyright).
+Instructional material is made available under the [Creative Commons Attribution license][cc-by-human]. The following is a human-readable
 summary of (and not a substitute for) the [full legal text of the CC BY 4.0 license][cc-by-legal].
 
 You are free:
@@ -22,8 +23,8 @@ license terms.
 Under the following terms:
 
 * **Attribution**---You must give appropriate credit (mentioning that
-  your work is derived from work that is Copyright © Neurohackweek and, where
-  practical, linking to http://neurohackweek.github.io/), provide a [link to the
+  your work is derived from work that is Copyright © Neurohackweek and ReproNim and, where
+  practical, linking to http://neurohackweek.github.io/ and http://repronim.github.io), provide a [link to the
   license][cc-by-human], and indicate if changes were made. You may do
   so in any reasonable manner, but not in any way that suggests the
   licensor endorses you or your use.
@@ -45,7 +46,7 @@ Notices:
 ## Software
 
 Except where otherwise noted, the example programs and other software
-provided by Neurohackweek are made available under the
+developed or provided by ReproNim are made available under the
 [OSI][osi]-approved
 [MIT license][mit-license].
 
@@ -74,10 +75,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 The templates used to create these lessons were created by [Software
 Carpentry](http://software-carpentry.org/). See AUTHORS for a list of contributors to the template. In accordance with the terms of the
 original license, the changes made are documented in the version control history
-of this repository, and other repositories in [the neurohackweek github website][nhw-github].
+of this repository, and other repositories in [the ReproNim github website][rp-github].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
 [mit-license]: http://opensource.org/licenses/mit-license.html
 [osi]: http://opensource.org
 [nhw-github]: http://github.com/neurohackweek
+[rp-github]: http://github.com/ReproNim

@@ -60,7 +60,7 @@ Images can be embedded into the lesson plan, by using the following syntax:
 ![an image]({{site.root}}/fig/rn-logo.png)
 
 To embed images, you will also want to copy the image file into the
-`fig` folder of the repo, and add that.
+`fig` folder of the repository, and add that.
 
 > ## Exercises and challenges (click on the arrow to the right to open)
 >

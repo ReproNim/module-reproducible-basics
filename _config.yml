@@ -62,3 +62,9 @@ exclude:
 
 # Turn off built-in syntax highlighting.
 highlighter: false
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  math_engine_opts:
+    preview: true   # not default but better acessibility

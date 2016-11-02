@@ -33,15 +33,18 @@ keypoints:
 
 > ## References
 > Online courses:
-> - [Software Carpentry: The Unix Shell (full: 1 h 35 min, familiarize: 10 min)](http://swcarpentry.github.io/shell-novice/)
+>
+>   - [Software Carpentry: The Unix Shell (full: 1 h 35 min, familiarize: 10 min)](http://swcarpentry.github.io/shell-novice/)
 >
 > Additional materials:
-> - [Wikipedia:Unix shell](https://en.wikipedia.org/wiki/Unix_shell)
-> - [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells)
+>
+>   - [Wikipedia:Unix shell](https://en.wikipedia.org/wiki/Unix_shell)
+>   - [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells)
 >
 > Relevant Books:
-> - [Data Science at the command line](http://datascienceatthecommandline.com) which also contains a list of
->   command line tools from useful for “data science”
+>
+>   - [Data Science at the command line](http://datascienceatthecommandline.com) which also contains a list of
+>     command line tools from useful for “data science”
 {: .callout}
 
 ## Commonly used shells and relation to existing neuroimaging projects

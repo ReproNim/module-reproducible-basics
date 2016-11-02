@@ -24,6 +24,7 @@ heart of what constitutes a good bug report.
 > ## References
 >
 > Additional materials:
+>
 > - [How to Report Bugs Effectively  *by Simon Tatham* (1999) (10 min)](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)
 >   A classical essay, which remains adequate.  It provides an
 >   overview of various aspects on what "bad" and "good" reports and how they could be expanded to

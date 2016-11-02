@@ -13,7 +13,7 @@ repo: https://github.com/ReproNim/lesson-reproducible-basics
 
 # Root URL below username.github.io domain, with leading slash but no trailing slash.
 # For example, for 'https://neurohackweek.github.io/lesson-example', use '/lesson-example'.
-root: "/lesson-basics"
+root: "/lesson-reproducible-basics"
 
 # Contact email address.
 email: debian@onerussian.com

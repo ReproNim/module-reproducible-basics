@@ -9,11 +9,11 @@ kind: "lesson"
 title: "ReproNim lesson template"
 
 # Repository URL (without trailing slash).
-repo: https://github.com/ReproNim/lesson-template
+repo: https://github.com/ReproNim/module-template
 
 # Root URL below username.github.io domain, with leading slash but no trailing slash.
 # For example, for 'https://neurohackweek.github.io/lesson-example', use '/lesson-example'.
-root: "/lesson-template"
+root: "/module-template"
 
 # Contact email address.
 email: debian@onerussian.com

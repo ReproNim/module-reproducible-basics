@@ -17,4 +17,6 @@ inline $$ \frac{kram}{down} \sum_0^\infty $$ text.
 
 $$ \frac{kram}{down} \sum_0^\infty $$
 
+$$ P( F(y) < t) ) = P( F^{-1}F(y) < F^{-1}(t) ) $$
+
 The second is display math because it occurs alone in a block.

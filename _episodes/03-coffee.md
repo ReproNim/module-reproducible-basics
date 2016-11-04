@@ -15,8 +15,13 @@ Delimiters [recognized by kramdown](http://kramdown.gettalong.org/syntax.html#ma
 
 inline $$ \frac{kram}{down} \sum_0^\infty $$ text.
 
+This seems to work:
+
 $$ \frac{kram}{down} \sum_0^\infty $$
+
+but not this:
 
 $$ P( F(y) < t) ) = P( F^{-1}F(y) < F^{-1}(t) ) $$
 
 The second is display math because it occurs alone in a block.
+

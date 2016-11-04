@@ -19,6 +19,10 @@
       var script = scripts[i];
       if (script.type.match(/^math\/tex/)) {
         var text = script.text === "" ? script.innerHTML : script.text;
+        if (text.substring(5, 10) == "CDATA"){
+            text = text.substring(11, text.length - 4);
+        }
+        console.log(text);
         var options = script.type.match(/mode\s*=\s*display/) ?
                       {displayMode: true} : {};
         script.insertAdjacentHTML("beforebegin",

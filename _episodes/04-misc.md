@@ -8,6 +8,7 @@ objectives:
 - Explain best practices on submitting bug reports
 keypoints:
 - You cannot reproduce *it* -- unlikely anyone else can
+- Having open sharing in mind from the beginning could simplify future reproducibility
 ---
 
 ---
@@ -61,3 +62,27 @@ Overall summary:
   what could have gone wrong, or to see if you feel like you have
   provided all possibly relevant information
 
+## Have reproducibility and openness in mind from the beginning
+
+"*The devil is in the detail*" and "*Talk is cheap, show me the code*"
+(L.Torvalds, Linux project) are two common idioms pointing to the fact
+that a verbal description (as e.g. typically condensed into a paper's
+Methods section) alone is rarely sufficient to reproduce an empirical
+result.  That is why it is important to prepare to have not only the
+summary paper to be shared, but also relevant data, code, description
+of the computation environments etc.  But preparing to share only
+later, as your project has progressed or may be even complete, might
+make it difficult if not impossible at all to actually be able to
+share.  Having sharing of your materials in mind right from the
+beginning should make actual sharing when you are ready to share a
+much easier task.
+
+> ## References
+>
+> Additional materials:
+>
+> - [Four aspects to make science open “by design” and not as an after-thought (15 min)](http://dx.doi.org/10.1186/s13742-015-0072-7)
+>   A brief communication on four aspects to be taken care off at the
+>   beginning of your project to make it easy to share later on.
+>
+{: .callout}

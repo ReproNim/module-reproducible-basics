@@ -38,6 +38,9 @@ Present ad-hoc solutions for establishing
 
 ## Git
 
+http://swcarpentry.github.io/git-novice/
+(also covers interaction with Github)
+
 ## Git-annex
 
 ## DataLad

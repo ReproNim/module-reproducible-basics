@@ -13,9 +13,6 @@ objectives:
 - "Explain how to make shell scripts more robust and less dangerous"
 - "Introduce basics of unit-testing"
 - "Write basic unit-test for shell commands"
-- "Explain how to make shell scripts more robust and less dangerous"
-- "Introduce basics of unit-testing"
-- "Write basic unit-test for shell commands"
 keypoints:
 - Command line shell is a powerful tool, and learning additional
   "hints" could help to make its use much more efficient, less
@@ -25,6 +22,12 @@ keypoints:
   options
 - "Shell scripts are powerful but by default could cause big pain"
 ---
+
+- For windows users:  how to get a shell...
+
+   - best practice: upgrading to Windows 10 to get a unix shell?
+
+
 
 ## What is a “shell”?
 
@@ -39,6 +42,13 @@ with common commands (such as `cp`, `mv`, etc.) built-in or
 accompanied by an additional package (e.g., `coreutils` in Debian)
 providing those.
 
+- Tale of Yarik & Perl
+
+Unlike GUI integrated environments with lots of functionality exposed
+in menu items and icons, shell is truly a "black box", which has a
+lot of powerful features which you need to discover first to be able
+to use it efficiently.
+
 In this part we will first get familiarized with basic (and possibly
 advanced) features of a shell and shell scripting, and then review
 aspects which particularly relate to reproducibility, as a principle
@@ -47,15 +57,20 @@ command actually was ran, inspecting available history of the
 commands, and verifying that a script did not complete while hiding
 failed interim execution.
 
+- Why shell:
+- repeatability
+- there are different shells
+- existing software toolkits already use various shells and it is
+  important to at least be aware of the difference...
 
-- Tale of Yarik & Perl
-
-> ## References
-> Online courses:
+> ## External teaching materials
+>
+> Before going through XXX
 >
 >   - [Software Carpentry: The Unix Shell (full: 1 h 35 min, familiarize: 10 min)](http://swcarpentry.github.io/shell-novice/)
->
-> Additional materials:
+{: .callout}
+
+> ## Additional materials
 >
 >   - [Wikipedia:Unix shell](https://en.wikipedia.org/wiki/Unix_shell)
 >   - [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells)
@@ -255,7 +270,7 @@ Exercise: Beware of e.g. ~/.local/lib/python2.7/site-packages (could use strace 
 
 ### Editing command line
 
-Two modes are usually supported -- emacs and vim
+Two modes are usually supported -- `emacs` and `vim` .
 
 **set -o emacs** to enter emacs mode (default), **set -o vi** to enter
 vi mode.  Further discussion and examples are for the default,
@@ -264,7 +279,17 @@ vi mode.  Further discussion and examples are for the default,
 Ctrl-x Ctrl-e (in emacs bash), (could be Meta-e in zsh) -- edit
 cmdline in the editor (as defined by `VISUAL` environment variable)
 
-### History
+## set -o
+
+Shells provide a set of configurable options which could be enabled or
+disabled using `set` command.  Use `set -o` to print current settings
+you have in your shell
+
+## Using/leaving breadcrumbs
+
+### Completions
+
+### Shell history
 
 - exploring the history
 - keeping shell history forever (e.g. http://www.onerussian.com/Linux/bash_history.phtml ).  Your own “lab book” if you work in shell lots of time.
@@ -283,6 +308,19 @@ cmdline in the editor (as defined by `VISUAL` environment variable)
 >      is [known to help learning](https://en.wikipedia.org/wiki/Peer_instruction).
 {: .challenge}
 
+### Creating log files
+
+- >
+
+`set -o noclobber` is recommended to forbid overwriting previously
+existing files.  `>|` could be used to explicitly instruct overwriting
+already existing file
+
+- `|&` (bash only) == `2>&1 |`
+
+(3dLME -help) `tcsh -x LME.txt |& tee diary.txt &   (|& -- bash)
+
+- tee
 
 ## Hints for correct/robust scripting in shell
 

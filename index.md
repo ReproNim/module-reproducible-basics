@@ -23,6 +23,7 @@ also would lay foundation in establishing habits to make your work
 actually more reproducible.
 
 
+To know **what**, **when**, and **how**?
 > ## Prerequisites
 >
 >

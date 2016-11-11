@@ -4,6 +4,7 @@ teaching: 25
 exercises: TODO
 questions:
 - How *reproducibility* helps fixing bugs?
+- What to do to be ready to share to have your studies be reproducible?
 objectives:
 - Explain best practices on submitting bug reports
 keypoints:

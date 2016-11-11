@@ -1,7 +1,7 @@
 ---
 title: "Package managers and distributions"
-teaching: 55
-exercises: TODO
+teaching: 90
+exercises: 30
 questions:
 - How we could establish and control computation environments using
   available package managers and distributions?

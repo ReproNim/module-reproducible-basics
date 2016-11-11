@@ -2,9 +2,10 @@
 layout: lesson
 ---
 
+
 *Reproducibility* could not only be enforced via dedicated systems
 facilitating automated and reproducible computation, but also could
-taken as a principle to adhere to while performing any day-to-day
+be taken as a principle to adhere to while performing any day-to-day
 research activities.  Neuroimaging is heavily data and software driven
 field of science, and as a result reproducibility in day to day
 activities could be significantly improved by learning more about the
@@ -15,7 +16,7 @@ This module guides through three somewhat independent topics, which
 are in the heart of establishing and efficiently using common generic
 resources: command line shell, version control systems (for code and
 data), and distribution package managers.  It is very unlikely that you have
-managed to avoid completely in your prior research activities, but it
+managed to avoid those tools completely in your prior research activities, but it
 is possible that you have under-utilized the power they are providing.
 Gaining additional skills in any of those topics could help you to not
 only become more efficient in your day-to-day research activities, but
@@ -24,6 +25,7 @@ actually more reproducible.
 
 
 To know **what**, **when**, and **how**?
+
 > ## Prerequisites
 >
 >

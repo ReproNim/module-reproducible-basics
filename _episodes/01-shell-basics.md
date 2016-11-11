@@ -1,7 +1,7 @@
 ---
 title: "Command line/shell"
-teaching: 55
-exercises: TODO
+teaching: 120
+exercises: 30
 questions:
 - "Why and how does using the command line/shell efficiently increase reproducibility of neuroimaging studies?"
 - "How can we assure that our scripts *do the right thing*?"

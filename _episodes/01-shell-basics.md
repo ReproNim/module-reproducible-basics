@@ -21,7 +21,7 @@ keypoints:
  'tricks' could help to make its use much more efficient, less
  error-prone, and thus more reproducible."
 - "Shell scripting is the most accessible tool to automate execution of
-  arbitrary set of commands. This will avoid manual retyping of the
+  arbitrary set of commands. This avoids manual retyping of the
   same commands and in tern will avoid typos and erroneous analyses."
 - "Environment variables play a big role in defining script behavior."
 - "You can automate testing of the execution of your commands to

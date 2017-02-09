@@ -70,7 +70,7 @@ Debian) providing those helpful command line utilities.
 
 In this module we will first become familiarized with basic (and
 possibly advanced) features of a shell and shell scripting, and then
-review a few aspects which particularly relate to reproducibility, as
+review a few aspects t particularly relate to reproducibility, as
 a principle of having good control over commands execution -- knowing
 which command actually was ran, what conditions could have potentially
 affected their execution, inspecting available history of the
@@ -100,7 +100,7 @@ failed interim execution.
 >
 > Relevant Books:
 >
->  - [Data Science at the Command Line](http://datascienceatthecommandline.com) which also contains a list of
+>  - [Data Science at the Command Line](http://datascienceatthecommandline.com), which also contains a list of
 >   command line tools from useful for “data science”
 {: .callout}
 
@@ -121,15 +121,17 @@ failed interim execution.
 {: .solution}
 
 > ## What is a shebang?
-> It is the first line in the script, and which starts with `#!`
+> It is the first line in the script, and which starts with `#!` 
 > followed by the command to be used to interpret the script, e.g.
-> having a file `blah`
+> if a file `blah` begins with the following:
 > ~~~
 > #!/bin/bash
 > echo "Running this script using bash"
 > ~~~
 > {: .bash}
-> and running `./blah` is analogous to calling `/bin/bash ./blah`
+> then running `./blah` is analogous to calling `/bin/bash ./blah` .
+> The string "#!" is read out loud 
+> as "hash-bang" and therefore is shortened to "shebang."
 {: .solution}
 
 
@@ -154,8 +156,8 @@ failed interim execution.
 
 - **sh** - a POSIX compliant shell. Generic name, not a specific project
    - Most portable (since standard)
-   - Many FSL scripts (claim to be)
-- **ksh** - KornShell. Based on older bash, but also became a root for tcsh, zsh and others
+   - Many FSL scripts (attempt to be)
+- **ksh** - KornSHell. Based on older bash, but also became a root for tcsh, zsh and others
 - **dash** - an implementation of a POSIX compliant shell (**sh**)
    - You will not see it used directly in a shebang
 - **bash** - Bourne Again SHell.
@@ -192,9 +194,8 @@ process on any operating system inherits some "environment variables"
 from its parent process. A shell just streamlines manipulation of those
 environments and also uses some of them directly to guide its own
 operation. Let's overview the most commonly used and manipulated
-environment variables, which are important to be aware of if you want
-to be sure that you are using the external commands and libraries you
-think you are using.
+environment variables. These variables are important because they
+impact what external commands and libraries you are using.
 
 ### PATH - determines full path to the command to be executed
 
@@ -209,7 +210,7 @@ environments (such as [virtualenv](https://virtualenv.pypa.io) in
 Python, or [modules](http://modules.sourceforge.net/) often used on
 HPC), and it is also
 the source of confusion in many cases where some unintended
-command is ran instead. That is why any tool which aims to capture the
+command is run instead. That is why any tool which aims to capture the
 state of the computational environment for later re-execution might
 need to store the value of the PATH variable to guarantee that even
 given the same set of files, the same commands are executed. For example,
@@ -217,7 +218,7 @@ we may have two different versions of AFNI installed in different locations;
 without specifying the path to a particular installation of AFNI, we may
 unintentionally run a different version and end up with different results.
 
-> ## How to determine full path to the command I am about to use?
+> ## How can you determine full path to the command that you are about to use?
 >
 > To see which command will actually be run when you intend to run a
 > `COMMAND`, use `which` helper, e.g.
@@ -255,7 +256,7 @@ unintentionally run a different version and end up with different results.
 {: .callout}
 
 
-> ## How to add a new path for shell to look for commands in?
+> ## How can you add a new path for shell to look for commands in?
 >
 > 1. So that those commands take precedence over other commands named
 > the same way but available elsewhere on the `PATH`?
@@ -270,7 +271,7 @@ unintentionally run a different version and end up with different results.
 > {: .solution}
 {: .challenge}
 
-> ## How to determine environment variables of a process?
+> ## How can you determine environment variables of a process?
 >
 > Since each process inherits and possibly changes environment
 > variables so that its child processes inherit them in turn, it is
@@ -289,11 +290,10 @@ unintentionally run a different version and end up with different results.
 > {: .solution}
 {: .challenge}
 
-> ## Why ${variable} is preferable over $variable?
+> ## Why is ${variable} is preferable over $variable?
 >
-> To make sure that if used concatenated with another string, it would
-> not reference some other unintended variable.  For instance if you
-> have a variable `filename` which contains value `preciousfile`
+> You use ${variable} to safely concatenate it with another string.  For instance if you
+> have a variable `filename` that contains value `preciousfile`
 > `$filename_modified` will refer to the value of possibly undefined
 > `filename_modified` variable, whenever `${filename}_modified` would
 > produce desired value of `preciousfile_modified`
@@ -303,13 +303,13 @@ unintentionally run a different version and end up with different results.
 
 ### LD_LIBRARY_PATH - determine which dynamic library is used
 
-To improve maintainability, and to make distributions smaller, most
-often commands we use rely on dynamic linking to reuse common
-functionality provided by shared dynamic libraries. The particular
+To improve maintainability and to make distributions smaller, most
+programs use dynamic linking to reuse common
+functionality provided by shared libraries. The particular
 list of dynamic libraries which an executable needs is often stored
 also without full paths, so `ld.so` (`/lib/ld-linux.so.2` e.g. on
 recent Debian systems), which takes care of executing those binaries,
-needs to determine which particular libraries to load. Similarly to
+needs to determine which particular libraries to load. Similar to
 how `PATH` variable determines resolution paths for execution of
 commands, `LD_LIBRARY_PATH` environment variable provides resolution
 paths for loading dynamic libraries. Unlike `PATH`, `ld.so` does

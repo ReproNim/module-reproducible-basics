@@ -70,7 +70,7 @@ Debian) providing those helpful command line utilities.
 
 In this module we will first become familiarized with basic (and
 possibly advanced) features of a shell and shell scripting, and then
-review a few aspects t particularly relate to reproducibility, as
+review a few aspects that particularly relate to reproducibility, as
 a principle of having good control over commands execution -- knowing
 which command actually was ran, what conditions could have potentially
 affected their execution, inspecting available history of the

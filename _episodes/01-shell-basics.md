@@ -292,7 +292,8 @@ unintentionally run a different version and end up with different results.
 
 > ## Why is ${variable} is preferable over $variable?
 >
-> You use ${variable} to safely concatenate it with another string.  For instance if you
+> You use ${variable} to safely concatenate a variable with another string.  
+> For instance if you
 > have a variable `filename` that contains value `preciousfile`
 > `$filename_modified` will refer to the value of possibly undefined
 > `filename_modified` variable, whenever `${filename}_modified` would
@@ -307,17 +308,17 @@ To improve maintainability and to make distributions smaller, most
 programs use dynamic linking to reuse common
 functionality provided by shared libraries. The particular
 list of dynamic libraries which an executable needs is often stored
-also without full paths, so `ld.so` (`/lib/ld-linux.so.2` e.g. on
+also without full paths, so `ld.so` (e.g. `/lib/ld-linux.so.2` on
 recent Debian systems), which takes care of executing those binaries,
 needs to determine which particular libraries to load. Similar to
 how `PATH` variable determines resolution paths for execution of
-commands, `LD_LIBRARY_PATH` environment variable provides resolution
+commands, the `LD_LIBRARY_PATH` environment variable provides resolution
 paths for loading dynamic libraries. Unlike `PATH`, `ld.so` does
 assume a list of default paths (e.g., `/lib`, then `/usr/lib` on Linux
 systems, as defined in `/etc/ld.so.conf` file(s)), so in your
 environment you may not have even set it explicitly.
 
-> ## How to discover which library is used:
+> ## How can you discover which library is used?
 >
 > `ldd EXEC` or `ldd LIBRARY` would list libraries a given binary or a
 > library is linked against and provide a full path, if it finds them
@@ -348,7 +349,7 @@ environment you may not have even set it explicitly.
 > ## Possible conflicts
 >
 > It might happen that `PATH` points to one environment first,
-> while LD_LIBRARY_PATH points to libraries from another environment,
+> while `LD_LIBRARY_PATH` points to libraries from another environment,
 > which could cause either incorrect or hard-to-diagnose
 > behavior later on. In general you should avoid manipulating those two
 > variables manually.
@@ -364,25 +365,25 @@ modules.
 
 > ## Possible side-effect
 >
-> Using a mix of system-wide and per-user installed
-> apps/modules while also possibly having additional custom
-> installations in other virtualenv environments.
+> Having a mix of system-wide and per-user installed
+> apps/modules with custom
+> installations in virtualenv environments can cause unexpected
+> modules to be used.
 >
 > You can use `python -c 'import sys; print(sys.path)'` to output a
 > list of paths your current default Python process would look through
-> for Python libraries
+> for Python libraries.
 >
 {: .callout}
 
 
 ### Additional aspects
 
-> ## Exported or "local" variables?
+> ## "Exported" vs. "local" variables
 >
-> Some variables are "exported" so they will be inherited by any new
-> child process (e.g. when you start a new command in a shell). Some
-> are local, and will not be inherited by child processes, and some
-> are "exported"
+> Variables can be "exported" so they will be inherited by any new
+> child process (e.g. when you start a new command in a shell). Otherwise
+> the variable will be "local," and will not be inherited by child processes.
 >
 > 1. How could you determine if variable is exported or not?
 > 2. Get a list of all local environments (present in your shell but
@@ -408,24 +409,24 @@ modules.
 
 ## Efficient use of the interactive shell
 
-Shell could be used quite efficiently if its features are learned, and
+A shell could be used quite efficiently if its features are learned and
 it configured appropriately to simplify most common operations
-performed using shell in day to day activities.
+performed in day to day activities.
 
 ### aliases
 
-Aliases are simply shortcuts for most commonly used commands which
-could provide alternative shorter, or add options to calls for most
+Aliases are simply shortcuts for most commonly used commands or add 
+options to calls for most
 common commands.  Please review some useful aliases presented in
 [30 Handy Bash Shell Aliases For Linux / Unix / Mac OS X](https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html).
 
-> ## Could aliases defined in your `~/.bashrc` be used in your scripts?
+> ## Should aliases defined in your `~/.bashrc` be used in your scripts?
 >
-> No, since `~/.bashrc` is read only for interactive sessions so
-> those aliases would not even be available in your script's
+> No. Since `~/.bashrc` is read only for interactive sessions,
+> aliases placed there will not be available in your scripts'
 > environment.  Even if they were available through some
 > manipulations, it would be highly inadvisable to use them, since
-> that  would render your scripts not portable across machines/users.
+> that would render your scripts not portable across machines/users.
 {: .solution}
 
 ### Editing command line
@@ -500,25 +501,25 @@ control execution of the processes:
 
 ### Shell history
 
-By default, shell stores in the memory a history of the commands you
+By default, a shell stores in memory a history of the commands you
 have ran.  You could access it using `history` command.  When you exit
-the shell, those history lines are appended to previously stored on a
-disk (by default in `~/.bash_history` for bash shell). This does not
-only allows to quickly recall commands you have ran recently. Shell
-history provides you an actual "lab notebook" of the actions you have
-performed, thus could be indispensable to
+the shell, those history lines are appended to a file (by default in 
+`~/.bash_history` for bash shell). This not
+only allows to quickly recall commands you have ran recently, but
+can provide you an actual "lab notebook" of the actions you have
+performed. Thus the shell history could be indispensable to
 
 - provide a skeleton for your script soon you realize that automating
-  current operations is worthwhile the effort
+  current operations is worthwhile the effort, and
 - determine what exactly command you have ran to perform some given
-  operation
+  operation.
 
 > ## Eternal history
 >
 > Unfortunately by default shell history is truncated to 1000 last
 > commands, so you cannot use as your "eternal lab notebook" without
-> some tuning.  Since it is a common problem a number of solution
-> exists, so please review available approaches:
+> some tuning.  Since it is a common problem, solutions
+> exist, so please review available approaches:
 > - [shell-chronicle](https://github.com/con/shell-chronicle)
 > - [tune up of PROMPT_COMMAND](https://debian-administration.org/article/543/Bash_eternal_history)
 >   to record each command as soon as it finished running
@@ -527,25 +528,25 @@ performed, thus could be indispensable to
 >   or [2](http://superuser.com/questions/479726/how-to-get-infinite-command-history-in-bash)
 {: .callout}
 
-One of the main keyboard shortcuts to navigate shell history is
+Some of the main keyboard shortcuts to navigate shell history are:
 
 `Ctrl-p` | Previous line in the history
 `Ctrl-n` | Next line in the history
 `Ctrl-r` | Bring up next match backwards in shell history
 
 You can hit `Ctrl-r` and start typing some portion of the command you
-remember running. Subsequent `Ctrl-r` would bring next match and so
-on. You would leave "search" mode as soon as you use some other
+remember running. Subsequent `Ctrl-r` will bring up the next match and so
+on. You will leave "search" mode as soon as you use some other
 command line navigation command (e.g. `Ctrl-e`).
 
 `Alt-.` | Insert last positioned argument of the previous command.
 
-Subsequent `Alt-.` brings the last argument of the previous command
+Subsequent `Alt-.` will bring up the last argument of the previous command
 and so on.
 
 > ## History navigation exercise
 >
-> Inspect your shell command history you have ran so far.
+> Inspect your shell command history you have run so far:
 > 1. use `history` and `uniq` commands to find what is the most
 >    popular command you have ran
 > 2. experiment using `Ctrl-r` to find commands next to the most
@@ -562,11 +563,11 @@ command within it fails.  This might lead to very bad side-effects
 
 - operating on incorrect results (e.g., if command re-generating
   results failed, but script continued)
-- polluting terminal screen (or log file) with output hiding away a
+- polluting the terminal screen (or log file) with output hiding away a
   point of failure
 
 That is why it is generally advisable to use `set -e` in the scripts
-to instructs shell to exit with non-0 exit code right when some command fails.
+that instructs the shell to exit with non-0 exit code right when some command fails.
 
 > ## Note on special commands
 > POSIX defines [some commands as "special"](https://www.gnu.org/software/bash/manual/html_node/Special-Builtins.html#Special-Builtins),
@@ -576,7 +577,7 @@ to instructs shell to exit with non-0 exit code right when some command fails.
 > `set`, `shift`, `trap`, `unset`).
 {: .callout}
 
-If you expect that some command might fail and it is Ok, handle its
+If you expect that some command might fail and it is OK, handle its
 failing execution explicitly, e.g. via
 
 ~~~
@@ -594,7 +595,7 @@ or just
 ### Use only defined variables
 
 By default POSIX shell and bash treat undefined variables as variables
-containing empty string:
+containing an empty string:
 
 ~~~
 > echo ">$undefined<"
@@ -610,13 +611,12 @@ or highly undesired side-effects:
   in the script.  E.g. imagine effects of `sudo rm -rf ${PREFIX}/` if
   `PREFIX` variable was not defined for some reason.
 
-`set -u` option instructs shell to fail if some undefined variable is
+The `set -u` option instructs the shell to fail if an undefined variable is
 used.
 
-If it is intended to use some variable which might still be undefined
+If you intended to use some variable that might still be undefined
 you could either use `${var:-DEFAULT}` to provide explicit `DEFAULT`
-value or just define it conditionally on being not yet defined with
-e.g.
+value or just define it conditionally on being not yet defined with:
 
 ~~~
 % : ${notyetdefined:=1}
@@ -636,7 +636,7 @@ e.g.
 
 ### Run-time testing
 
-To some degree you could consider `set -u` feature to be a "run time
+To some degree you could consider the `set -u` feature to be a "run time
 test" -- "test if variable is defined, and if not -- fail".  **bash**
 and other shells do actually provide a command called `test`, which
 can perform various basic checks and return with non-0 exit code if
@@ -673,16 +673,16 @@ your script performs as expected.
 powerful paradigm to verify that pieces of your code (units) operate
 correctly in various scenarios, and represent those assumptions in the
 code.  An interesting observation is that everyone does "testing" by
-simply running their code/scripts at least once on some inputs and
-observing what they have produced and either output matches original
+simply running their code/scripts at least once on some inputs, 
+seeing what they have produced, and checking if the output matches original
 expectations. Unit-testing just takes it one step further -- code up
 such tests in a separate file so you could run them all at once later
-on e.g. whenever you change your script, and verify that it still
+on (e.g. whenever you change your script) and verify that it still
 performs correctly.  In the simplest case you could simply take your
-test command and run them into a separate script which would fail if
-any command within it, which would test your target script(s), would
-fail.  E.g. following script could be used to test basic correct operation
-of `1dsum` command from AFNI:
+test command and run them into a separate script that would fail if
+any command within it fails, which would test your target script(s).  
+For example, the following script could be used to test basic correct operation
+of AFNI's `1dsum` command:
 
 ~~~
 tfile=$(mktemp)              # create a temporary random file name
@@ -693,9 +693,9 @@ rm $tfile                    # cleanup
 ~~~
 {: .bash}
 
-Although looks uselessly simple, this could be a powerful basic test
-to guarantee that `1dsum` is available, that it was installed
-correctly (matching architecture etc), and does operate fine on
+Although looks uselessly simple, this is a powerful basic test
+to guarantee that `1dsum` is available, that it is installed
+correctly (matching architecture etc.), and operates fine on
 typical files stored on the file system.
 
 To have better management over collection of such tests, testing
@@ -705,7 +705,7 @@ frameworks were developed for shell scripts. Notable ones are:
 - [Bats: Bash Automated Testing System](https://github.com/sstephenson/bats)
 
 They provide helpers to exercise the tests and report which ones
-passed and which failed, allow to run over collection of tests.
+passed and which failed, and to run a collection of tests.
 
 > ## Exercise
 >

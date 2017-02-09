@@ -8,42 +8,43 @@ questions:
 objectives:
 - "Understand basic differences among available shells and their use in
  neuroimaging toolkits"
-- "Using shell as a working medium explain the role of some most important environment variables"
+- "Using a shell as a working medium"
+- "Explain the role of some of the most important environment variables"
 - "Provide hints on efficient use of the collected shell history of commands"
 - "Explain how to make shell scripts more robust and less dangerous"
-- "Introduce basics of runtime- and unit- testing"
+- "Introduce basics of runtime and unit testing"
 keypoints:
-- "There are different (incompatible) shells and different
-  neuroimaging tools might use a different shell and thus provide
-  instructions which would not be compatible with your current shell"
-- "Command line shell is a powerful tool, and learning additional
+- "There are a number of incompatible shells. Different
+  neuroimaging tools may use specific shells and thus provide
+  instructions that are not compatible with your current shell."
+- "A command line shell is a powerful tool and learning additional
  'tricks' could help to make its use much more efficient, less
- error-prone, and thus more reproducible"
+ error-prone, and thus more reproducible."
 - "Shell scripting is the most accessible tool to automate execution of
-  arbitrary set of commands to largely avoid manual retyping of the
-  same commands possibly leading to typos and erroneous analyses"
-- "Environment variables play a big role in defining script behavior"
+  arbitrary set of commands. This will avoid manual retyping of the
+  same commands and in tern will avoid typos and erroneous analyses."
+- "Environment variables play a big role in defining script behavior."
 - "You can automate testing of the execution of your commands to
   provide at least some verifiable guarantee of correct execution
-  across different systems"
-- "Shell scripts are powerful but if misused can cause big problems"
+  across different systems."
+- "Shell scripts are powerful but if misused can cause big problems."
 ---
 
-> ## You can skip this lesson if you can answer these questions? --->
+> ## You can skip this lesson if you can answer these questions: &nbsp; &#8680;
 >
 >  - What factors affect execution of a given typed command in shell?
->  - How to script execution of a list of commands given user input
+>  - How can you script the execution of a list of commands given user input
 >    arguments?
->  - How to guarantee that your script was executed correctly and have not
->    failed interim execution?
->  - How to use text editors to edit your current command line?
->  - How to quickly recover sequence of commands you have ran in shell
->    e.g. a year ago while performing some analysis?
+>  - How can you guarantee that your script was executed correctly and will not
+>    fail during execution?
+>  - How can you use text editors to edit your current command line?
+>  - How can you quickly recover sequence of commands you have ran in shell
+>    (e.g. a year ago while performing some analysis)?
 {: .challenge}
 
 
 - For Windows OS users: If you do not have remote or virtual
-  environment with Unix or Linux system, you possibly could
+  environment with Unix or Linux system, you can
   [enable "native" Linux bash shell on your Windows 10 system](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/).
 
 

@@ -14,20 +14,20 @@ objectives:
 - "Explain how to make shell scripts more robust and less dangerous"
 - "Introduce basics of runtime and unit testing"
 keypoints:
-- "There are a number of incompatible shells. Different
+- "There are a number of incompatible shells; Different
   neuroimaging tools may use specific shells and thus provide
-  instructions that are not compatible with your current shell."
+  instructions that are not compatible with your current shell"
 - "A command line shell is a powerful tool and learning additional
  'tricks' could help to make its use much more efficient, less
- error-prone, and thus more reproducible."
+ error-prone, and thus more reproducible"
 - "Shell scripting is the most accessible tool to automate execution of
-  arbitrary set of commands. This avoids manual retyping of the
-  same commands and in turn will avoid typos and erroneous analyses."
-- "Environment variables play a big role in defining script behavior."
+  arbitrary set of commands; This avoids manual retyping of the
+  same commands and in turn avoids typos and erroneous analyses"
+- "Environment variables play a big role in defining script behavior"
 - "You can automate testing of the execution of your commands to
   provide at least some verifiable guarantee of correct execution
-  across different systems."
-- "Shell scripts are powerful but if misused can cause big problems."
+  across different systems"
+- "Shell scripts are powerful but if misused can cause big problems"
 ---
 
 > ## You can skip this lesson if you can answer these questions: &nbsp; &#8680;

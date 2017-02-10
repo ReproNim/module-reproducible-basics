@@ -3,16 +3,16 @@ title: "Package managers and distributions"
 teaching: 90
 exercises: 30
 questions:
-- How we could establish and control computation environments using
+- How can we establish and control computation environments using
   available package managers and distributions?
 objectives:
-- Explain differences between available distributions and package managers
+- Explain the differences between available distributions and package managers
 keypoints:
-- "Package managers and distributions allow for efficient creation tightly
+- "Package managers and distributions allow for the efficient creation of tightly
   version-controlled computation environments"
 ---
 
-## What is a “package manager" and relation to "distributions"
+## What is a “package manager" and its relation to "distributions"
 
 - Just two words on their purpose
 

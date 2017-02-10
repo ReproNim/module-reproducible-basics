@@ -57,6 +57,23 @@ In brief:
     5.  If you receive feedback, make changes on your desktop and push to your
         branch on GitHub: the pull request will update automatically.
 
+## How to Generate and Preview the Lessons
+
+First install jekyll:
+
+```Bash
+sudo apt-get install ruby ruby-dev
+sudo gem install jekyll
+```
+
+Then from your git checkout you will be able to execute:
+
+```Bash
+make serve
+```
+
+which will generate and serve the lessons on <http://localhost:4000>.
+
 
 ## Other Resources
 

@@ -39,25 +39,33 @@ heart of what constitutes a good bug report.
 {: .callout}
 
 Overall summary:
+
 - If possible, **check if issue persists with a newer version** of the
   software/dataset. If not -- it was likely fixed and you would need
   to upgrade, or if software comes from a centralized distribution,
   you might like to report it there or ask to have package being
   updated there
+
 - Do not try to describe the problem in your own words if you are not
   100% sure what the problem is. An even if you are sure -- **provide
   concise and reproducible example which demonstrates the problem** be
   it a script, or a list of steps in a GUI driven software
+
 - **Make sure that your example complete**, i.e. that is not just a
   ripped out piece without necessary imports etc. and that it does
   reproduce the issue
+  
   - Try to run it on another computer with similar setup -- does it
     reproduce or not, include that information in your report
+
 - Do not forget to **provide relevant information**, such as
+
   - Operating system and its version
+
   - Version of the software in question and how it was installed
     (e.g. via a package manager, or manually from a source tarball
     or a git repository)
+
 - Right before you are ready to submit -- **(re-)read your report
   yourself** and see if you possibly could get now an idea yourself of
   what could have gone wrong, or to see if you feel like you have

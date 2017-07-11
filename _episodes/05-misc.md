@@ -46,19 +46,19 @@ Overall summary:
   you might like to report it there or ask to have package being
   updated there
 
-- Do not try to describe the problem in your own words if you are not
-  100% sure what the problem is. An even if you are sure -- **provide
-  concise and reproducible example that demonstrates the problem** be
+- **Do not try to describe the problem in your own words** if you are not
+  100% sure what the problem is. And even if you are sure -- **provide
+  a concise and reproducible example that demonstrates the problem** be
   it a script, or a list of steps in a GUI-driven software
 
 - **Make sure that your example is complete**, i.e. that is not just a
- ripped out piece without necessary imports etc. and that it does
+  ripped out piece without necessary imports etc. and that it does
   reproduce the issue
   
   - Try to run it on another computer with similar setup -- does it
     reproduce or not, include that information in your report
 
-- Do not forget to **provide relevant information**, such as:
+- **Provide relevant information**, such as:
 
   - The operating system and its version
 

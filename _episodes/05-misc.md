@@ -77,14 +77,16 @@ Overall summary:
 (L.Torvalds, Linux project) are two common idioms pointing to the fact
 that a verbal description (as e.g. typically condensed into a paper's
 Methods section) alone is rarely sufficient to reproduce an empirical
-result.  That is why it is important to prepare to have not only the
-summary paper to be shared, but also relevant data, code, description
-of the computation environments, etc.  However, if you wait to prepare
-to share later, as your project has progressed or may be even complete, you might
-make it difficult if not impossible to actually be able to
-share your work.  Having sharing of your materials in mind right from the
-beginning should make actual sharing when you are ready to share a
-much easier task.
+result.  
+
+That is why it is important to share also relevant data, code, description
+of the computation environments, etc. 
+However, if you delay preparing your materials so they are ready to be shared, you might
+find it difficult, if not impossible at all, to actually be able to
+share your work later on as your project has progressed forward or may be even 
+completed.  Having a possibility of sharing in mind right from the
+beginning should make actual sharing a much easier task when you are actually 
+ready or are asked to share.
 
 > ## References
 >

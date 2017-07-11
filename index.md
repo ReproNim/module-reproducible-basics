@@ -3,14 +3,14 @@ layout: lesson
 ---
 
 
-*Reproducibility* could not only be enforced via dedicated systems
-facilitating automated and reproducible computation, but also could
-be taken as a principle to adhere to while performing any day-to-day
+The term "reproducibility" conjures a mental image of dedicated systems
+conducting automated and repeatable computations.  However, **you** can
+embrace reproducibility as a principle to apply to your day-to-day
 research activities.  Neuroimaging is a heavily data and software driven
-field of science.  As a result, reproducibility in day to day
-activities could be significantly improved by learning more about the
-tools we use already daily, and how they could be used to not only
-improve efficiency but also reproducibility.
+field of science.  As a result, by learning more tricks and techniques
+of the tools that you already use daily, you will discover ways to
+not only improve efficiency but also increase the reproducibility of
+your research.
 
 This module guides through three somewhat independent topics, which
 are in the heart of establishing and efficiently using common generic
@@ -24,10 +24,10 @@ also would lay foundation in establishing habits to make your work
 actually more reproducible.  Moreover these topics will be in the
 foundation of future modules in the ReproNim curriculum.
 
-To some degree, reproducibility requires on knowing **what**,
+To some degree, reproducibility requires knowledge of **what**,
 **when**, and **how** any particular analysis was carried out.
-Therefore materials in this module will try to accent on helping to
-answer those questions.  Before making accent on those questions,
+Therefore materials in this module will focus on helping to
+answer those questions.  Before addressing these specific questions,
 referenced external materials (tutorials, lessons, etc) will provide a
 more generic and more thorough presentation of the topics.
 
@@ -38,7 +38,7 @@ more generic and more thorough presentation of the topics.
 > might like to go through additional materials which will be
 > referenced in each particular lesson.  Even if you feel that you are
 > very proficient in all of those topics, we hope you would still
-> learn some new "hints" or would recommend or contribute some new
+> learn some new "tricks" or would recommend or contribute some new
 > materials to the lessons.
 {: .prereq}
 

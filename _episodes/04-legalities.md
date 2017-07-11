@@ -9,7 +9,7 @@ objectives:
 - Familiarize with aspects of ownership, licensing, and consent forms
 - Be able to choose among common appropriate licenses
 keypoints:
-- Clear up all "legal" aspects which would allow your work to be
+- Clear up all "legal" aspects that would allow your work to be
   reproducible as soon as possible in the course of your research
   project
 - It is advisable to choose some standard license for your materials
@@ -19,9 +19,9 @@ keypoints:
 > ## You can skip this lesson if you can answer these questions? --->
 >
 >  - What license would you choose for your code? for your dataset?
->  - How to annonimize your data?
+>  - How to anonymize your data?
 >  - Does your experiment participant consent form allow for any
->    sharing through possibly publicly available
+>    public sharing of data?
 {: .challenge}
 
 > ## External materials

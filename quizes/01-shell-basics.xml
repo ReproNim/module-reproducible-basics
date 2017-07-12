@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<quiz>
+<question type="shortanswer">
+	<name>
+		<text>DetermineSHELL</text>
+	</name>
+	<questiontext format="html">
+		<text>How can you determine what shell you are currently in?</text>
+	</questiontext>
+	<answer fraction="100">
+		<text>echo $SHELL</text>
+		<feedback><text>Correct!</text></feedback>
+	</answer>
+</question>
+<question type="shortanswer">
+	<name>
+		<text>ChangeLoginShell</text>
+	</name>
+	<questiontext format="html">
+		<text>How do you change the login shell for your account?</text>
+	</questiontext>
+	<answer fraction="100">
+		<text>chsh</text>
+		<feedback><text>Correct!</text></feedback>
+	</answer>
+</question>
+<question type="shortanswer">
+	<name>
+		<text>WhatIsShebang</text>
+	</name>
+	<questiontext format="html">
+		<text>What is shebang?</text>
+	</questiontext>
+	<answer fraction="100">
+		<text>First line in the script which starts with #! followed by the command used to interpret the script.</text>
+		<feedback><text>Correct!</text></feedback>
+	</answer>
+</question>
+<question type="multichoice">
+	<name>
+		<text>AddOptionsToShebang</text>
+	</name>
+	<questiontext format="html">
+		<text>Which of the following are correct ways to add options to shebang?</text>
+	</questiontext>
+	<answer fraction="33">
+		<text>#!/bin/bash</text>
+		<feedback><text>Correct!</text></feedback>
+	</answer>
+	<answer fraction="33">
+		<text>#!/bin/bash -e</text>
+		<feedback><text>Correct!</text></feedback>
+	</answer>
+	<answer fraction="33">
+		<text>#!/bin/bash -ex</text>
+		<feedback><text>Correct!</text></feedback>
+	</answer>
+	<answer fraction="0">
+		<text>#!/bin/bash -e -x</text>
+		<feedback><text>NO, shebang can accept up to 1 option!</text></feedback>
+	</answer>
+	<shuffleanswers>1</suffleanswers>
+	<single>false</single>
+	<answernumbering>abcd</answernumbering>
+</question>
+</quiz>

@@ -1,0 +1,14 @@
+//GIFT format for quiz questions in Moodle
+//see https://docs.moodle.org/23/en/GIFT_format for mor information
+//
+//
+//Challenges Questions
+::Q1:: How can you determin what shell you are currently in? {=echo $SHELL}
+::Q2:: How do you change the login shell for your account? {=chsh}
+::Q3:: What is shebang? {=It is the first line in the script which starts with #! followed by the command to be used to interpret the script}
+::Q4:: Which of the following are correct ways to add options to shebang? {
+~%33%#!/bin/bash
+~%33%#!/bin/bash -e
+~%33%#!/bin/bash -ex
+~%-100%#!/bin/bash -e -x
+}

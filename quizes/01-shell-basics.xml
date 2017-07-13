@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+	<question type="shortanswer">
+		<name>
+			<text>DetermineSHELL</text>
+		</name>
+		<questiontext format="html">
+			<text><![CDATA[<p>How can you determine what shell you are currently in?</p>]]></text>
+		</questiontext>
+		<answer fraction="100">
+			<text>echo $SHELL</text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+	</question>
+	<question type="shortanswer">
+		<name>
+			<text>ChangeLoginShell</text>
+		</name>
+		<questiontext format="html">
+			<text><![CDATA[<p>How do you change the login shell for your account?</p>]]></text>
+		</questiontext>
+		<answer fraction="100">
+			<text>chsh</text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+	</question>
+	<question type="shortanswer">
+		<name>
+			<text>WhatIsShebang</text>
+		</name>
+		<questiontext format="html">
+			<text>What is shebang?</text>
+		</questiontext>
+		<answer fraction="100">
+			<text><![CDATA[<p>First line in the script which starts with #! followed by the command used to interpret the script.</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+	</question>
+	<question type="multichoice">
+		<name>
+			<text>AddOptionsToShebang</text>
+		</name>
+		<questiontext format="html">
+			<text><![CDATA[<p>Which of the following are correct ways to add options to shebang (You may choose more than one answer).?</p>]]></text>
+		</questiontext>
+		<partiallycorrectfeedback format="html">
+			<text><![CDATA[<p>Your answer is partially correct. </p>]]></text>
+		</partiallycorrectfeedback>
+		<incorrectfeedback format="html">
+			<text><![CDATA[<p>Your answer is incorrect.</p>]]></text>
+		</incorrectfeedback>
+		<generalfeedback format="html">
+			<text><![CDATA[<p>This is general feedback.</p>]]></text>
+		</generalfeedback>
+		<shuffleanswers>true</shuffleanswers>
+		<single>false</single>
+		<answer fraction="33.33333" format="html">
+			<text><![CDATA[<p>#!/bin/bash</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+		<answer fraction="33.33333" format="html">
+			<text><![CDATA[<p>#!/bin/bash -e</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+		<answer fraction="33.33333" format="html">
+			<text><![CDATA[<p>#!/bin/bash -ex</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+		<answer fraction="0" format="html">
+			<text><![CDATA[<p>#!/bin/bash -e -x</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>NO, shebang can accept up to 1 option!</p>]]></text>
+			</feedback>
+		</answer>
+	</question>
+</quiz>

@@ -113,7 +113,8 @@ you with sufficient resources to carry our entire data analysis on your data,
 you are encouraged to use CIs to verify your code reproducible and correct execution 
 on a set of unit-tests or on a subset of the data.  For example, see 
 [simple workflow](https://github.com/ReproNim/simple_workflow) code for 
-the [A very simple, re-executable neuroimaging publication](https://f1000research.com/articles/6-124/))
+the [A very simple, re-executable neuroimaging publication](https://f1000research.com/articles/6-124/)).
+
 
 #### Travis CI
 
@@ -137,6 +138,12 @@ with GitHub.  It is free for projects available publicly on [github].
 > - [CircleCI 1.0 Documentation (familiarize: 10m, canonical reference)](https://circleci.com/docs/1.0)
 > ultimate documentation for CircleCI.  Review sections of relevance to your language/platform.
 {: .callout}
+
+> ## External review materials
+> - [Continuous Integration in the Cloud: Comparing Travis, Circle and Codeship (review: 10m)](https://strongloop.com/strongblog/node-js-travis-circle-codeship-compare/)
+> Having acquinted with the basics of those two [CI] offerings, review the differences
+{: .callout}
+
 
 > ## Excercise
 >

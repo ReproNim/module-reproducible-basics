@@ -1,6 +1,6 @@
 ---
 title: "Version control systems"
-teaching: 210
+teaching: 300
 exercises: 40
 questions:
 - How do version control systems help reproducibility, and 
@@ -213,12 +213,14 @@ commands to have `git-annex` branch merged correctly.
 > ## How to get data files controlled by git-annex?
 >
 > Using git/git-annex commands
+> 
 > 1. "download" a [BIDS](http://bids.neuroimaging.io) dataset from https://github.com/datalad/ds000114
 > 2. get all non-preprocessed T1w anatomicals
 > 3. try (and fail) to get all `T1.mgz` files
 > 4. knowing that `yoh@falkor:/srv/datasets.datalad.org/www/workshops/nipype-2017/ds000114`
->    is available via http from http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git ,  
->    get those `T1.mgz` files
+> is available via http from `http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git` ,
+> get those `T1.mgz` files
+>
 > > ## Answer
 > > ~~~
 > > % git clone https://github.com/datalad/ds000114   # 1.
@@ -234,18 +236,21 @@ commands to have `git-annex` branch merged correctly.
 {: .challenge}
 
 > ## How to add file a.txt directly under git, and file b.dat under git-annex?
-> 1. You could use `git add` for adding files under git, and `git annex add` to
->    add files under annex
+> ### Simple (one time)
+> Use `git add` for adding files under git, and `git annex add` to
+> add files under annex:
 > ~~~
 > % git add a.txt
 > % git annex add b.dat
 > ~~~
 > {: .bash}
-> 2. (advanced) If you want to 
->    [automate such "decision making"](http://git-annex.branchable.com/tips/largefiles/)
->    based on either files extensions
->    and/or their sizes, you could specify those rules within `.gitattributes` file
->    (which in turn also needs to be `git add`-ed), e.g.
+>
+> ### Advanced (for all future `git annex add` calls)
+> If you want to 
+> [automate such "decision making"](http://git-annex.branchable.com/tips/largefiles/)
+> based on either files extensions
+> and/or their sizes, you could specify those rules within `.gitattributes` file
+> (which in turn also needs to be `git add`-ed), e.g.
 > ~~~
 > % cat << EOF > .gitattributes
 > * annex.largefiles=(not(mimetype=text/*))
@@ -264,10 +269,15 @@ commands to have `git-annex` branch merged correctly.
 > {: .bash}
 {: .solution}
 
+
 ## DataLad
 
+[DataLad] 
+
 > ## External teaching materials
-> - [Examples of workflows](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html)
+> - [DataLad lecture and demo (Full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo)
+> - [DataLad demos of the features (Full: 30 min, review: 10 min)](http://datalad.org/features.html)
+> - [An example datalad collaborative workflow (optional: 10 min)](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html)
 {: .callout}
 
 ## Additional relevant helpers
@@ -304,3 +314,4 @@ commands to have `git-annex` branch merged correctly.
 [VCS]: https://en.wikipedia.org/wiki/Version_control
 [CI]: https://en.wikipedia.org/wiki/Continuous_integration
 [Travis CI]: http://travis-ci.org
+[DataLad]: http://datalad.org

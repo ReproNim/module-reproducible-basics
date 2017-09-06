@@ -6,10 +6,10 @@ questions:
 - How do version control systems help reproducibility, and 
   which systems should be used?
 objectives:
+- Become familiar with version control systems for
+  code and data, and relevant tools based on them
 - Learn how to use version control systems to obtain, maintain, and
   share code and data
-- Become familiar with a variety of version control systems for
-  code and data, and relevant tools based on them
 - Review available 3rd party services and workflows that could be
   used to help to guarantee reproducibility of the results
 keypoints:
@@ -18,23 +18,24 @@ keypoints:
 - "VCS could be used directly or serve a foundation for domain-specific tools"
 ---
 
-> ## You can skip this lesson if you can answer these question? --->
+> ## You can skip this lesson if you can answer these questions? --->
 >
 >  - How to keep all your scripts, configuration, notes, and data
->    under version control systems and shareable with your collaborators,
->    and your results automatically verified by continuous integration systems
+>    under version control systems and shareable with your collaborators?
+>  - How to establish and use continuous integration systems to verify correctness
+>    of reproduce results (where feasible)?
 {: .challenge}
 
 
-## What is a “version control system" (VCS)?
+## What is a “version control system" ([VCS])?
 
 We all probably do some level of version control of our files,
-documents, and even data files, but without a version control **system**
+documents, and even data files, but without a version control **system** ([VCS])
 we do it in an ad-hoc manner:
 
 [![A Story Told in File Names by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1323](../fig/borrowed/phd052810s.png)](http://www.phdcomics.com)
 
-So, in general, VCS systems help to track versions of digital artifacts
+So, in general, VCS systems help to **track versions** of digital artifacts
 such as code (scripts, source files), configuration files, images,
 documents, data -- original or generated (as outcome of the analysis).
 With proper annotation of changes, VCS becomes the lab notebook for
@@ -50,23 +51,25 @@ worthwhile placing any materials you produce and care about under
 some appropriate VCS.
 
 Besides tracking changes, another main function of VCS is
-collaboration. VCSs are typically used not only locally since they allow
-the transfer and aggregation of versions of (or changes to) your
+**collaboration**. VCSs are typically used not only locally but across multiple
+hosts. Any modern VCS supports
+transfer and aggregation of versions of (or changes to) your
 work among collaborators.  By using some public services (such as
-github.com) you can also make them available to other online services
+[github]) you can also make them available to other online services
+(such as [travis-ci](http://travis-ci.org)) 
 that could be configured to react to any new change you
 introduce and to perform prescribed actions.  Integration with such
 services, which could automatically reanalyse data and
-verify that expected results still hold, provides another big benefit for
+and verify that expected results still hold, provides another big benefit for
 guaranteeing correct computations and reproducibility.
 
 In this module we will first learn about
 
-- general use of Git as a VCS to maintain not-so-large files (code,
-configuration, etc)
+- general use of [Git] as a VCS to maintain not-so-large files (code,
+configuration, text, etc)
 - 3rd-party services worth learning to integrate with your VCS on
-public hosting portals (e.g. on github)
-- VCS geared for managing data files
+public hosting portals (e.g. on [github])
+- VCS geared for managing data files ([git-annex])
 - additional VCS-based tools that could help you to get better
 control of your digital research artifacts and notes.
 
@@ -91,8 +94,61 @@ control of your digital research artifacts and notes.
 
 ## 3rd party services
 
-### Travis
-### Circle-CI
+As you have learned in [Remotes in GitHub](http://swcarpentry.github.io/git-novice/07-github/)
+section of the [Software Carpentry Git course](http://swcarpentry.github.io/git-novice/)
+[github] website provides you a public (or private) storage for your Git repositories on the web.
+GitHub website also allows 3rd-party websites to interact with your repositories 
+to provide additional services, typically in a response to your submission of new changes
+to your repositories. Visit [GitHub Marketplace](https://github.com/marketplace) for an
+overview of the vast collection of such additional services.  Some services are free,
+some are "pay-for-service".  Students could benefit from obtaining a 
+[Student Developer Pack](https://education.github.com/pack) to gain free access to
+some services which otherwise would require a fee.
+
+### Continuous integration
+
+There is a growing number of online services providing 
+**continuous integration** ([CI]) services.  Although free tier unlikely to provide
+you with sufficient resources to carry our entire data analysis on your data,
+you are encouraged to use CIs to verify your code reproducible and correct execution 
+on a set of unit-tests or on a subset of the data.  For example, see 
+[simple workflow](https://github.com/ReproNim/simple_workflow) code for 
+the [A very simple, re-executable neuroimaging publication](https://f1000research.com/articles/6-124/)).
+
+
+#### Travis CI
+
+[Travis CI] was one of the first free continuous integration services integrated
+with GitHub.  It is free for projects available publicly on [github].
+
+> ## External teaching materials
+> - [A quick Travis CI Tutorial for Node.js developers (full: 20m)](https://github.com/dwyl/learn-travis)
+> a good description of all needed steps to perform to enable Travis CI for your github project.
+> Although tuned for Node.js projects, the same principles apply to other platforms/languages.
+> - [Shablona - A template for small scientific python projects (review: 5m, optional)](https://github.com/uwescience/shablona)
+> a template for scientific Python projects.  Review its `.travis.yml` for an example
+> of a typical setup for a Python-based project.
+> - [Travis CI Documentation (familiarize: 10m, canonical reference)](https://docs.travis-ci.com/)
+> ultimate documentation for Travis CI. Review sections of relevance to your language/platform.
+{: .callout}
+
+#### Circle-CI
+
+> ## External teaching materials
+> - [CircleCI 1.0 Documentation (familiarize: 10m, canonical reference)](https://circleci.com/docs/1.0)
+> ultimate documentation for CircleCI.  Review sections of relevance to your language/platform.
+{: .callout}
+
+> ## External review materials
+> - [Continuous Integration in the Cloud: Comparing Travis, Circle and Codeship (review: 10m)](https://strongloop.com/strongblog/node-js-travis-circle-codeship-compare/)
+> Having acquinted with the basics of those two [CI] offerings, review the differences
+{: .callout}
+
+
+> ## Excercise
+>
+> ### Adjust `simple_workflow` to execute sample analysis on another subject
+{: .challenge}
 
 
 ## Git-annex
@@ -100,6 +156,9 @@ control of your digital research artifacts and notes.
 
 > ## External teaching materials
 > -  [git-annex walkthrough](http://git-annex.branchable.com/walkthrough/) -
+[A walk-through from a Cog Neuroscientist](https://github.com/jhamrick/git-annex-tutorial/blob/master/Tutorial%20on%20git-annex.ipynb)
+[Another walk-through on a typical use-case for sync'ing etc](https://writequit.org/articles/getting-started-with-git-annex.html)
+
 {: .callout}
 
 
@@ -137,3 +196,9 @@ control of your digital research artifacts and notes.
 - AFNI captures provenance information within output files that could
   be inspected using `3dinfo` command
 
+[git-annex]: git-annex.branchable.com
+[Git]: https://git-scm.com
+[github]: http://github.com
+[VCS]: https://en.wikipedia.org/wiki/Version_control
+[CI]: https://en.wikipedia.org/wiki/Continuous_integration
+[Travis CI]: http://travis-ci.org

@@ -24,6 +24,7 @@ keypoints:
 >    under version control systems and shareable with your collaborators?
 >  - How to establish and use continuous integration systems to verify correctness
 >    of reproduce results (where feasible)?
+>  - What exactly have you done in your sample data analysis project X on a date Y?
 {: .challenge}
 
 
@@ -69,7 +70,7 @@ In this module we will first learn about
 configuration, text, etc)
 - 3rd-party services worth learning to integrate with your VCS on
 public hosting portals (e.g. on [github])
-- VCS geared for managing data files ([git-annex])
+- VCS geared for managing data files ([git-annex], [datalad])
 - additional VCS-based tools that could help you to get better
 control of your digital research artifacts and notes.
 
@@ -91,11 +92,18 @@ control of your digital research artifacts and notes.
 > - (very optional, since this module is Git-based) [Software Carpentry: Version Control with Mercurial (full: 4h)](http://swcarpentry.github.io/hg-novice/)
 {: .callout}
 
+> ## Exercise
+>
+> TODO: an excercise based on the simple_workflow, which would entail
+> fork'ing, and preparing (but not submitting, unless really an improvement) 
+> to submit a PR
+{: .challenge}
+
 
 ## 3rd party services
 
 As you have learned in [Remotes in GitHub](http://swcarpentry.github.io/git-novice/07-github/)
-section of the [Software Carpentry Git course](http://swcarpentry.github.io/git-novice/)
+section of the [Software Carpentry Git course](http://swcarpentry.github.io/git-novice/),
 [github] website provides you a public (or private) storage for your Git repositories on the web.
 GitHub website also allows 3rd-party websites to interact with your repositories 
 to provide additional services, typically in a response to your submission of new changes
@@ -109,10 +117,10 @@ some services which otherwise would require a fee.
 
 There is a growing number of online services providing 
 **continuous integration** ([CI]) services.  Although free tier unlikely to provide
-you with sufficient resources to carry our entire data analysis on your data,
+you with sufficient resources to carry out entire data analysis on your data,
 you are encouraged to use CIs to verify your code reproducible and correct execution 
-on a set of unit-tests or on a subset of the data.  For example, see 
-[simple workflow](https://github.com/ReproNim/simple_workflow) code for 
+on a set of unit-tests using "toy"/simulated data or on a subset of the real dataset.
+For example, see [simple workflow](https://github.com/ReproNim/simple_workflow) code for
 the [A very simple, re-executable neuroimaging publication](https://f1000research.com/articles/6-124/)).
 
 
@@ -141,26 +149,120 @@ with GitHub.  It is free for projects available publicly on [github].
 
 > ## External review materials
 > - [Continuous Integration in the Cloud: Comparing Travis, Circle and Codeship (review: 10m)](https://strongloop.com/strongblog/node-js-travis-circle-codeship-compare/)
-> Having acquinted with the basics of those two [CI] offerings, review the differences
+> Having acquainted with the basics of those two [CI] offerings, review the differences
 {: .callout}
 
 
-> ## Excercise
+> ## Exercise
 >
-> ### Adjust `simple_workflow` to execute sample analysis on another subject
+> Adjust `simple_workflow` to execute sample analysis on another subject
+>
 {: .challenge}
 
 
 ## Git-annex
 
+[git-annex] is a tool which allows to manage data files within a [git] repository,
+without committing (large) content of those data files directly under git.
+In a nutshell, [git-annex]
+
+- moves actual data file(s) under `.git/annex/objects`, into a file typically 
+  named according to the [checksum](https://en.wikipedia.org/wiki/Checksum) of 
+  the file's content, and in its place creates a symlink pointing to that new 
+  location
+- commits that symlink (not actual data) under git, so a file of any size
+  would have the same small footprint within git
+- within `git-annex` branch records information about where (on which 
+  machine/clone or web URL), that data file is available from
+
+so later on, if you have access to the clones of the repository which have the
+copy of the file, you could easily `get` it (which will download/copy that file
+under `.git/annex/objects`) or `drop` it (which would remove that file from 
+`.git/annex/objects`).
+
+As a result of git not containing the actual content of those large files, but 
+instead containing just symlinks, and information within `git-annex` branch, it 
+becomes possible to
+
+- have very lean [git] repositories, pointing to arbitrarily large files
+- share such repositories on any git hosting portal (e.g. [github]).  Just do
+  not forget also to push `git-annex` branch which would contain information
+  about
+- very quickly switch (i.e. checkout) between different states of the repository,
+  because no large file would need to be created -- just symlinks
+
+### Note
+
+Never `git merge` `git-annex` branch manually.  [git-annex] uses special merge
+algorithm to merge data availability information, and you should use 
+[git annex merge](https://git-annex.branchable.com/git-annex-merge/) 
+or [git annex sync](https://git-annex.branchable.com/git-annex-sync/)
+commands to have `git-annex` branch merged correctly.
 
 > ## External teaching materials
-> -  [git-annex walkthrough](http://git-annex.branchable.com/walkthrough/) -
-[A walk-through from a Cog Neuroscientist](https://github.com/jhamrick/git-annex-tutorial/blob/master/Tutorial%20on%20git-annex.ipynb)
-[Another walk-through on a typical use-case for sync'ing etc](https://writequit.org/articles/getting-started-with-git-annex.html)
-
+> - [git-annex walkthrough from a Cog Neuroscientist (full: 30 min)](https://github.com/jhamrick/git-annex-tutorial/blob/master/Tutorial%20on%20git-annex.ipynb)
+> an IPython/Jupyter notebook.  Please go through all the items, by either rerunning
+> the notebook cells (if you have IPython/Jupyter available), or just 
+> copy/pasting them into a terminal
+> - [git-annex walkthrough (full: 10 min)](http://git-annex.branchable.com/walkthrough/)
+> an original git-annex walkthrough.  Just go through all the sections to see
+> what aspects previous walkthrough did not cover.
+> - [Another walk-through on a typical use-case for sync'ing, etc (optional)](https://writequit.org/articles/getting-started-with-git-annex.html)
 {: .callout}
 
+> ## How to get data files controlled by git-annex?
+>
+> Using git/git-annex commands
+> 1. "download" a [BIDS](http://bids.neuroimaging.io) dataset from https://github.com/datalad/ds000114
+> 2. get all non-preprocessed T1w anatomicals
+> 3. try (and fail) to get all `T1.mgz` files
+> 4. knowing that `yoh@falkor:/srv/datasets.datalad.org/www/workshops/nipype-2017/ds000114`
+>    is available via http from http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git ,  
+>    get those `T1.mgz` files
+> > ## Answer
+> > ~~~
+> > % git clone https://github.com/datalad/ds000114   # 1.
+> > % cd ds000114
+> > % git annex get sub-*/anat/sub-*_T1w.nii.gz       # 2.
+> > % git annex get derivatives/freesurfer/sub-*/mri/T1.mgz  # 3. (should fail)
+> > % git remote add datalad datasets.datalad.org/workshops/nipype-2017/ds000114/.git
+> > % git fetch datalad
+> > % git annex get derivatives/freesurfer/sub-*/mri/T1.mgz  # 4. (should succeed)
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
+> ## How to add file a.txt directly under git, and file b.dat under git-annex?
+> 1. You could use `git add` for adding files under git, and `git annex add` to
+>    add files under annex
+> ~~~
+> % git add a.txt
+> % git annex add b.dat
+> ~~~
+> {: .bash}
+> 2. (advanced) If you want to 
+>    [automate such "decision making"](http://git-annex.branchable.com/tips/largefiles/)
+>    based on either files extensions
+>    and/or their sizes, you could specify those rules within `.gitattributes` file
+>    (which in turn also needs to be `git add`-ed), e.g.
+> ~~~
+> % cat << EOF > .gitattributes
+> * annex.largefiles=(not(mimetype=text/*))
+> *.dat annex.largefiles=anything
+> EOF
+> ~~~
+> {: .bash}
+> would instruct `git annex add` command to add all non-text (according to 
+> auto-detected [MIME-type](https://en.wikipedia.org/wiki/Media_type) of their 
+> content) and all files having `.dat` extension to `git-annex` and the rest to
+> git:
+> ~~~
+> % git add .gitattributes     # to add to git the new .gitattributes
+> % git annex add a.txt b.dat
+> ~~~
+> {: .bash}
+{: .solution}
 
 ## DataLad
 

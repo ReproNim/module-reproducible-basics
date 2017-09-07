@@ -276,16 +276,56 @@ commands to have `git-annex` branch merged correctly.
 
 > ## External teaching materials
 > - [DataLad lecture and demo (Full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo)
+> This lecture describes goals and basic principles of DataLad, and presents
+> the first of the demos on discovery and installation of the datasets.
 > - [DataLad demos of the features (Full: 30 min, review: 10 min)](http://datalad.org/features.html)
-> - [An example datalad collaborative workflow (optional: 10 min)](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html)
+> provides [asciinema](http://asciinema.org) (and shell script versions) introduction
+> to major features of the DataLad
+> - [An example datalad collaborative workflow (Full: 10 min)](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html)
+> presents a simple workflow using DataLad to fully version
+> control data and code in the project and collaborate efficiently
 {: .callout}
+
+> ## How to create a new sub-dataset, populate it with derivative data, and share it?
+>
+> Using datalad commands, and starting with your existing clone of `ds000114`
+> from preceding exercise
+> 
+> 1. create sub-dataset `derivatives/demo-bet`
+> 2. using a skull-stripping tool (e.g. `bet` from FSL suite), for each original
+> subject produce a skull stripped anatomical under corresponding subdirectory of
+> `derivatives/demo-bet`. You are encouraged to use `datalad run` command 
+> (available in datalad 0.9 or later) to leave a record on the action you took
+> 3. [publish](http://docs.datalad.org/en/latest/generated/man/datalad-publish.html)
+> your work to your "fork" of the repository on github, while uploading data files
+> to any data hosting you have available (ssh/http server, box.com, dropbox, etc)
+>
+>
+> > ## Answer
+> > ~~~
+> > % cd ds000114
+> > % datalad create -d . derivatives/demo-bet   # 1.
+> > % # a somewhat long but fully automated and "protocoled" by run solution:
+> > % datalad run 'for f in sub-*/anat/sub-*_T1w.nii.gz; do d=$(dirname $f); od=derivatives/demo-bet/$d; mkdir -p $od; bet $f derivatives/demo-bet/$f; done'  # 2.
+> > % # establish a folder on box.com access to which would be shared in the group
+> > % export WEBDAV_USERNAME=secret WEBDAV_PASSWORD=secret
+> > % cd derivatives/demo-bet
+> > % # see https://git-annex.branchable.com/special_remotes for more supported git-annex special remotes
+> > % git annex initremote box.com type=webdav url=https://dav.box.com/dav/team/ds000114--demo-bet chunk=50mb encryption=none
+> > % datalad create-sibling-github --publish-depends box.com --access-protocol https ds000114--demo-bet
+> > % datalad publish --to github sub*
+> > % 
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
 
 ## Additional relevant helpers
 
 - [sumatra](http://neuralensemble.org/sumatra) - manages
   and tracks projects based on numerical simulation or analysis,
   with the aim of supporting reproducible research. It can be thought
-  of as an ''automated electronic lab notebook'' for
+  of as an "automated electronic lab notebook" for
   simulation/analysis projects.
 
 - [noworkflow](https://github.com/gems-uff/noworkflow) - captures a

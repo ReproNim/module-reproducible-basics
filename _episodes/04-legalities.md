@@ -24,14 +24,42 @@ keypoints:
 >    public sharing of data?
 {: .challenge}
 
+
 > ## External materials
 >
 >
-> - [Software Carpentry: Version Control with Git (full: 2:30h, familiarize: 20m)](http://swcarpentry.github.io/git-novice/) --
->  a thorough lesson of the main git commands and workflows.  Please
-> complete at least until `Licensing` submodule which will be a
-> separate topic.
-> - [Four aspects to make science open “by design” and not as an after-thought (10-20m)](http://dx.doi.org/10.1186/s13742-015-0072-7) --
+> - [Software Carpentry: Version Control with Git (full: 20m)](http://swcarpentry.github.io/git-novice/) --
+>  Go through `Licensing` submodule.
+> - [Four aspects to make science open “by design” and not as an after-thought (full: 20m)](http://dx.doi.org/10.1186/s13742-015-0072-7) --
 >  a brief correspondence which recapitulate four aspects (trademarks, ownership, licensing, and participant consent)
 >  in the scope of the scientific practice.
 {: .callout}
+
+## Anonimization tools
+
+> ## External materials
+>
+> - [Software Carpentry: Version Control with Git (full: 10m)](http://open-brain-consent.readthedocs.io/en/latest/annon_tools.html) --
+>   Review anonimization tools available for various types of data in neuroimaing.
+> - [Four aspects to make science open “by design” and not as an after-thought (full: 20m)](http://dx.doi.org/10.1186/s13742-015-0072-7) --
+>  a brief correspondence which recapitulate four aspects (trademarks, ownership, licensing, and participant consent)
+>  in the scope of the scientific practice.
+{: .callout}
+
+> ## How to deface T1 anatomical?
+>
+> Please deface an anatomical ...  Try to use knowledge of VCS to track your
+> actions the best way possible for future reproducibility
+> 
+> 1. create sub-dataset `derivatives/demo-bet`
+> 2. TODO
+>
+>
+> > ## Answer
+> > ~~~
+> > % cd ds000114
+> > % .... TODO
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}

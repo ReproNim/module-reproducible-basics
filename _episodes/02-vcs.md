@@ -115,13 +115,13 @@ some services which otherwise would require a fee.
 
 ### Continuous integration
 
-There is a growing number of online services providing 
+There is a growing number of online services providing
 **continuous integration** ([CI]) services.  Although free tier unlikely to provide
 you with sufficient resources to carry out entire data analysis on your data,
-you are encouraged to use CIs to verify your code reproducible and correct execution 
+you are encouraged to use CIs to verify your code reproducible and correct execution
 on a set of unit-tests using "toy"/simulated data or on a subset of the real dataset.
 For example, see [simple workflow](https://github.com/ReproNim/simple_workflow) code for
-the [A very simple, re-executable neuroimaging publication](https://f1000research.com/articles/6-124/)).
+the [A very simple, re-executable neuroimaging publication](https://f1000research.com/articles/6-124/).
 
 
 #### Travis CI
@@ -272,7 +272,11 @@ commands to have `git-annex` branch merged correctly.
 
 ## DataLad
 
-[DataLad] 
+[DataLad] project relies on git and git-annex and establishes an
+integrated data monitoring, management and distribution environment.
+As a sample of a data distribution, based on a number of "data
+crawlers" it provides unified access to over 10TB of neural data from
+various portals and initiatives (such as CRCNS, OpenfMRI, etc).
 
 > ## External teaching materials
 > - [DataLad lecture and demo (Full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo)
@@ -285,6 +289,16 @@ commands to have `git-annex` branch merged correctly.
 > presents a simple workflow using DataLad to fully version
 > control data and code in the project and collaborate efficiently
 {: .callout}
+
+
+> ## What datalad command would assist in recording the "effect" of running a command?
+>
+> ~~~
+> % datalad run COMMAND PARAMETERS
+> ~~~
+> {: .bash}
+> Please see [datalad run --help](http://docs.datalad.org/en/latest/generated/man/datalad-run.html) for more details.
+{: .solution}
 
 > ## How to create a new sub-dataset, populate it with derivative data, and share it?
 >

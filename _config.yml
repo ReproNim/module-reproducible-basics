@@ -6,7 +6,7 @@
 kind: "lesson"
 
 # Overall title for pages.
-title: "ReproNim module 0: Reproducible basics"
+title: "ReproNim Reproducible Basics Module"
 
 # Repository URL (without trailing slash).
 repo: https://github.com/ReproNim/module-reproducible-basics

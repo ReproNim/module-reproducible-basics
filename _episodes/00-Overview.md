@@ -1,6 +1,6 @@
 ---
 title: "Module overview"
-teaching: 180
+teaching: 5
 exercises: 0
 questions:
 - "Why should I care ?"

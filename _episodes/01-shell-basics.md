@@ -38,7 +38,7 @@ keypoints:
 >  - How can you guarantee that your script was executed correctly and will not
 >    fail during execution?
 >  - How can you use text editors to edit your current command line?
->  - How can you quickly recover sequence of commands you have ran in shell
+>  - How can you quickly recover a sequence of commands you have run in shell
 >    (e.g. a year ago while performing some analysis)?
 {: .challenge}
 
@@ -46,7 +46,6 @@ keypoints:
 - For Windows OS users: If you do not have remote or virtual
   environment with Unix or Linux system, you can
   [enable "native" Linux bash shell on your Windows 10 system](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/).
-
 
 
 ## What is a “shell”?
@@ -72,26 +71,26 @@ In this module we will first become familiarized with basic (and
 possibly advanced) features of a shell and shell scripting, and then
 review a few aspects that particularly relate to reproducibility, as
 a principle of having good control over commands execution -- knowing
-which command actually was ran, what conditions could have potentially
-affected their execution, inspecting available history of the
+which command actually was run, what conditions could have potentially
+affected its execution, inspecting available history of the
 commands, and verifying that a script did not complete while hiding
 failed interim execution.
 
 > ## External teaching materials
 >
 > Before going through the rest of this lesson, you should learn
-> basics of shell usage and scripting. Following lesson provides a
+> basics of shell usage and scripting. The following lesson provides a
 > good overview of all basics concepts.  Even if you are familiar with
 > shell and shell scripting, please review materials of the lesson and
 > try to complete all exercises in it, especially if you do not know
-> correct answer to them right away:
+> correct answers to them right away:
 >
 >   - [Software Carpentry: The Unix Shell (full: 1 h 35 min, review: 20 min)](http://swcarpentry.github.io/shell-novice/)
 {: .callout}
 
 > ## Additional materials
 >
-> If you are interested to know more about history and features of
+> If you are interested to know more about the history and features of
 > various shells, please review materials under following external links:
 >
 >  - ["Teaching Notes" of the above "The Unix Shell" lesson](https://swcarpentry.github.io/shell-novice/guide/)
@@ -101,7 +100,7 @@ failed interim execution.
 > Relevant Books:
 >
 >  - [Data Science at the Command Line](http://datascienceatthecommandline.com), which also contains a list of
->   command line tools from useful for “data science”
+>   command line tools useful for “data science”
 {: .callout}
 
 ## Challenges
@@ -201,7 +200,7 @@ impact what external commands and libraries you are using.
 
 Whenever running a command without providing its full path on the
 filesystem, the `PATH` environment variable is consulted to determine
-which paths to look for the command. You might have multiple
+which paths to use to look for the command. You might have multiple
 implementations or versions of the same command available at different
 locations, which might be specified within the PATH variable (separated
 with a colon). Although a very simple concept, it is a workhorse
@@ -261,7 +260,7 @@ unintentionally run a different version and end up with different results.
 > 1. So that those commands take precedence over other commands named
 > the same way but available elsewhere on the `PATH`?
 >
-> 2. So those commands are ran only if not found elsewhere on the
+> 2. So those commands are run only if not found elsewhere on the
 > on the `PATH`? (rarely needed/used case)
 >
 > > ## Solution
@@ -311,7 +310,7 @@ list of dynamic libraries which an executable needs is often stored
 also without full paths, so `ld.so` (e.g. `/lib/ld-linux.so.2` on
 recent Debian systems), which takes care of executing those binaries,
 needs to determine which particular libraries to load. Similar to
-how `PATH` variable determines resolution paths for execution of
+the way `PATH` variable determines resolution paths for execution of
 commands, the `LD_LIBRARY_PATH` environment variable provides resolution
 paths for loading dynamic libraries. Unlike `PATH`, `ld.so` does
 assume a list of default paths (e.g., `/lib`, then `/usr/lib` on Linux
@@ -502,16 +501,16 @@ control execution of the processes:
 ### Shell history
 
 By default, a shell stores in memory a history of the commands you
-have ran.  You could access it using `history` command.  When you exit
+have run.  You could access it using `history` command.  When you exit
 the shell, those history lines are appended to a file (by default in 
 `~/.bash_history` for bash shell). This not
-only allows to quickly recall commands you have ran recently, but
+only allows you to quickly recall commands you have run recently, but
 can provide you an actual "lab notebook" of the actions you have
 performed. Thus the shell history could be indispensable to
 
-- provide a skeleton for your script soon you realize that automating
+- provide a skeleton for your script and soon you realize that automating
   current operations is worthwhile the effort, and
-- determine what exactly command you have ran to perform some given
+- determine exactly what command you have run to perform some given
   operation.
 
 > ## Eternal history
@@ -548,7 +547,7 @@ and so on.
 >
 > Inspect your shell command history you have run so far:
 > 1. use `history` and `uniq` commands to find what is the most
->    popular command you have ran
+>    popular command you have run
 > 2. experiment using `Ctrl-r` to find commands next to the most
 >    popular command
 {: .challenge}
@@ -571,7 +570,7 @@ that instructs the shell to exit with non-0 exit code right when some command fa
 
 > ## Note on special commands
 > POSIX defines [some commands as "special"](https://www.gnu.org/software/bash/manual/html_node/Special-Builtins.html#Special-Builtins),
-> failure in execution of which would cause entire script to exit (even
+> for which failure in execution would cause entire script to exit (even
 > without set `-e`) if they return non-0 value (`break`, `:`, `.`,
 > `continue`, `eval`, `exec`, `exit`, `export`, `readonly`, `return`,
 > `set`, `shift`, `trap`, `unset`).
@@ -679,7 +678,7 @@ expectations. Unit-testing just takes it one step further -- code up
 such tests in a separate file so you could run them all at once later
 on (e.g. whenever you change your script) and verify that it still
 performs correctly.  In the simplest case you could simply take your
-test command and run them into a separate script that would fail if
+test commands and run them into a separate script that would fail if
 any command within it fails, which would test your target script(s).  
 For example, the following script could be used to test basic correct operation
 of AFNI's `1dsum` command:

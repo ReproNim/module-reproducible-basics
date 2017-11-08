@@ -103,52 +103,6 @@ failed interim execution.
 >   command line tools useful for “data science”
 {: .callout}
 
-## Challenges
-
-> ## How can you determine what shell are you currently in?
-> ~~~
-> % echo $SHELL
-> ~~~
-> {: .bash}
-{: .solution}
-
-> ## How do you change the login shell for your account?
-> ~~~
-> % chsh
-> ~~~
-> {: .bash}
-{: .solution}
-
-> ## What is a shebang?
-> It is the first line in the script, and which starts with `#!` 
-> followed by the command to be used to interpret the script, e.g.
-> if a file `blah` begins with the following:
-> ~~~
-> #!/bin/bash
-> echo "Running this script using bash"
-> ~~~
-> {: .bash}
-> then running `./blah` is analogous to calling `/bin/bash ./blah` .
-> The string "#!" is read out loud 
-> as "hash-bang" and therefore is shortened to "shebang."
-{: .solution}
-
-
-> ## Could a shebang carry options?
->
-> To help answering the question answer which of the following shebangs would be correct and what would be
-> their effect
->
-> 1. `#!/bin/bash`
-> 2. `#!/bin/bash -e`
-> 3. `#!/bin/bash -ex`
-> 4. `#!/bin/bash -e -x`
->
-> > ## Answer
-> > Shebang can carry up to 1 option, so 1-3 are correct.
-> {: .solution}
-{: .challenge}
-
 
 ## Commonly used shells and relation to existing neuroimaging projects
 
@@ -173,7 +127,16 @@ failed interim execution.
 > - [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells)
 {: .callout}
 
-> ## How do you change current shell in your session?
+## Challenges
+
+> ## How can you determine what shell are you currently in?
+> ~~~
+> % echo $SHELL
+> ~~~
+> {: .bash}
+{: .solution}
+
+> ## How do you change **current shell** in the current session?
 > You just start it. E.g.
 > ~~~
 > % tcsh
@@ -184,6 +147,44 @@ failed interim execution.
 > your previous shell by typing `exit` or just pressing `Ctrl-d`.
 {: .solution}
 
+> ## How do you change **the login shell** (the one you enter when you
+> login) for your account?
+> ~~~
+> % chsh
+> ~~~
+> {: .bash}
+{: .solution}
+
+
+> ## What is a shebang?
+> It is the first line in the script, and which starts with `#!` 
+> followed by the command to be used to interpret the script, e.g.
+> if a file `blah` begins with the following:
+> ~~~
+> #!/bin/bash
+> echo "Running this script using bash"
+> ~~~
+> {: .bash}
+> then running `./blah` is analogous to calling `/bin/bash ./blah` .
+> The string "#!" is read out loud
+> as "hash-bang" and therefore is shortened to "shebang."
+{: .solution}
+
+
+> ## Could a shebang carry options?
+>
+> To help answering the question answer which of the following shebangs would be correct and what would be
+> their effect
+>
+> 1. `#!/bin/bash`
+> 2. `#!/bin/bash -e`
+> 3. `#!/bin/bash -ex`
+> 4. `#!/bin/bash -e -x`
+>
+> > ## Answer
+> > Shebang can carry up to 1 option, so 1-3 are correct.
+> {: .solution}
+{: .challenge}
 
 
 ## Environment variables
@@ -217,15 +218,17 @@ we may have two different versions of AFNI installed in different locations;
 without specifying the path to a particular installation of AFNI, we may
 unintentionally run a different version and end up with different results.
 
-> ## How can you determine full path to the command that you are about to use?
+> ## How can you determine which command (full path to it) that you are about to use?
 >
 > To see which command will actually be run when you intend to run a
-> `COMMAND`, use `which` helper, e.g.
+> `COMMAND`, use `which` command, e.g.
 > ~~~
 > $ which afni
 > /usr/bin/afni
 > ~~~
 > {: .bash}
+> Do not mix up with `locate` command, which (if available) would
+> just find a file with that word somewhere in the file name/path. 
 {: .solution}
 
 

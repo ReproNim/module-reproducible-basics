@@ -92,11 +92,55 @@ control of your digital research artifacts and notes.
 > - (very optional, since this module is Git-based) [Software Carpentry: Version Control with Mercurial (full: 4h)](http://swcarpentry.github.io/hg-novice/)
 {: .callout}
 
-> ## Exercise
+> ## What is the recommended first step to do on a new host?
 >
-> TODO: an excercise based on the simple_workflow, which would entail
-> fork'ing, and preparing (but not submitting, unless really an improvement) 
-> to submit a PR
+> It is recommended to configure git, so commits have appropriate author information.
+>
+> ~~~
+> % git config --global user.name "FirstName LastName"
+> % git config --global user.email "ideally@real.email"
+> ~~~
+> {: .bash}
+{: .solution}
+
+> ## Exercise: a basic git/GitHub workflow
+>
+> Goal: submit a Pull Request suggesting a change to the
+> [https://github.com/ReproNim/simple_workflow](simple_workflow) analysis.
+> You should submit an initial PR with one of the changes, and then improve it
+> with subsequent additional commit, and see how PR gets automatically updated.
+> Possible changes for the first commit to initiate a PR:
+> - a complitely dummy change to README.md (0 points)
+> - a typo fix to README.md (10 points)
+>
+> Then proceed with a more meaningful change:
+> - adjust `circle.yml` to run analysis (look for line with `run_demo_workflow.py`)
+>   on just a single subject (currently `-n 2` to run on two subjects)
+>
+{: .challenge}
+
+> ## Exercise: exploiting git history
+>
+> Goal, determine how estimate for the Left-Amygdala changed in the AnnArbor_sub16960
+> subject from release 1.0.0 to 1.1.0
+> > ## Answer
+> > git diff allows to see the differences between any points in the git history
+> > and optionally restricted to the specific file(s), so the answer to the 
+> > challenge, to which you could have arrived by using `git tag`, `git grep`,
+> > to identify what you are looking for:
+> >  ~~~
+> > % git diff 1.0.0..1.1.0 -- expected_output/AnnArbor_sub16960/segstats.json
+> > ...
+> >      "Left-Amygdala": [
+> > -        619,
+> > -        742.80002951622009
+> > +        608,
+> > +        729.60002899169922
+> >      ],
+> > ~~~
+> > {: .bash}
+> {: .solution}
+>
 {: .challenge}
 
 
@@ -150,6 +194,7 @@ with GitHub.  It is free for projects available publicly on [github].
 > ## External review materials
 > - [Continuous Integration in the Cloud: Comparing Travis, Circle and Codeship (review: 10m)](https://strongloop.com/strongblog/node-js-travis-circle-codeship-compare/)
 > Having acquainted with the basics of those two [CI] offerings, review the differences
+> - [Side-by-side comparison of CI services: review 5m](https://www.slant.co/versus/625/2481/~circleci_vs_appveyor)
 {: .callout}
 
 
@@ -215,7 +260,7 @@ commands to have `git-annex` branch merged correctly.
 > Using git/git-annex commands
 > 
 > 1. "download" a [BIDS](http://bids.neuroimaging.io) dataset from https://github.com/datalad/ds000114
-> 2. get all non-preprocessed T1w anatomicals
+> 2. `get` all non-preprocessed T1w anatomicals
 > 3. try (and fail) to get all `T1.mgz` files
 > 4. knowing that `yoh@falkor:/srv/datasets.datalad.org/www/workshops/nipype-2017/ds000114`
 > is available via http from `http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git` ,
@@ -274,9 +319,9 @@ commands to have `git-annex` branch merged correctly.
 
 [DataLad] project relies on git and git-annex and establishes an
 integrated data monitoring, management and distribution environment.
-As a sample of a data distribution, based on a number of "data
-crawlers" it provides unified access to over 10TB of neural data from
-various portals and initiatives (such as CRCNS, OpenfMRI, etc).
+As a sample of a data distribution based on a number of "data
+crawlers" for existing data portals, it provides unified access to over 
+10TB of neural data from various initiatives (such as CRCNS, OpenfMRI, etc).
 
 > ## External teaching materials
 > - [DataLad lecture and demo (Full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo)
@@ -356,8 +401,6 @@ various portals and initiatives (such as CRCNS, OpenfMRI, etc).
 
 
 ### Neuroimaging ad-hoc "versioning"
-
-### Ad-hoc "version control"
 
 - AFNI captures provenance information within output files that could
   be inspected using `3dinfo` command

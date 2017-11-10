@@ -107,7 +107,6 @@ the states of all aforementioned APT repositories, as they were provided in the 
 This allows to obtain any previously present in those APT repositories version of
 the package.
 
-.. excercise using snapshots?
 
 ## NeuroDebian
 

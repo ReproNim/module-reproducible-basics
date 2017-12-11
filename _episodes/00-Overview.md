@@ -7,8 +7,8 @@ questions:
 - "Who is this module for ?"
 - "How should I study it ?"
 objectives:
-- “To motivate thinking about reproducibility as an inherent aspect of research activities"
-- “To show how to use lesson materials as soon as feasibly possible“
+- To think about reproducibility as an inherent part of research activities.
+- To use lesson materials as soon as possible.
 keypoints:
 - "Efficient practices are the (more) reproducible ones"
 

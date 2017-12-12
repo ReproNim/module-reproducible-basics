@@ -30,13 +30,13 @@ To some degree, reproducibility requires knowledge of **what**,
 Therefore the lessons in this module will focus on helping
 answer those questions.  Before addressing these specific questions,
 referenced external materials (tutorials, lessons, etc) will provide a
-more generic and more thorough presentation of the topics.
+more generic and thorough presentation of the topics.
 
 
 ### Who is this module for?
 
 The module is for any scientist, researcher, or a student who is using
-software to analyze data, writing custom code or editing documents.
+software for data analysis, writing custom code or editing documents.
 
 > ## Prerequisites
 >
@@ -57,9 +57,9 @@ software environments, having experience providing constructive
 feedback about defects you found in software you use, etc. All those
 topics seem independent but are also very much related, so it is likely
 that you might have some familiarity with all of them, or that you know
-just one of them well.  If all topics are not familiar to you at all,
+just one of them well.  If you have no experience with any topic,
 this may take you a long time: for instance, 5 to 7 full days. If you
-are familiar, some of the information may be redundant and it may take
+are experienced, some of the information may be redundant and it may take
 you only a few hours to go through this material in detail. In each
 lesson, we provide an estimate for the time it would take to learn
 the lesson, assuming you have a basic understanding of the topic.
@@ -76,7 +76,7 @@ computer 2. Get curious and check what you are using; start
 provisioning your own computation environments. Report problems you
 run into and don’t just leave them unresolved.
 
-An efficient approach to learning the materials is to first to skim
+An efficient approach to learning the materials is to first skim
 through all the materials, noting the key concepts and applying them
 right away. Then, after gaining experience and stumbling upon some
 problems, it will be useful to review the relevant topic in greater

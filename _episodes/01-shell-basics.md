@@ -3,36 +3,36 @@ title: "Command line/shell"
 teaching: 150
 exercises: 30
 questions:
-- "Why and how does using the command line/shell efficiently increase reproducibility of neuroimaging studies?"
-- "How can we assure that our scripts *do the right thing*?"
+- "Why and how does using the command line/shell efficiently increase the reproducibility of neuroimaging studies?"
+- "How can we ensure that our scripts *do the right thing*?"
 objectives:
-- "Understand basic differences among available shells and their use in
+- "Understand basic differences among available shells and their use(s) in
  neuroimaging toolkits"
-- "Using a shell as a working medium"
-- "Explain the role of some of the most important environment variables"
+- "Use a shell as a working medium"
+- "Explain the roles of some of the most important environment variables"
 - "Provide hints on efficient use of the collected shell history of commands"
 - "Explain how to make shell scripts more robust and less dangerous"
 - "Introduce basics of runtime and unit testing"
-keypoints:
-- "There are a number of incompatible shells; Different
+key points:
+- "There are a number of incompatible shells; different
   neuroimaging tools may use specific shells and thus provide
-  instructions that are not compatible with your current shell"
+  instructions that are not compatible with your current shell.”
 - "A command line shell is a powerful tool and learning additional
- 'tricks' could help to make its use much more efficient, less
- error-prone, and thus more reproducible"
+ 'tricks' can help make its use much more efficient, less
+ error-prone, and thus more reproducible.”
 - "Shell scripting is the most accessible tool to automate execution of
-  arbitrary set of commands; This avoids manual retyping of the
-  same commands and in turn avoids typos and erroneous analyses"
-- "Environment variables play a big role in defining script behavior"
+  an arbitrary set of commands. This avoids manual retyping of the
+  same commands and in turn avoids typos and erroneous analyses.”
+- "Environment variables play a big role in defining script behavior.”
 - "You can automate testing of the execution of your commands to
   provide at least some verifiable guarantee of correct execution
-  across different systems"
-- "Shell scripts are powerful but if misused can cause big problems"
+  across different systems.”
+- "Shell scripts are powerful but, if misused, can cause big problems.”
 ---
 
 > ## You can skip this lesson if you can answer these questions: &nbsp; &#8680;
 >
->  - What factors affect execution of a given typed command in shell?
+>  - What factors affect the execution of a given typed command in shell?
 >  - How can you script the execution of a list of commands given user input
 >    arguments?
 >  - How can you guarantee that your script was executed correctly and will not
@@ -43,9 +43,9 @@ keypoints:
 {: .challenge}
 
 
-- For Windows OS users: If you do not have remote or virtual
+- For Windows OS users: If you do not have a remote or virtual
   environment with Unix or Linux system, you can
-  [enable "native" Linux bash shell on your Windows 10 system](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/).
+  [enable a “native" Linux bash shell on your Windows 10 system](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/).
 
 
 ## What is a “shell”?
@@ -53,35 +53,35 @@ keypoints:
 *Shell* commonly refers to the UNIX shell environment, which in its
 core function provides users with a CLI (command line interface) to
 manipulate "environment variables" and to execute external
-commands. Because desired actions are expressed as typed commands it
-becomes possible to script (program) sets of those commands to be
-(re-)executed repetitively or conditionally (e.g., provides constructs
-for loops, functions, conditions).  So, in contrast to GUI (graphical
-user interface), such automation via scripting is a native feature of
-a CLI shell.  Unlike GUI integrated environments with lots of
+commands. Because desired actions are expressed as typed commands, it
+is possible to script (program) sets of those commands to be
+(re-)executed repetitively or conditionally. For example, it provides constructs
+for loops, functions and conditions.  So, in contrast to GUIs (graphical
+user interfaces), such automation via scripting is a native feature of
+a CLI shell.  Unlike GUI-integrated environments with lots of
 functionality exposed in menu items and icons, shell is truly a "black
 box", which has a lot of powerful features which you need to discover
 first to be able to use it efficiently.  Because manipulation of files
-is one of the main tasks to accomplish in a shell, usually a shell
+is one of the main tasks to accomplish in a shell, a shell usually
 either comes with common commands (such as `cp`, `mv`, etc.) built-in
 or is accompanied by an additional package (e.g., `coreutils` in
 Debian) providing those helpful command line utilities.
 
-In this module we will first become familiarized with basic (and
+In this module we will first familiarize ourselves with basic (and
 possibly advanced) features of a shell and shell scripting, and then
-review a few aspects that particularly relate to reproducibility, as
-a principle of having good control over commands execution -- knowing
+review a few of its aspects that particularly relate to reproducibility.
+This is a principle of having good control over commands execution -- knowing
 which command actually was run, what conditions could have potentially
-affected its execution, inspecting available history of the
-commands, and verifying that a script did not complete while hiding
+affected its execution, inspecting the available history of the
+commands, and verifying that a script did not complete while hiding a
 failed interim execution.
 
 > ## External teaching materials
 >
-> Before going through the rest of this lesson, you should learn
+> Before going through the rest of this lesson, you should learn the
 > basics of shell usage and scripting. The following lesson provides a
-> good overview of all basics concepts.  Even if you are familiar with
-> shell and shell scripting, please review materials of the lesson and
+> good overview of all basic concepts.  Even if you are familiar with
+> shell and shell scripting, please review the materials of the lesson and
 > try to complete all exercises in it, especially if you do not know
 > correct answers to them right away:
 >
@@ -90,8 +90,8 @@ failed interim execution.
 
 > ## Additional materials
 >
-> If you are interested to know more about the history and features of
-> various shells, please review materials under following external links:
+> If you are interested in knowing more about the history and features of
+> various shells, please review the materials under following external links:
 >
 >  - ["Teaching Notes" of the above "The Unix Shell" lesson](https://swcarpentry.github.io/shell-novice/guide/)
 >    provides a number of hints and links to interesting related resources
@@ -104,7 +104,7 @@ failed interim execution.
 {: .callout}
 
 
-## Commonly used shells and relation to existing neuroimaging projects
+## Commonly used shells and their relevance to existing neuroimaging projects
 
 
 - **sh** - a POSIX compliant shell. Generic name, not a specific project
@@ -113,11 +113,11 @@ failed interim execution.
 - **ksh** - KornSHell. Based on older bash, but also became a root for tcsh, zsh and others
 - **dash** - an implementation of a POSIX compliant shell (**sh**)
    - You will not see it used directly in a shebang
-- **bash** - Bourne Again SHell.
+- **bash** - Bourne Again Shell.
    - (Optionally) sh-compliant but with additional features from **ksh** and **csh**
    - Next most portable and most popular for shell scripting (after
      **sh**) and generally available (in contrast to **zsh**)
-- **csh/tcsh** - shell which aimed to provide interface similar to C programming language.
+- **csh/tcsh** - shell which aimed to provide interface similar to the C programming language.
    - Heavily used by FreeSurfer, AFNI (primarily @ scripts)
 - **zsh** - Powerful, but not POSIX/bash-compatible. Inspired by many features from **ksh** and **tcsh**.
    - Rarely used for generic scripting

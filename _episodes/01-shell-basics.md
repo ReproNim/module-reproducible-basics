@@ -56,14 +56,14 @@ manipulate "environment variables" and to execute external
 commands. Because desired actions are expressed as typed commands, it
 is possible to script (program) sets of those commands to be
 (re-)executed repetitively or conditionally. For example, it provides constructs
-for loops, functions and conditions.  So, in contrast to GUIs (graphic
+for loops, functions and conditions.  So, in contrast to GUIs (graphical
 user interfaces), such automation via scripting is a native feature of
 a CLI shell.  Unlike GUI-integrated environments with lots of
 functionality exposed in menu items and icons, shell is truly a "black
 box", which has a lot of powerful features that are integral to its
 efficient use.  Because manipulation of files
 is one of the main tasks to accomplish in a shell, a shell usually
-either comes with common commands (such as `cp`, `mv`, etc.) built in
+either comes with common commands (such as `cp`, `mv`, etc.) builtin
 or is accompanied by an additional package (e.g., `coreutils` in
 Debian) providing those helpful command line utilities.
 
@@ -108,9 +108,9 @@ failed interim execution.
 
 
 - **sh** - a POSIX compliant shell. This is a generic name and doesn’t refer to a specific project.
-   - Most portable (since it is the standard)
-   - Has many FSL scripts
-- **ksh** - KornShell. Based on older bash, but also became a root for tcsh, zsh and others
+   - Most portable shell (since it is the standard)
+   - Many FSL scripts use this shell
+- **ksh** - KornSHell. Based on older bash, but also became a root for tcsh, zsh and others
 - **dash** - an implementation of a POSIX compliant shell (**sh**)
    - You will not see it used directly in a shebang
 - **bash** - Bourne Again Shell.
@@ -214,7 +214,7 @@ we may have two different versions of AFNI installed in different locations;
 without specifying the path to a particular installation of AFNI, we may
 unintentionally run a different version than intended and end up with different results.
 
-> ## How can you determine which command (specifying a full path) you are about to use?
+> ## How can you determine the full path of a command you are about to use?
 >
 > To see which command will actually be run when you intend to run a
 > `COMMAND`, use `which` command, e.g.
@@ -228,18 +228,18 @@ unintentionally run a different version than intended and end up with different 
 {: .solution}
 
 
-> ## Beware of built-in commands
+> ## Beware of builtin commands
 >
 > Some commands might be implemented by shell itself, and their
 > implementation might differ from the one provided by a core
 > set of tools.
 >
-> Note that `which` is not a built-in command in bash (but is in
-> zsh), meaning that in bash you would not be able to "resolve”
-> built-in commands such as `pwd`.
+> Note that `which` is not a builtin command in bash (but is in
+> zsh), meaning that in bash you would not be able to "resolve"
+> builtin commands such as `pwd`.
 >
 > ~~~
-> % pwd -h      # bash built-in
+> % pwd -h      # bash builtin
 > bash: pwd: -h: invalid option
 > pwd: usage: pwd [-LP]
 >
@@ -356,7 +356,7 @@ environment, you may not have even set it explicitly!
 ### PYTHONPATH - determine which Python module will be used
 
 The idea of controlling resolution paths via environment variables
-also applies to language-specific domains. For example,, Python consults
+also applies to language-specific domains. For example, Python consults
 the `PYTHONPATH` variable to possibly change search paths for Python
 modules.
 
@@ -501,11 +501,11 @@ have run.  You can access it using the `history` command.  When you exit
 the shell, those history lines are appended to a file (by default in 
 `~/.bash_history` for bash shell). This not
 only allows you to quickly recall commands you have run recently, but
-can provide you an actual "lab notebook" of the actions you have
-performed. Thus the shell history can be very useful, as it can provide
-a skeleton for your script. When you soon realize that automating
-your current operations is worth the effort, you can determine exactly
-what command you have run to perform any given operation.
+can provide an actual "lab notebook" of the actions you have
+performed. Thus the shell history can be very useful for two reasons. Firstly, it can provide
+a skeleton for your script to help you realize that automating
+your current operations is worth the effort. Secondly, it helps you determine exactly
+which command you ran to perform any given operation.
 
 > ## Eternal history
 >
@@ -630,7 +630,7 @@ value or to just define it conditionally, on it having not yet been defined, wit
 ### Run-time testing
 
 To some degree you can consider the `set -u` feature to be a "run time
-test" -- “test if variable is defined, and if not -- fail".  **bash**
+test" -- "test if variable is defined, and if not -- fail".  **bash**
 and other shells do actually provide a command called `test`, which
 can perform various basic checks and return with a non-0 exit code if the
 condition is not satisfied.  For undefined variables it is `test -v`:

@@ -13,7 +13,7 @@ objectives:
 - "Provide hints on efficient use of the collected shell history of commands"
 - "Explain how to make shell scripts more robust and less dangerous"
 - "Introduce basics of runtime and unit testing"
-key points:
+keypoints:
 - "There are a number of incompatible shells; different
   neuroimaging tools may use specific shells and thus provide
   instructions that are not compatible with your current shell.”
@@ -45,7 +45,7 @@ key points:
 
 - For Windows OS users: If you do not have a remote or virtual
   environment with Unix or Linux system, you can
-  [enable a “native" Linux bash shell on your Windows 10 system](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/).
+  [enable a "native" Linux bash shell on your Windows 10 system](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/).
 
 
 ## What is a “shell”?
@@ -113,7 +113,7 @@ failed interim execution.
 - **ksh** - KornSHell. Based on older bash, but also became a root for tcsh, zsh and others
 - **dash** - an implementation of a POSIX compliant shell (**sh**)
    - You will not see it used directly in a shebang
-- **bash** - Bourne Again Shell.
+- **bash** - Bourne Again SHell.
    - (Optionally) sh-compliant but with additional features from **ksh** and **csh**
    - Next most portable and most popular for shell scripting (after
      **sh**) and generally available (in contrast to **zsh**)

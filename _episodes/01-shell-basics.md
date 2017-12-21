@@ -9,25 +9,25 @@ objectives:
 - "Understand basic differences among available shells and their use(s) in
  neuroimaging toolkits"
 - "Use a shell as a working medium"
-- "Explain the roles of some of the most important environment variables"
+- "Explain the role of some of the most important environment variables"
 - "Provide hints on efficient use of the collected shell history of commands"
 - "Explain how to make shell scripts more robust and less dangerous"
 - "Introduce basics of runtime and unit testing"
 keypoints:
 - "There are a number of incompatible shells; different
   neuroimaging tools may use specific shells and thus provide
-  instructions that are not compatible with your current shell.”
+  instructions that are not compatible with your current shell"
 - "A command line shell is a powerful tool and learning additional
  'tricks' can help make its use much more efficient, less
- error-prone, and thus more reproducible.”
+ error-prone, and thus more reproducible"
 - "Shell scripting is the most accessible tool to automate execution of
-  an arbitrary set of commands. This avoids manual retyping of the
-  same commands and in turn avoids typos and erroneous analyses.”
-- "Environment variables play a big role in defining script behavior.”
+  arbitrary set of commands; this avoids manual retyping of the
+  same commands and in turn avoids typos and erroneous analyses"
+- "Environment variables play a big role in defining script behavior"
 - "You can automate testing of the execution of your commands to
   provide at least some verifiable guarantee of correct execution
-  across different systems.”
-- "Shell scripts are powerful but, if misused, can cause big problems.”
+  across different systems"
+- "Shell scripts are powerful but, if misused, can cause big problems"
 ---
 
 > ## You can skip this lesson if you can answer these questions: &nbsp; &#8680;
@@ -137,7 +137,7 @@ failed interim execution.
 {: .solution}
 
 > ## How do you change the **current shell** of your current session?
-> You just start it. E.g.
+> You just start it. For example:
 > ~~~
 > % tcsh
 > ~~~
@@ -470,12 +470,11 @@ If you need a more powerful way to edit your current command line, use
 `Ctrl-x Ctrl-e` | (or `Alt-e` in **zsh**) -- Edit command line text in the editor (as defined by `VISUAL` environment variable)
 
 
-In addition to ability to edit command line text, some shortcuts
-control execution of processes:
+Some shortcuts can not only edit command line text, but also control the execution of processes:
 
 `Ctrl-c` | Kill currently running process
 `Ctrl-d` | Exit current shell
-`Ctrl-z` | Suspend currently running process. `fg` restores it, and `bg` would place it into background execution.
+`Ctrl-z` | Suspend currently running process. `fg` restores it, and `bg` places it into background execution.
 
 > ## set -o
 >
@@ -673,7 +672,8 @@ such tests in a separate file so you can run them all at once later
 on (e.g. whenever you change your script) and verify that it still
 performs correctly.  In the simplest case you can simply take your
 test commands and run them into a separate script that would fail if
-any command within it fails, which would test your target script(s).  
+any command within it fails, which would test your target script(s).
+ 
 For example, the following script could be used to test basic correct operations
 of AFNI's `1dsum` command:
 

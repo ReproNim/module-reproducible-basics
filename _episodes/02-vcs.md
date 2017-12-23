@@ -158,8 +158,7 @@ some services which otherwise would require a fee.
 There is a growing number of online services providing
 **continuous integration** ([CI]) services.  Although the free tier is unlikely to provide
 you with sufficient resources to carry out entire data analyses on your data,
-you are encouraged to use CIs to verify your code’s reproducibility and correct execution
-on a set of unit-tests using "toy"/simulated data or on a subset of the real dataset.
+you are encouraged to use CIs. They can help verify your code’s reproducibility and correct execution, as well as the reproducibility of your results. CIs can be used on a set of unit-tests using "toy"/simulated data or on a subset of the real dataset.
 For example, see [simple workflow](https://github.com/ReproNim/simple_workflow) code for
 [a very simple, re-executable neuroimaging publication](https://f1000research.com/articles/6-124/).
 

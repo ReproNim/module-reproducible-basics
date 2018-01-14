@@ -39,7 +39,7 @@ keypoints:
 
 > ## External materials
 >
-> - [Latest anonymization tools for neuroimaging (full: 10m)](http://open-brain-consent.readthedocs.io/en/latest/annon_tools.html) --
+> - [Latest anonymization tools for neuroimaging (full: 10m)](http://open-brain-consent.readthedocs.io/en/latest/anon_tools.html) --
 >   Review anonymization tools available for various types of data in neuroimaging.
 {: .callout}
 

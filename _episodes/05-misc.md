@@ -19,7 +19,7 @@ aspects of reproducibility in basic day-to-day activities.
 
 ## A good bug report is a reproducible one
 
-“Reproducibility” is at the heart of what constitutes a good bug report.
+"Reproducibility" is at the heart of what constitutes a good bug report.
 
 
 > ## References
@@ -71,7 +71,7 @@ Overall summary:
 
 ## Have reproducibility and openness in mind from the beginning
 
-"*The devil is in the detail*” and "*Talk is cheap, show me the code*"
+"*The devil is in the detail*" and "*Talk is cheap, show me the code*"
 (L. Torvalds, Linux project) are two common idioms pointing to the fact
 that a verbal description alone, as typically condensed into a paper's
 Methods section, is rarely sufficient to reproduce an empirical

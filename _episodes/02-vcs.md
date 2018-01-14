@@ -47,7 +47,7 @@ previous results -- if your work's history is stored in a VCS, you just
 need to get a previous version of your materials and carry out the
 analysis using it.  You can also recover a file which you mistakenly
 removed since a previous version would be contained within your VCS, so no
-more excuses like “the cat ate my source code". For those features alone it is
+more excuses like "the cat ate my source code". For those features alone it is
 worth placing any materials you produce and care about under
 some appropriate VCS.
 
@@ -275,7 +275,7 @@ commands to merge the `git-annex` branch correctly.
 {: .challenge}
 
 > ## How can we add the file a.txt directly under git, and file b.dat under git-annex?
-> ### Simple method (initial instance)
+> ### Simple method (initial invocation)
 > Use `git add` for adding files under Git, and `git annex add` to
 > add files under annex:
 > ~~~

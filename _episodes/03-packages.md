@@ -82,7 +82,7 @@ version of a software package. It does so by design to guarantee that all
 available software in the released version of Debian work correctly together.  
 If multiple versions were allowed and be present, including possibly newer 
 ones, it would be impossible to provide such a guarantee. However, more recent versions
-of the package often need to be installed. For this purpose ,
+of the package often need to be installed. For this purpose,
 [Debian backports](http://backports.debian.org) provide an APT repository for
 stable releases of Debian with some package versions brought from Debian testing.
 Enabling a backports APT repository makes it possible to install more recent versions of packages
@@ -116,7 +116,7 @@ maintained by the NeuroDebian team get uploaded to Debian unstable and then
 propagate to Debian and Ubuntu releases.
 
 To facilitate access to the most recent versions
-of such software on pre-existing releases of Debian and its most popular 
+of such software on already existing releases of Debian and its most popular 
 [derivative](https://wiki.debian.org/Derivatives) [Ubuntu](http://ubuntu.com),
 the NeuroDebian project established its own 
 [APT](https://en.wikipedia.org/wiki/APT_(Debian)) repository. So, in a vein, 
@@ -135,7 +135,7 @@ the instructions on http://neuro.debian.net
 
 If you are using [Docker](http://docker.io), 
 [NeuroDebian Docker images](https://hub.docker.com/_/neurodebian/) are provided for all 
-supported Debian and Ubuntu releases. If you are using [Singularity], then please standby for instructions.
+supported Debian and Ubuntu releases. If you are using [Singularity](http://singularity.lbl.gov), you could `singularity pull docker://neurodebian[:RELEASE]` to get minimalistic images, or fetch the "Ultimate NeuroDebian Image" by `singularity pull shub://neurodebian/neurodebian`.
 
 ## Conda
 
@@ -159,5 +159,5 @@ Aggregation of multiple datasets is done via the
 and a dataset containing other datasets is called a 
 [superdataset](http://docs.datalad.org/en/latest/glossary.html) in DataLad. 
 One of such super-datasets is provided from http://datasets.datalad.org and it 
-aggregates hundreds of neural datasets to create a file over 10TB in total.
+aggregates hundreds of neural datasets over 10TB in size altogether.
 To learn about DataLad, please refer to the [VCS lesson: DataLad](/02-vcs/#datalad).

@@ -137,6 +137,13 @@ supported Debian and Ubuntu releases.  If you are using [Singularity]()
 
 ## Conda
 
+[conda] is a package manager which was initially developed and use for
+[Anaconda] product, but because of its openness became used to establish
+independent popular conda "channels", such as [conda-forge] and [bioconda].
+Distinguishing feature of `conda` is not requiring root/super-user access
+for its installation and management.  Although largely Python-oriented,
+`conda` distributions are not limited only to Python-based projects.
+
 > ## External teaching materials
 > - [Conda: Chatsheet (review: 5 min, print: 2 pages)](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
 >   a concise list of the most common conda commands 
@@ -158,3 +165,9 @@ and a dataset containing other datasets is called a
 One of such super-datasets is provided from http://datasets.datalad.org and it 
 aggregates hundreds of neural datasets over 10TB in size total.
 To learn about DataLad, we refer you to the [VCS lesson:DataLad](/02-vcs/#datalad).
+
+
+[conda]: https://en.wikipedia.org/wiki/Conda_(package_manager)
+[Anaconda]: https://anaconda.org
+[conda-forge]: https://conda-forge.org
+[bioconda]: https://bioconda.github.io

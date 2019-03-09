@@ -545,6 +545,15 @@ and so on.
 >    popular command
 {: .challenge}
 
+> ## An opinionated `.repronim.bashrc`
+>
+> If you would like to see an example of a `.bashrc` file that makes reproducible
+> practices the "default" option, checkout [.repronim.bashrc](({{ page.root }}/code/.repronim.bashrc)).
+> You can either `source` this file in your existing `.bashrc` file
+> (e.g. you can copy this file to your home directory and add `source ~/.repronim.bashrc`
+> to your original `.bashrc` file)
+> or you can copy/paste useful lines from this file to your `.bashrc`.
+{: .callout}
 
 ## Hints for correct/robust scripting in shell
 

@@ -16,14 +16,17 @@ Alt-f:  Move cursor forward one word on the current line
 Alt-b:  Move cursor backward one word on the current line
 Tab:    Auto-complete files, folders, and command names
 Ctrl-x OR Ctrl-e OR Alt-e in zsh:  Edit command line text in the editor (as defined by VISUAL environment variable)"
+
 CONTROL="Job Control Shortcuts::
 Ctrl-c: Kill currently running process
 Ctrl-d: Exit current shell
 Ctrl-z: Suspend currently running process. fg restores it, and bg places it into background execution"
+
 HISTORY="History Shortcuts::
 Ctrl-p:	Previous line in the history
 Ctrl-n:	Next line in the history
 Ctrl-r:	Bring up next match backwards in shell history"
+
     if [ $# -lt 1 ]; then
         echo -e "${LINE}\n\n${CONTROL}\n\n${HISTORY}"
         return 0

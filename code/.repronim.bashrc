@@ -4,28 +4,28 @@ set -o emacs  # use the emacs shortcuts
 # function to help remind users about the shortcuts
 print_shortcuts() {
 LINE="Commandline/Cursor Editing Shortcuts::
-Ctrl-a: Go to the beginning of the line you are currently typing on
-Ctrl-e: Go to the end of the line you are currently typing on
-Ctrl-u: Remove text on the line before the cursor position
-Ctrl-h: Remove preceding symbol (same as backspace)
-Ctrl-w: Delete the word before the cursor
-Ctrl-k: Remove text on the line after the cursor position
-Ctrl-t: Swap the last two characters before the cursor
-Alt-t:  Swap the last two words before the cursor
-Alt-f:  Move cursor forward one word on the current line
-Alt-b:  Move cursor backward one word on the current line
-Tab:    Auto-complete files, folders, and command names
-Ctrl-x Ctrl-e OR Alt-e in zsh:  Edit command line text in the editor (as defined by VISUAL environment variable)"
+ Ctrl-a: Go to the beginning of the line you are currently typing on
+ Ctrl-e: Go to the end of the line you are currently typing on
+ Ctrl-u: Remove text on the line before the cursor position
+ Ctrl-h: Remove preceding symbol (same as backspace)
+ Ctrl-w: Delete the word before the cursor
+ Ctrl-k: Remove text on the line after the cursor position
+ Ctrl-t: Swap the last two characters before the cursor
+ Alt-t:  Swap the last two words before the cursor
+ Alt-f:  Move cursor forward one word on the current line
+ Alt-b:  Move cursor backward one word on the current line
+ Tab:    Auto-complete files, folders, and command names
+ Ctrl-x Ctrl-e OR Alt-e in zsh:  Edit command line text in the editor (as defined by VISUAL environment variable)"
 
 CONTROL="Job Control Shortcuts::
-Ctrl-c: Kill currently running process
-Ctrl-d: Exit current shell
-Ctrl-z: Suspend currently running process. fg restores it, and bg places it into background execution"
+ Ctrl-c: Kill currently running process
+ Ctrl-d: Exit current shell
+ Ctrl-z: Suspend currently running process. fg restores it, and bg places it into background execution"
 
 HISTORY="History Shortcuts::
-Ctrl-p:	Previous line in the history
-Ctrl-n:	Next line in the history
-Ctrl-r:	Bring up next match backwards in shell history"
+ Ctrl-p:	Previous line in the history
+ Ctrl-n:	Next line in the history
+ Ctrl-r:	Bring up next match backwards in shell history"
 
     if [ $# -lt 1 ]; then
         echo -e "${LINE}\n\n${CONTROL}\n\n${HISTORY}"

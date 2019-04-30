@@ -15,7 +15,7 @@ Alt-t:  Swap the last two words before the cursor
 Alt-f:  Move cursor forward one word on the current line
 Alt-b:  Move cursor backward one word on the current line
 Tab:    Auto-complete files, folders, and command names
-Ctrl-x OR Ctrl-e OR Alt-e in zsh:  Edit command line text in the editor (as defined by VISUAL environment variable)"
+Ctrl-x Ctrl-e OR Alt-e in zsh:  Edit command line text in the editor (as defined by VISUAL environment variable)"
 
 CONTROL="Job Control Shortcuts::
 Ctrl-c: Kill currently running process

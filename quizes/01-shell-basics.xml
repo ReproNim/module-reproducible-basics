@@ -16,17 +16,38 @@
 	</question>
 	<question type="shortanswer">
 		<name>
+			<text>ChangeCurrentShell</text>
+		</name>
+		<questiontext format="html">
+			<text><![CDATA[<p>How do you change the current shell of your current session?</p>]]></text>
+		</questiontext>
+		<answer fraction="100">
+			<text>tcsh</text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+		<answer fraction="100">
+		     <text>sh</text>
+		     <feedback><text>Correct!</text></feedback>
+		 </answer>
+ 		<answer fraction="100">
+ 		     <text>csh</text>
+ 		     <feedback><text>Correct!</text></feedback>
+ 		 </answer>
+	</question>
+	<question type="shortanswer">
+		<name>
 			<text>ChangeLoginShell</text>
 		</name>
 		<questiontext format="html">
-			<text><![CDATA[<p>How do you change the login shell for your account?</p>]]></text>
+			<text><![CDATA[<p>How do you change the login shell (the one you enter when you login) for your account?</p>]]></text>
 		</questiontext>
 		<answer fraction="100">
 			<text>chsh</text>
 			<feedback>
 				<text><![CDATA[<p>Correct!</p>]]></text>
 			</feedback>
-		</answer>
 	</question>
 	<question type="shortanswer">
 		<name>
@@ -37,6 +58,12 @@
 		</questiontext>
 		<answer fraction="100">
 			<text><![CDATA[<p>First line in the script which starts with #! followed by the command used to interpret the script.</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+		<answer fraction="100">
+			<text><![CDATA[<p>first line in a bash script.</p>]]></text>
 			<feedback>
 				<text><![CDATA[<p>Correct!</p>]]></text>
 			</feedback>
@@ -82,6 +109,57 @@
 			<text><![CDATA[<p>#!/bin/bash -e -x</p>]]></text>
 			<feedback>
 				<text><![CDATA[<p>NO, shebang can accept up to 1 option!</p>]]></text>
+			</feedback>
+		</answer>
+	</question>
+	<question type="shortanswer">
+		<name>
+			<text>DetermineCommandPath</text>
+		</name>
+		<questiontext format="html">
+			<text>Command to determine the full path of a command you are about to use?</text>
+		</questiontext>
+		<answer fraction="100">
+			<text>which</text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+	</question>
+	<question type="multichoice">
+		<name>
+			<text>AddNewPathToShell</text>
+		</name>
+		<questiontext format="html">
+			<text><![CDATA[<p>Which of the following are correct ways to add a new path (/a/b/c) in which the shell will look for commands?</p>]]></text>
+		</questiontext>
+		<partiallycorrectfeedback format="html">
+			<text><![CDATA[<p>Your answer is partially correct. </p>]]></text>
+		</partiallycorrectfeedback>
+		<incorrectfeedback format="html">
+			<text><![CDATA[<p>Your answer is incorrect.</p>]]></text>
+		</incorrectfeedback>
+		<generalfeedback format="html">
+			<text><![CDATA[<p>Good!</p>]]></text>
+		</generalfeedback>
+		<shuffleanswers>true</shuffleanswers>
+		<single>false</single>
+		<answer fraction="50" format="html">
+			<text><![CDATA[<p>PATH=/a/b/c:$PATH</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+		<answer fraction="50" format="html">
+			<text><![CDATA[<p>PATH=$PATH:/a/b/c</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
+		<answer fraction="0" format="html">
+			<text><![CDATA[<p>PATH=PATH;/a/b/c</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>NO, you need to use $PATH on the right side of the expression and separators are done with colon not semicolons!</p>]]></text>
 			</feedback>
 		</answer>
 	</question>

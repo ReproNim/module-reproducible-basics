@@ -68,6 +68,12 @@
 				<text><![CDATA[<p>Correct!</p>]]></text>
 			</feedback>
 		</answer>
+		<answer fraction="100">
+			<text><![CDATA[<p>first line of a bash script.</p>]]></text>
+			<feedback>
+				<text><![CDATA[<p>Correct!</p>]]></text>
+			</feedback>
+		</answer>
 	</question>
 	<question type="multichoice">
 		<name>

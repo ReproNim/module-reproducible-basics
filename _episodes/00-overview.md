@@ -7,8 +7,8 @@ questions:
 - "Who is this module for?"
 - "How should I study it?"
 objectives:
-- To think about reproducibility as an inherent part of research activities.
-- To apply lesson materials in your daily work as soon as possible.
+- Think about reproducibility as an inherent part of research activities.
+- Apply lesson materials in your daily work as soon as possible.
 keypoints:
 - "Efficient practices are the (more) reproducible ones"
 
@@ -83,7 +83,7 @@ or recommended practices.**
 ### What are the lessons in this module?
 
 This module introduces three somewhat independent topics at the heart of
-efficient and reproducible scientific computing: command line shell, 
+efficient and reproducible scientific computing: command line/shell, 
 version control systems (for code and data), distribution package managers,
 and a few additional aspects such as bug reporting and licensing. It's 
 unlikely that you've managed to completely avoid those tools so far,

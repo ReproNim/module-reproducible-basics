@@ -40,7 +40,7 @@ keypoints:
 >   review anonymization tools available for various types of data in neuroimaging.
 {: .callout}
 
-> ## Exercise: de-face a T1-weighted anatomical scan?
+> ## Exercise: de-face a T1-weighted anatomical scan
 >
 > De-face an anatomical scan using your knowledge of VCSs to track your
 > actions according to best practices for reproducibility.
@@ -49,7 +49,7 @@ keypoints:
 > 2. TODO
 >
 >
-> > ## Answer
+> > ## Solution
 > > ~~~
 > > % cd ds000114
 > > % .... TODO

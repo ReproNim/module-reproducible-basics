@@ -89,13 +89,14 @@ failed interim execution.
 > If you are interested in knowing more about the history and features of
 > various shells, please review the materials under following external links:
 >
->  - ["Teaching Notes" of the above "The Unix Shell" lesson](https://swcarpentry.github.io/shell-novice/guide/)
->    provides a number of hints and links to interesting related resources
+>  - ["Teaching Notes" of the above "The Unix Shell" lesson](https://swcarpentry.github.io/shell-novice/guide/) --
+>    provides a number of hints and links to interesting related resources.
 >  - [Wikipedia:Unix shell](https://en.wikipedia.org/wiki/Unix_shell)
 >
 > Relevant Books:
 >
->  - [Data Science at the Command Line](http://datascienceatthecommandline.com), which also contains a list of
+>  - [Data Science at the Command Line](http://datascienceatthecommandline.com) -- 
+>   contains a list of
 >   command line tools useful for “data science”
 {: .callout}
 
@@ -165,7 +166,7 @@ failed interim execution.
 {: .solution}
 
 
-> ## Can a shebang carry options?
+> ## Exercise: supplying options to a shebang
 >
 > To help answer the question, determine which of the following shebangs would be correct and what their effect would be.
 >
@@ -174,8 +175,11 @@ failed interim execution.
 > 3. `#!/bin/bash -ex`
 > 4. `#!/bin/bash -e -x`
 >
-> > ## Answer
-> > A shebang can support one option, so 1-3 are all correct.
+> > ## Solution
+> > A shebang can support one option, so 1-3 are all correct. The `-ex` flag
+> > instructs the script to exit immediately if a command returns a non-zero
+> > exit code (`-e`), and to print commands and their arguments as they're
+> > executed (`-x`).
 > {: .solution}
 {: .challenge}
 
@@ -210,7 +214,7 @@ we may have two different versions of AFNI installed in different locations;
 without specifying the path to a particular installation of AFNI, we may
 unintentionally run a different version than intended and end up with different results.
 
-> ## How can you determine the full path of a command you are about to use?
+> ## How can you determine the full path of a command?
 >
 > To see which program will actually be used when you run a
 > command, use the `which` command; e.g.:
@@ -250,7 +254,7 @@ unintentionally run a different version than intended and end up with different 
 {: .callout}
 
 
-> ## How can you add a new path where the shell will look for commands?
+> ## Exercise: add a new path where the shell will look for commands
 >
 > 1. So that those commands take precedence over identically named commands
 > available elsewhere on the `PATH`?
@@ -265,7 +269,7 @@ unintentionally run a different version than intended and end up with different 
 > {: .solution}
 {: .challenge}
 
-> ## How can you determine the environment variables used by a process?
+> ## Exercise: determine the environment variables used by a process?
 >
 > Since each process inherits and possibly changes environment
 > variables so that its child processes inherit them in turn, it can
@@ -369,9 +373,9 @@ modules.
 {: .callout}
 
 
-### Additional aspects
+### Additional considerations
 
-> ## "Exported" vs. "local" variables
+> ## Exercise: "exported" vs. "local" variables
 >
 > Variables can be "exported" so they will be inherited by any new
 > child process (e.g., when you run a new command in a shell). Otherwise,
@@ -381,7 +385,7 @@ modules.
 > 2. How do you produce a list of all local environments (present in your shell but
 >  not exported)?
 >
-> > ## Answers
+> > ## Solution
 > >
 > > 1. Only exported variables will be output by the `export` command. Alternatively,
 > >    you can use `declare -p` to list all variables prepended with
@@ -389,7 +393,7 @@ modules.
 > >    ~~~
 > >    % LOCAL_VARIABLE="just for now"
 > >    % export EXPORTED_VARIABLE="long live the king"
-> >    % declare -p | grep _VARIABLE
+> >    % declare -p | grep \_VARIABLE
 > >    declare -x EXPORTED_VARIABLE="long live the king"
 > >    declare -- LOCAL_VARIABLE="just for now"
 > >    ~~~
@@ -472,7 +476,7 @@ Some shortcuts can not only edit command line text, but also control the executi
 `Ctrl-d` | Exit current shell
 `Ctrl-z` | Suspend currently running process; `fg` restores it, and `bg` places it into background execution
 
-> ## set -o
+> ## Interrogating shell options with `set -o`
 >
 > Shells provide a set of configurable options which can be enabled or
 > disabled using the `set` command.  Use `set -o` to print the current settings
@@ -697,7 +701,7 @@ In general, they provide helpers with the means to execute tests.
 Helpers then report which ones passed and failed as they run a collection
 of tests.
 
-> ## Exercise
+> ## Exercise: use existing testing framework to evaluate script
 >
 > Choose shunit2 or bats (or both) and
 >

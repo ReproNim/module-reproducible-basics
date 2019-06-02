@@ -101,7 +101,7 @@ control over your digital research artifacts and notes
 
 > ## Exercise: a basic Git/GitHub workflow
 >
-> Goal: submit a pull request (PR) suggesting a change to the
+> Submit a pull request (PR) suggesting a change to the
 > [https://github.com/ReproNim/simple_workflow](simple_workflow) analysis.
 > You should submit an initial PR with one of the changes, and then improve it
 > with subsequent additional commits, and see how the PR gets automatically updated.
@@ -117,9 +117,9 @@ control over your digital research artifacts and notes
 
 > ## Exercise: exploiting git history
 >
-> Goal: determine how the estimate for the Left-Amygdala changed in AnnArbor_sub16960
+> Determine how the estimate for the Left-Amygdala changed in AnnArbor_sub16960
 > from release 1.0.0 to 1.1.0.
-> > ## Answer
+> > ## Solution
 > > git diff allows us to see the differences between points in the git history
 > > and to optionally restrict the search to the specific file(s); 
 > > use `git tag` and `git grep`:
@@ -190,7 +190,7 @@ with [GitHub], and is free for publicly available projects.
 {: .callout}
 
 
-> ## Exercise
+> ## Exercise: adjust `simple_workflow`
 >
 > Adjust `simple_workflow` to execute sample analysis on another subject.
 >
@@ -255,7 +255,7 @@ commands to merge the `git-annex` branch correctly.
 > is available via http from `http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git`,
 > get those `T1.mgz` files
 >
-> > ## Answer
+> > ## Solution
 > > ~~~
 > > % git clone https://github.com/datalad/ds000114          # 1.
 > > % cd ds000114
@@ -348,7 +348,7 @@ crawlers" for existing data portals, it provides unified access to over
 >    preferred host (ssh/http server, box.com, dropbox, etc.)
 >
 >
-> > ## Answer
+> > ## Solution
 > > ~~~
 > > % cd ds000114
 > > % datalad create -d . derivatives/demo-bet                   # 1.

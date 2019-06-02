@@ -3,19 +3,20 @@ title: "Other day-to-day reproducible practices"
 teaching: 25
 exercises: TODO
 questions:
-- How does *reproducibility* help in fixing bugs?
-- What can you do to be ready to share your studies reproducibly?
+- How is *reproducibility* critical to fixing software bugs?
+- What steps can you take toward sharing your studies reproducibly?
 objectives:
-- Explain best practices on submitting bug reports
+- Underestand best practices for submitting bug reports
 keypoints:
-- If *you* cannot reproduce it -- it is unlikely that anyone else can
+- If *you* can't reproduce it, it's likely that nobody else can.
 - Having open sharing in mind from the beginning can simplify future reproducibility
 ---
 
 ---
 
-In this lesson, let’s cover some other relatively small
-aspects of reproducibility in basic day-to-day activities.
+In this final lesson, we'll cover some miscellaneous best practices
+for reproducibility in basic day-to-day activities. Although individually
+some practices may seem insignificant, they add up.
 
 ## A good bug report is a reproducible one
 
@@ -26,72 +27,72 @@ aspects of reproducibility in basic day-to-day activities.
 >
 > Additional materials:
 >
-> - [How to Report Bugs Effectively  *by Simon Tatham* (1999) (10 min)](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html)
->   A classical essay, which remains apropos.  It provides an
->   overview of various aspects on what "bad" and "good" reports are and how they could be expanded to provide sufficient information
-> - [Mozilla: Bug writing guidelines (15 min)](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Bug_writing_guidelines)
->   Although it concentrates solely on Mozilla products, it provides good and
->   generally applicable guidelines on how to phrase and structure
->   bug reports
+> - [*How to Report Bugs Effectively* by Simon Tatham (1999) (10 min)](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) -- 
+>   a classic essay that remains apropos; provides an
+>   overview of "good" and "bad" bug reports and how they can be expanded to provide sufficient information.
+> - [Mozilla: Bug writing guidelines (15 min)](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Bug_writing_guidelines) -- 
+>   although geared toward Mozilla products, this provides generally applicable
+>   guidelines on how to structure bug reports
 >
 {: .callout}
 
 Overall summary:
 
 - If possible, **check if the issue persists with a newer version** of the
-  software/dataset. If not -- it was likely fixed and you will need
-  to upgrade. Or, if the software comes from a centralized distribution,
-  you might like to report it there or ask to have the package
-  updated there.
+  software/dataset. If not, it was likely fixed and you'll need
+  to upgrade. If the software comes from a centralized distribution,
+  you can report the bug there, or request to have the package
+  updated.
 
 - **Do not try to describe the problem in your own words** if you are not
   100% sure what the problem is. And even if you are sure -- **provide
   a concise and reproducible example that demonstrates the problem**, be
-  it a script, or a list of steps in a GUI-driven software.
+  it a script or a list of steps for a GUI-driven package.
 
-- **Make sure that your example is complete**, i.e. that is not just a
-  ripped out piece without necessary imports etc. and that it does
-  reproduce the issue
+- **Make sure that your example is complete**; i.e. that it's not just a
+  a code snippet without the necessary context (e.g., imports) to
+  reproduce the issue.
   
-  - Try to run it on another computer with a similar setup -- does it
+  - Try to run it on another computer with a similar setup -- is it
     reproduce or not? Include that information in your report.
 
 - **Provide relevant information**, such as:
 
-  - The operating system and its version
+  - the operating system and version
 
-  - The version of the software in question and how it was installed
-    (e.g. via a package manager, or manually from a source tarball
+  - the version of the software in question and how it was installed
+    (e.g., via a package manager, or manually from a source tarball,
     or from a Git repository)
+  
+  It's better to err on the side of being exhaustive.
 
-- Right before you are ready to submit -- **(re-)read your report
-  yourself** and see if you can now get an idea of
-  what could have gone wrong, or to see if you feel like you have
-  provided all possibly relevant information
+- Right before you are ready to submit, **(re-)read your report
+  yourself** to see if you can now get an idea of
+  what might have gone wrong, or to see if you've
+  provided all relevant information.
 
 ## Have reproducibility and openness in mind from the beginning
 
-"*The devil is in the detail*" and "*Talk is cheap, show me the code*"
+"*The devil is in the details*" and "*Talk is cheap, show me the code*"
 (L. Torvalds, Linux project) are two common idioms pointing to the fact
 that a verbal description alone, as typically condensed into a paper's
 Methods section, is rarely sufficient to reproduce an empirical
-result.  
+result.
 
-That is why it is important to share also relevant data, code, description
-of the computation environments, etc. 
-However, if you delay preparing your materials so they are ready to be shared, you might
-find it difficult, if not impossible, to actually be able to
-share your work later on as your project has progressed forward or may even be 
-completed. Having the possibility of sharing in mind right from the
-beginning will make actual sharing a much easier task when you are actually 
-ready or are asked to share.
+This is why it's so important to share relevant data, code, computation environments, etc. 
+However, if you delay preparing your materials for sharing, you might
+find it difficult, if not impossible, to share your work later on -- 
+as your project has progressed forward or may even be 
+completed. Keeping the goal of sharing in mind right from the
+start will make sharing easier when you're actually 
+ready or asked to share.
 
 > ## References
 >
 > Additional materials:
 >
-> - [Four aspects to make science open “by design” and not as an after-thought (15 min)](http://dx.doi.org/10.1186/s13742-015-0072-7)
->   A brief communication on four aspects to be taken care of at the
->   beginning of your project to make it easy to share later on.
+> - [Four aspects to make science open “by design” and not as an after-thought (15 min)](http://dx.doi.org/10.1186/s13742-015-0072-7) --
+>   a brief communication on four considerations when starting
+>   a project to facilitate sharing later on.
 >
 {: .callout}

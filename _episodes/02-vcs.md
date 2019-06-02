@@ -313,12 +313,12 @@ crawlers" for existing data portals, it provides unified access to over
 50TB of data from various initiatives (such as CRCNS, OpenfMRI, etc.).
 
 > ## External teaching materials
-> - [DataLad lecture and demo (Full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo) --
+> - [DataLad lecture and demo (full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo) --
 > describes the goals and basic principles of DataLad with demos on discovery and installation of datasets.
-> - [DataLad feature demos (Full: 30 min, review: 10 min)](http://datalad.org/features.html) --
+> - [DataLad feature demos (full: 30 min, review: 10 min)](http://datalad.org/features.html) --
 > provides an [asciinema](http://asciinema.org) (and shell script versions) introduction
 > to major features of DataLad
-> - [Example of a DataLad collaborative workflow (Full: 10 min)](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html) --
+> - [Example of a DataLad collaborative workflow (full: 10 min)](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html) --
 > presents a simple workflow using DataLad to fully version-control
 > data and collaborate efficiently
 {: .callout}

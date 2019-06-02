@@ -3,7 +3,7 @@ title: "Command line/shell"
 teaching: 150
 exercises: 30
 questions:
-- "Why and how does using the command line/shell efficiently increase the reproducibility of neuroimaging studies?"
+- "How does using the command line/shell efficiently increase the reproducibility of neuroimaging studies?"
 - "How can we ensure that our scripts *do the right thing*?"
 objectives:
 - "Understand basic differences among available shells and their use(s) in
@@ -16,18 +16,16 @@ objectives:
 keypoints:
 - "There are a number of incompatible shells; different
   neuroimaging tools may use specific shells and thus provide
-  instructions that are not compatible with your current shell"
+  instructions that are not compatible with your current shell."
 - "A command line shell is a powerful tool and learning additional
  'tricks' can help make its use much more efficient, less
- error-prone, and thus more reproducible"
+ error-prone, and thus more reproducible."
 - "Shell scripting is the most accessible tool to automate execution of
   arbitrary set of commands; this avoids manual retyping of the
-  same commands and in turn avoids typos and erroneous analyses"
-- "Environment variables play a big role in defining script behavior"
-- "You can automate testing of the execution of your commands to
-  provide at least some verifiable guarantee of correct execution
-  across different systems"
-- "Shell scripts are powerful but, if misused, can cause big problems"
+  same commands and in turn avoids typos and erroneous analyses."
+- "Environment variables play a big role in defining script behavior."
+- "You can write automated tests for your commands to ensure correct execution."
+- "Shell scripts are powerful, but -- if misused -- can cause big problems."
 ---
 
 > ## You can skip this lesson if you can answer these questions: &nbsp; &#8680;
@@ -38,8 +36,8 @@ keypoints:
 >  - How can you guarantee that your script was executed correctly and will not
 >    fail during execution?
 >  - How can you use text editors to edit your current command line?
->  - How can you quickly recover a sequence of commands you have run in shell
->    (e.g. a year ago while performing some analysis)?
+>  - How can you quickly recover a sequence of commands you ran in shell
+>    (e.g., an analysis from a year ago)?
 {: .challenge}
 
 
@@ -60,17 +58,15 @@ for loops, functions and conditions.  So, in contrast to GUIs (graphical
 user interfaces), such automation via scripting is a native feature of
 a CLI shell.  Unlike GUI-integrated environments with lots of
 functionality exposed in menu items and icons, shell is truly a "black
-box", which has a lot of powerful features that are integral to its
-efficient use.  Because manipulation of files
-is one of the main tasks to accomplish in a shell, a shell usually
-either comes with common commands (such as `cp`, `mv`, etc.) builtin
-or is accompanied by an additional package (e.g., `coreutils` in
-Debian) providing those helpful command line utilities.
+box", with lots of powerful underlying features integral to efficient use. 
+Since manipulating files is one of the main tasks in a shell, a shell usually
+comes with common commands (such as `cp`, `mv`, etc.) built in
+or provided by an additional package (e.g., `coreutils` in Debian).
 
-In this module we will first familiarize ourselves with basic (and
-at times advanced) features of a shell and shell scripting, and then
-review a few key aspects that particularly relate to reproducibility.
-We will examine what constitutes good control over commands execution: knowing
+In this module, we first familiarize ourselves with basic (and
+at times advanced) features of a shell and shell scripting, then
+review a few key aspects related to reproducibility.
+We will examine best practices for controlling command execution: knowing
 which command actually was run, what conditions could have potentially
 affected its execution, inspecting the available history of the
 commands, and verifying that a script did not complete while hiding a
@@ -83,7 +79,7 @@ failed interim execution.
 > good overview of all basic concepts.  Even if you are familiar with
 > shell and shell scripting, please review the materials of the lesson and
 > try to complete all exercises in it, especially if you do not know
-> correct answers to them right away:
+> correct answers right away:
 >
 >   - [Software Carpentry: The Unix Shell (full: 1 h 35 min, review: 20 min)](http://swcarpentry.github.io/shell-novice/)
 {: .callout}
@@ -107,19 +103,19 @@ failed interim execution.
 ## Commonly used shells and their relevance to existing neuroimaging projects
 
 
-- **sh** - a POSIX compliant shell. This is a generic name and doesn’t refer to a specific project.
-   - Most portable shell (since it is the standard)
+- **sh** - a POSIX-compliant shell; this is a generic name and doesn’t refer to a specific project.
+   - Most portable shell (since it's the standard)
    - Many FSL scripts use this shell
-- **ksh** - KornSHell. Based on older bash, but also became a root for tcsh, zsh and others
-- **dash** - an implementation of a POSIX compliant shell (**sh**)
+- **ksh** - KornSHell; based on older bash, but also became a root for tcsh, zsh and others.
+- **dash** - Debian Almquist SHell; an implementation of a POSIX-compliant shell (**sh**).
    - You will not see it used directly in a shebang
-- **bash** - Bourne Again SHell.
-   - (Optionally) sh-compliant but with additional features from **ksh** and **csh**
+- **bash** - Bourne Again SHell; default shell for Mac OS and many Linux distributions.
+   - (Optionally) POSIX-compliant but with additional features from **ksh** and **csh**
    - Next most portable and most popular for shell scripting (after
      **sh**) and generally available (in contrast to **zsh**)
-- **csh/tcsh** - shell that aims to provide an interface similar to the C programming language.
+- **csh/tcsh** - C SHell/Tenex C SHell; shell that aims to provide an interface similar to the C programming language.
    - Heavily used by FreeSurfer and AFNI (primarily @ scripts)
-- **zsh** - Powerful, but not POSIX/bash-compatible. Inspired by many features from **ksh** and **tcsh**.
+- **zsh** - Powerful, but not POSIX/bash-compatible; inspired by many features from **ksh** and **tcsh**.
    - Rarely used for generic scripting
 
 > ## References
@@ -129,7 +125,7 @@ failed interim execution.
 
 ## Challenges
 
-> ## How can you determine what shell are you currently in?
+> ## How can you determine what shell you're currently in?
 > ~~~
 > % echo $SHELL
 > ~~~
@@ -137,7 +133,7 @@ failed interim execution.
 {: .solution}
 
 > ## How do you change the **current shell** of your current session?
-> You just start it. For example:
+> Executing the name of the shell starts it. For example:
 > ~~~
 > % tcsh
 > ~~~
@@ -156,7 +152,7 @@ failed interim execution.
 
 > ## What is a shebang?
 > It is the first line in the script, which starts with `#!` and is 
-> followed by the command interpreting the script, e.g.
+> followed by the command interpreting the script; e.g.,
 > if a file `blah` begins with the following:
 > ~~~
 > #!/bin/bash
@@ -164,8 +160,8 @@ failed interim execution.
 > ~~~
 > {: .bash}
 > then running `./blah` is analogous to calling `/bin/bash ./blah` .
-> The string "#!" is read out loud
-> as "hash-bang" and therefore is shortened to "shebang."
+> The string "#!" is said out loud
+> as "hash-bang" and therefore is shortened to "shebang".
 {: .solution}
 
 
@@ -179,7 +175,7 @@ failed interim execution.
 > 4. `#!/bin/bash -e -x`
 >
 > > ## Answer
-> > A shebang can carry up to 1 option, so 1-3 are all correct.
+> > A shebang can support one option, so 1-3 are all correct.
 > {: .solution}
 {: .challenge}
 
@@ -189,26 +185,26 @@ failed interim execution.
 Environment variables are not a feature of `a shell` per se. Every
 process on any operating system inherits some "environment variables"
 from its parent process. A shell just streamlines manipulation of those
-environments and also uses some of them directly to guide its own
-operation. Let's overview the most commonly used and manipulated
+environments and also uses some of them to guide its own
+operation. Let's overview the most commonly used
 environment variables. These variables are important because they
 impact what external commands and libraries you are using.
 
 ### PATH - determines full path to the command to be executed
 
-Whenever a command is run and its full path is not provided on the
-filesystem, the `PATH` environment variable is consulted to determine
-which paths to use to look for the command. You may have multiple
+Whenever a command is run without providing the full path on the
+filesystem, the shell consults the `PATH` environment variable to determine
+where to look for the command. You may have multiple
 implementations or versions of the same command available at different
 locations, which may be specified within the PATH variable (separated
 with a colon). Although this is a very simple concept, it is a workhorse
 for "overlay distributions" (such as [conda](https://conda.io)). It is
 also a workhorse for "overlay environments” such as [virtualenv](https://virtualenv.pypa.io)
-in Python, or the often-used [modules](http://modules.sourceforge.net/) on
-HPC. Furthermore, it is also a source of much confusion in many cases where an unintended
-command is run instead. This is why any tool which aims to capture the
-state of the computational environment for later re-execution might
-need to store the value of the PATH variable to guarantee that even
+in Python, or the [modules](http://modules.sourceforge.net/) on servers.
+It can also be a source of much confusion in cases where an unintended
+command is run. This is why any tool which aims to capture the
+state of the computational environment for later re-execution
+needs to store the value of the PATH variable to guarantee that
 given the same set of files, the same commands are executed. For example,
 we may have two different versions of AFNI installed in different locations;
 without specifying the path to a particular installation of AFNI, we may
@@ -216,22 +212,22 @@ unintentionally run a different version than intended and end up with different 
 
 > ## How can you determine the full path of a command you are about to use?
 >
-> To see which command will actually be run when you intend to run a
-> `COMMAND`, use `which` command, e.g.
+> To see which program will actually be used when you run a
+> command, use the `which` command; e.g.:
 > ~~~
 > $ which afni
 > /usr/bin/afni
 > ~~~
 > {: .bash}
-> Do not mix this up with the `locate` command, which (if available) would
-> just find a file with that word somewhere in the file name/path. 
+> Do not confuse this with the `locate` command, which (if available) would
+> find a file containing the specified word somewhere in the file name/path. 
 {: .solution}
 
 
-> ## Beware of builtin commands
+> ## Beware of built-in ("builtin") commands
 >
-> Some commands might be implemented by shell itself, and their
-> implementation might differ from the one provided by a core
+> Some commands might be implemented by a shell itself, and that
+> implementation may differ from the one provided by another
 > set of tools.
 >
 > Note that `which` is not a builtin command in bash (but is in
@@ -254,28 +250,28 @@ unintentionally run a different version than intended and end up with different 
 {: .callout}
 
 
-> ## How can you add a new path in which shell will look for commands…
+> ## How can you add a new path where the shell will look for commands?
 >
 > 1. So that those commands take precedence over identically named commands
 > available elsewhere on the `PATH`?
 >
-> 2. So those commands are run only if not found elsewhere on the
+> 2. So those commands are run only if not found elsewhere
 > on the `PATH`? (rarely needed/used case)
 >
 > > ## Solution
 > > For a new path /a/b/c:
-> > 1. Use  PATH=/a/b/c:$PATH
-> > 2. Use  PATH=$PATH:/a/b/c
+> > 1. Use `PATH=/a/b/c:$PATH`
+> > 2. Use `PATH=$PATH:/a/b/c`
 > {: .solution}
 {: .challenge}
 
-> ## How can you determine the environment variables of a process?
+> ## How can you determine the environment variables used by a process?
 >
 > Since each process inherits and possibly changes environment
-> variables so that its child processes inherit them in turn, it is
-> often important to be able to introspect them.  Given a `PID` of
+> variables so that its child processes inherit them in turn, it can
+> often be important to be able to inspect them.  Given a `PID` of
 > a currently running process (e.g., the `$$` variable in POSIX shell contains a
->`PID` of your active shell), how can you determine its environment variables?
+> `PID` of your active shell), how can you determine its environment variables?
 >
 > > ## Solution
 > > 1. By looking into `/proc/PID/environ` file on Unix/Linux
@@ -293,8 +289,8 @@ unintentionally run a different version than intended and end up with different 
 > You use ${variable} to safely concatenate a variable with another string.  
 > For instance, if you had a variable `filename` that contains the value
 > `preciousfile`, `$filename_modified` would refer to the value of the
-> possibly undefined `filename_modified` variable whenever `${filename}_modified`
-> produced the desired value of `preciousfile_modified`.
+> possibly undefined `filename_modified` variable; on the other hand, `${filename}_modified`
+> will produce the desired value of `preciousfile_modified`.
 {: .solution}
 
 
@@ -305,20 +301,20 @@ To improve maintainability and to make distributions smaller, most
 programs use dynamic linking to reuse common functions provided by
 shared libraries. The particular list of dynamic libraries that an
 executable needs is often stored without full paths as well. Thus,
-`ld.so` (e.g. `/lib/ld-linux.so.2` on recent Debian systems), which
+`ld.so` (e.g., `/lib/ld-linux.so.2` on recent Debian systems), which
 takes care of executing those binaries, needs to determine which
-particular libraries to load. Like the way `PATH` variable determines
-resolution paths for the execution of commands, the `LD_LIBRARY_PATH`
-environment variable provides resolution paths for loading dynamic
+particular libraries to load. Like the way `PATH` variable resolves
+paths for the execution of commands, the `LD_LIBRARY_PATH`
+environment variable resolves paths for loading dynamic
 libraries. Unlike `PATH`, however, `ld.so` does assume a list of
 default paths (e.g., `/lib`, then `/usr/lib` on Linux systems, as
-defined in `/etc/ld.so.conf` file(s)). Consequently, in your
-environment, you may not have even set it explicitly!
+defined in `/etc/ld.so.conf` file(s)). Consequently, you may not have
+even explicitly set it in your environment!
 
 > ## How can you discover which library is used?
 >
 > `ldd EXEC` and `ldd LIBRARY` list libraries of a given binary. If a
-> library is linked against, they can provide a full path if it finds them
+> library is linked, they can provide a full path if it finds them
 > using `ld`'s default paths or the `LD_LIBRARY_PATH` variable. For example:
 > ~~~
 > % ldd /usr/lib/afni/bin/afni | head
@@ -337,7 +333,7 @@ environment, you may not have even set it explicitly!
 > -- the calls your program makes to the core of the operating system (i.e., kernel).
 > This way you can discover what files any given program tries to
 > access or open for writing, which other commands it tries to run,
-> etc.  Try running  `strace -e open` and provide some command to be
+> etc. Try running  `strace -e open` and provide some command to be
 > executed.
 >
 {: .callout}
@@ -355,9 +351,9 @@ environment, you may not have even set it explicitly!
 
 ### PYTHONPATH - determine which Python module will be used
 
-The idea of controlling resolution paths via environment variables
+The idea of controlling path resolution via environment variables
 also applies to language-specific domains. For example, Python consults
-the `PYTHONPATH` variable to possibly change search paths for Python
+the `PYTHONPATH` variable to determine search paths for Python
 modules.
 
 > ## Possible side-effect
@@ -367,7 +363,7 @@ modules.
 > can cause unexpected use of modules.
 >
 > You can use `python -c 'import sys; print(sys.path)'` to output a
-> list of paths your current default Python process would look through
+> list of paths your current default Python process would consult
 > to find Python libraries.
 >
 {: .callout}
@@ -378,8 +374,8 @@ modules.
 > ## "Exported" vs. "local" variables
 >
 > Variables can be "exported" so they will be inherited by any new
-> child process (e.g. when you start a new command in a shell). Otherwise,
-> the variable will be "local," and will not be inherited by child processes.
+> child process (e.g., when you run a new command in a shell). Otherwise,
+> the variable will be "local", and will not be inherited by child processes.
 >
 > 1. How can you determine if a variable was exported or not?
 > 2. How do you produce a list of all local environments (present in your shell but
@@ -392,9 +388,9 @@ modules.
 > >    a specific attribute:
 > >    ~~~
 > >    % LOCAL_VARIABLE="just for now"
-> >    % export EXPORTED_VARIABLE="long live king"
+> >    % export EXPORTED_VARIABLE="long live the king"
 > >    % declare -p | grep _VARIABLE
-> >    declare -x EXPORTED_VARIABLE="long live king"
+> >    declare -x EXPORTED_VARIABLE="long live the king"
 > >    declare -- LOCAL_VARIABLE="just for now"
 > >    ~~~
 > >    {: .bash}
@@ -405,8 +401,8 @@ modules.
 
 ## Efficient use of the interactive shell
 
-A shell can be used quite efficiently if its features are familiar and
-if it is configured to simplify common operations.
+A shell can be used quite efficiently once you become familiar with its 
+features and configure it to simplify common operations.
 
 ### aliases
 
@@ -418,7 +414,7 @@ options to calls for most common commands.  Please review useful aliases present
 >
 > No. Since `~/.bashrc` is read only for interactive sessions,
 > aliases placed there will not be available in your scripts'
-> environment.  Even if they were available after some
+> environment. Even if they were available after some
 > manipulation, it would be highly inadvisable to use them, since
 > that would render your scripts not portable across machines/users.
 {: .solution}
@@ -456,7 +452,7 @@ Hints:
   by hitting the `Esc` key once, instead of holding `Alt` before pressing the
   following command character.
 - Although many navigational commands can be achieved also by using
-  "arrow keys" on your keyboard, some times using their `Ctrl-`
+  "arrow keys" on your keyboard, sometimes using their `Ctrl-`
   counterparts is more efficient since it doesn't require you to move
   away your hands from the main alphanumeric portion of the keyboard.
 - Many people find the need to use `Ctrl` key more often than
@@ -474,7 +470,7 @@ Some shortcuts can not only edit command line text, but also control the executi
 
 `Ctrl-c` | Kill currently running process
 `Ctrl-d` | Exit current shell
-`Ctrl-z` | Suspend currently running process. `fg` restores it, and `bg` places it into background execution.
+`Ctrl-z` | Suspend currently running process; `fg` restores it, and `bg` places it into background execution
 
 > ## set -o
 >
@@ -483,34 +479,34 @@ Some shortcuts can not only edit command line text, but also control the executi
 > you have in your shell, and then navigate `man bash` to find their
 > extended description.
 >
-> You do so in `man` search by using the shortcut `/` and
+> When using `man`, you can search the manual page by using the shortcut `/` and
 > typing `o option-name`. You can type 'n' for the "next" and 'p' for
 > "previous" finding to identify the corresponding section.
 > For example, use `set -o noclobber` which can be used to forbid
 > overwriting of previously existing files. `>|` could be used to
 > explicitly instruct the overwriting of an already existing file. “A shell
-> redirect ate my results file" should no longer be given as an excuse.
+> redirect ate my results file" should no longer be given as a valid excuse.
 >
 {: .challenge}
 
 ### Shell history
 
-By default, a shell stores, in memory, a history of the commands you
-have run.  You can access it using the `history` command.  When you exit
+By default, a shell stores in memory a history of the commands you
+have run. You can access this log using the `history` command. When you exit
 the shell, those history lines are appended to a file (by default in 
 `~/.bash_history` for bash shell). This not
 only allows you to quickly recall commands you have run recently, but
-can provide an actual "lab notebook" of the actions you have
-performed. Thus the shell history can be very useful for two reasons. Firstly, it can provide
-a skeleton for your script to help you realize that automating
-your current operations is worth the effort. Secondly, it helps you determine exactly
+can effectively provide a "lab notebook" of the actions you have
+performed. Thhe shell history can be very useful for two reasons. Firstly, it can provide
+a skeleton for your script and help you realize that automating
+your shell commands is worth the effort. Secondly, it helps you determine exactly
 which command you ran to perform any given operation.
 
 > ## Eternal history
 >
 > Unfortunately, by default shell history is truncated to the 1000 last
-> commands, so you cannot use as your "eternal lab notebook" without
-> some tuning.  Since it is a common problem, solutions
+> commands, so you cannot use it as your "eternal lab notebook" without
+> some tuning.  Since this is a common problem, solutions
 > exist, so please review available approaches:
 > - [shell-chronicle](https://github.com/con/shell-chronicle)
 > - [tune up of PROMPT_COMMAND](https://debian-administration.org/article/543/Bash_eternal_history)
@@ -529,9 +525,9 @@ Some of the main keyboard shortcuts to navigate shell history are:
 You can hit `Ctrl-r` and start typing some portion of the command you
 remember running. Subsequent use of `Ctrl-r` will bring up the next match, and so
 on. You will leave "search" mode as soon as you use some other
-command line navigation command (e.g. `Ctrl-e`).
+command line navigation command (e.g., `Ctrl-e`).
 
-`Alt-.` | Insert the last positioned argument of the previous command.
+`Alt-.` | Insert the final argument of the previous command.
 
 Subsequent use of `Alt-.` will bring up the last argument of the previous command,
 and so on.
@@ -539,9 +535,8 @@ and so on.
 > ## History navigation exercise
 >
 > Inspect your shell command history you have run so far:
-> 1. use `history` and `uniq` commands to find what is the most
->    popular command you have run
-> 2. experiment using `Ctrl-r` to find the commands next to the most
+> 1. Use `history` and `uniq` commands to figure out what which command you run the most
+> 2. Experiment with `Ctrl-r` to find the commands next to the most
 >    popular command
 {: .challenge}
 
@@ -551,26 +546,26 @@ and so on.
 ### Fail early
 
 By default, your shell script might execute even if some
-command within it fails.  This might lead to very bad side-effects:
+command within it fails.  This might lead to some very bad side effects:
 
-- operating on incorrect results (e.g., if command re-generating
+- operating on incorrect results (e.g., if command to reproduce
   results failed, but script continued)
-- polluting the terminal screen (or log file) with output hiding away a
+- polluting the terminal screen (or log file) with output hiding a
   point of failure
 
-That is why it is generally advisable to use `set -e` in the scripts
-that instruct the shell to exit with non-0 exit code right when some command fails.
+This is why it's generally advisable to use `set -e` in scripts
+to instruct the shell to exit with non-0 exit code as soon as a command fails.
 
 > ## Note on special commands
 > POSIX defines [some commands as "special"](https://www.gnu.org/software/bash/manual/html_node/Special-Builtins.html#Special-Builtins),
-> for which failure to execute would cause the entire script to exit, even
-> without set `-e`, if they returned a non-0 value: `break`, `:`, `.`,
+> such that failure to execute would cause the entire script to exit, even
+> without `set -e`, if they returned a non-0 exit code: `break`, `:`, `.`,
 > `continue`, `eval`, `exec`, `exit`, `export`, `readonly`, `return`,
 > `set`, `shift`, `trap`, and `unset`.
 {: .callout}
 
-If you expect some command to fail and that is OK, handle its
-failing execution explicitly, e.g. via
+If you expect some command to fail and that's okay, handle its
+failing execution explicitly; e.g., via:
 
 ~~~
 % command_ok_to_fail || echo "As expected command_ok_to_fail failed"
@@ -596,19 +591,19 @@ containing an empty string:
 {: .bash}
 
 which can lead to many undesired and non-reproducible
-or highly undesired side-effects:
+or undesirable side-effects:
 
 - "using" mistyped variable names
 - "using" variables that were not defined yet due to the logic
-  of the script.  E.g. imagine effects of `sudo rm -rf ${PREFIX}/` if the
-  `PREFIX` variable was not defined for some reason.
+  of the script. For example, imagine the effects of `sudo rm -rf ${PREFIX}/` if the
+  `PREFIX` variable was not defined for some reason. (**Do not copy this into your terminal!**)
 
 The `set -u` option instructs the shell to fail if an undefined variable is
 used.
 
-If you intended to use some variable that might still be undefined
+If you intend to use some variable that might still be undefined
 you can either use `${var:-DEFAULT}` to provide an explicit `DEFAULT`
-value or to just define it conditionally, on it having not yet been defined, with:
+value or define it on the conition that it doesn't already exist; e.g.:
 
 ~~~
 % : ${notyetdefined:=1}
@@ -619,6 +614,7 @@ value or to just define it conditionally, on it having not yet been defined, wit
 
 
 > ## set -eu
+> Include `set -eu` toward the beginning of  your shell script.
 > This command sets both "fail early" modes for extra protection to make your
 > scripts more deterministic and thus reproducible.
 {: .callout}
@@ -628,11 +624,11 @@ value or to just define it conditionally, on it having not yet been defined, wit
 
 ### Run-time testing
 
-To some degree you can consider the `set -u` feature to be a "run time
-test" -- "test if variable is defined, and if not -- fail".  **bash**
+To some degree you can consider the `set -u` feature to be a "run-time
+test" -- i.e., "test if variable is defined, and if not, fail".  **bash**
 and other shells do actually provide a command called `test`, which
 can perform various basic checks and return with a non-0 exit code if the
-condition is not satisfied.  For undefined variables it is `test -v`:
+condition is not satisfied. For undefined variables, use `test -v`:
 
 ~~~
 % test -v undefined
@@ -663,16 +659,16 @@ your script performs as expected.
 
 [Unit-testing](https://en.wikipedia.org/wiki/Unit_testing) is a
 powerful paradigm to verify that pieces of your code (units) operate
-correctly in various scenarios, and represent those assumptions in the
-code.  An interesting observation is that everyone does "testing" by
-simply running their code/scripts at least once on some inputs, 
-seeing what they have produced, and checking if the output matches original
-expectations. Unit-testing just takes it one step further -- code up
-such tests in a separate file so you can run them all at once later
-on (e.g. whenever you change your script) and verify that it still
-performs correctly.  In the simplest case you can simply take your
-test commands and run them into a separate script that would fail if
-any command within it fails, which would test your target script(s).
+correctly in various scenarios, and that these assumptions are represented in
+the code. An interesting observation is that everyone does at least some 
+"testing" by simply running their code/scrip on an input and checking
+that the output matches their expectations. Unit-testing just takes this
+workflow one step further: code such tests in a separate file so you can run
+them all at once later on (e.g., whenever you change your script) to verify
+that your script still performs correctly. In the simplest case, you can
+just copy your test commands into a separate script that would fail if
+any command within it fails (therfore effectively testing your target
+script(s)).
  
 For example, the following script could be used to test basic correct operations
 of AFNI's `1dsum` command:
@@ -686,9 +682,9 @@ rm $tfile                    # cleanup
 ~~~
 {: .bash}
 
-Although looks uselessly simple, this is a powerful basic test
+Although it looks trivially simple, this is a powerful basic test
 to guarantee that `1dsum` is available, that it is installed
-correctly (matching architecture etc.), and that it operates correctly on
+correctly, and that it operates correctly on
 typical files stored on the file system.
 
 To have better management over a collection of such tests, testing
@@ -697,14 +693,15 @@ frameworks were developed for shell scripts. Notable ones are:
 - [shunit2: xUnit based unit testing for Unix shell scripts](https://code.google.com/archive/p/shunit2/)
 - [Bats: Bash Automated Testing System](https://github.com/sstephenson/bats)
 
-In general, they provide helpers with the means to exercise tests. Helpers then report which ones
-passed and failed as they run a collection of tests.
+In general, they provide helpers with the means to execute tests.
+Helpers then report which ones passed and failed as they run a collection
+of tests.
 
 > ## Exercise
 >
 > Choose shunit2 or bats (or both) and
 >
-> 1. re-write the above test for `1dsum` using one of the frameworks.  If
+> 1. Re-write the above test for `1dsum` using one of the frameworks.  If
 > you do not have AFNI available, you can test generic `bc` or `dc`
 > command line calculators that may be available on your system.
 > 2. Add additional tests to "document" behavior of `1dsum` whenever
@@ -716,6 +713,8 @@ passed and failed as they run a collection of tests.
 
 > ## Testing frameworks
 >
-> Testing frameworks exist nearly for every programming and scripting
-> language/environment. See [Wikipedia: List of unit testing frameworks](https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks)
+> Although we've focused on testing shell scripts, testing frameworks exist
+> nearly for every programming and scripting language/environment (see [Wikipedia: List of unit testing frameworks](https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks).
+We recommend extending this testing framework to code you write at all stages
+of your analysis pipeline.
 {: .callout}

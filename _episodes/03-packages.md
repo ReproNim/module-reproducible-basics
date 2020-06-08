@@ -64,13 +64,6 @@ containers (docker or singularity).
 
 > ## External teaching materials
 >
-> Before going through the rest of this lesson, you should learn the
-> basics of shell usage and scripting. The following lesson provides a
-> good overview of all basic concepts.  Even if you are familiar with
-> shell and shell scripting, please review materials of the lesson and
-> try to complete all exercises in it, especially if you do not readily know
-> their correct answers:
->
 >   - [Debian Reference: Ch.2 Debian package management (full: 1 h, review: 20 min)](https://www.debian.org/doc/manuals/debian-reference/ch02.en.html)
 >     It is a part of the thorough user-oriented Debian manual, the first chapter of which presents the basics of working
 >     in the Linux environment, thus echoing our "Command line/shell" lesson. Here we would like

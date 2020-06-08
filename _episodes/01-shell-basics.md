@@ -30,7 +30,7 @@ keypoints:
 - "Shell scripts are powerful but, if misused, can cause big problems"
 ---
 
-> ## You can skip this lesson if you can answer these questions: &nbsp; &#8680;
+> ## You can skip this lesson if you can answer these questions:
 >
 >  - What factors affect the execution of a given typed command in shell?
 >  - How can you script the execution of a list of commands given user input

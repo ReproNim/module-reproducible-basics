@@ -140,7 +140,7 @@ for its installation and management.  Although largely Python-oriented,
 `conda` distributions are not limited only to Python-based projects.
 
 > ## External teaching materials
-> - [Conda: Chatsheet (review: 5 min, print: 2 pages)](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
+> - [Conda: Chatsheet (review: 5 min, print: 2 pages)](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)
 >   a concise list of the most common conda commands 
 > - [Conda: Myths and Misconceptions by Jake Vanderplas (full: 20 min, review: 4 min)](https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/   )
 >   provides summary points for common aspects of conda and its relationship to 

@@ -292,7 +292,7 @@ commands to merge the `git-annex` branch correctly.
 > (which in turn also needs to be `git add`-ed), e.g.
 > ~~~
 > % cat << EOF > .gitattributes
-> * annex.largefiles=(not(mimetype=text/*))
+> * annex.largefiles=((mimeencoding=binary)and(largerthan=0))
 > *.dat annex.largefiles=anything
 > EOF
 > ~~~

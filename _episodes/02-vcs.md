@@ -266,7 +266,7 @@ commands to merge the `git-annex` branch correctly.
 > > % cd ds000114
 > > % git annex get sub-*/anat/sub-*_T1w.nii.gz       # 2.
 > > % git annex get derivatives/freesurfer/sub-*/mri/T1.mgz  # 3. (should fail)
-> > % git remote add datalad datasets.datalad.org/workshops/nipype-2017/ds000114/.git
+> > % git remote add datalad http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git
 > > % git fetch datalad
 > > % git annex get derivatives/freesurfer/sub-*/mri/T1.mgz  # 4. (should succeed)
 > > ~~~

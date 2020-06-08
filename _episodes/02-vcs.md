@@ -250,7 +250,7 @@ commands to merge the `git-annex` branch correctly.
 {: .callout}
 
 > ## How can we get data files controlled by git-annex?
->:
+>
 > Using git/git-annex commands
 > 
 > 1. “Download" a [BIDS](http://bids.neuroimaging.io) dataset from https://github.com/datalad/ds000114

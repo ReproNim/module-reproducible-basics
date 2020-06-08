@@ -160,7 +160,7 @@ and a dataset containing other datasets is called a
 [superdataset](http://docs.datalad.org/en/latest/glossary.html) in DataLad. 
 One of such super-datasets is provided from http://datasets.datalad.org and it 
 aggregates hundreds of neural datasets over 10TB in size altogether.
-To learn about DataLad, please refer to the [VCS lesson:DataLad](../02-vcs/#Datalad).
+To learn about DataLad, please refer to the [VCS lesson:DataLad](../02-vcs/#datalad).
 
 
 [conda]: https://en.wikipedia.org/wiki/Conda_(package_manager)

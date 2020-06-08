@@ -18,7 +18,7 @@ keypoints:
 - "VCS can be used directly or can serve a foundation for domain-specific tools"
 ---
 
-> ## You can skip this lesson if you can answer these questions
+> ## You can skip this lesson if you can answer these questions:
 >
 >  - How do you keep all your scripts, configuration, notes and data
 >    under version control systems and shareable with your collaborators?

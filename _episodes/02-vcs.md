@@ -318,6 +318,13 @@ crawlers" for existing data portals, it provides unified access to over
 10TB of neural data from various initiatives (such as CRCNS, OpenfMRI, etc).
 
 > ## External teaching materials
+> - [The DataLad Handbook](https://handbook.datalad.org) is a code-along crash-course
+> on the basic and advanced principles of DataLad, and the most up-to-date and
+> most comprehensive user-documentation that exists for DataLad. The section
+> [Basics (Full: One day)](https://handbook.datalad.org/en/latest/basics/intro.html) demonstrates
+> and teaches the core commands of the tool, and the section
+>[usecases (each usecase: 10-30 min)](https://handbook.datalad.org/en/latest/usecases/intro.html)
+> gives  an overview of what is possible.
 > - [DataLad lecture and demo (Full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo)
 > This lecture describes the goals and basic principles of DataLad, and presents
 > the first of the demos on discovery and installation of the datasets.

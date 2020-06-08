@@ -324,9 +324,6 @@ crawlers" for existing data portals, it provides unified access to over
 > - [DataLad demos of the features (Full: 30 min, review: 10 min)](http://datalad.org/features.html)
 > provides an [asciinema](http://asciinema.org) (and shell script versions) introduction
 > to major features of DataLad
-> - [This example of a DataLad collaborative workflow (Full: 10 min)](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html)
-> presents a simple workflow using DataLad to fully “version-control”
-> data code in the project and collaborate efficiently
 {: .callout}
 
 

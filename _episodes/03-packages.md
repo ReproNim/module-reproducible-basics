@@ -64,13 +64,6 @@ containers (docker or singularity).
 
 > ## External teaching materials
 >
-> Before going through the rest of this lesson, you should learn the
-> basics of shell usage and scripting. The following lesson provides a
-> good overview of all basic concepts.  Even if you are familiar with
-> shell and shell scripting, please review materials of the lesson and
-> try to complete all exercises in it, especially if you do not readily know
-> their correct answers:
->
 >   - [Debian Reference: Ch.2 Debian package management (full: 1 h, review: 20 min)](https://www.debian.org/doc/manuals/debian-reference/ch02.en.html)
 >     It is a part of the thorough user-oriented Debian manual, the first chapter of which presents the basics of working
 >     in the Linux environment, thus echoing our "Command line/shell" lesson. Here we would like
@@ -147,7 +140,7 @@ for its installation and management.  Although largely Python-oriented,
 `conda` distributions are not limited only to Python-based projects.
 
 > ## External teaching materials
-> - [Conda: Chatsheet (review: 5 min, print: 2 pages)](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
+> - [Conda: Chatsheet (review: 5 min, print: 2 pages)](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)
 >   a concise list of the most common conda commands 
 > - [Conda: Myths and Misconceptions by Jake Vanderplas (full: 20 min, review: 4 min)](https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/   )
 >   provides summary points for common aspects of conda and its relationship to 
@@ -167,7 +160,7 @@ and a dataset containing other datasets is called a
 [superdataset](http://docs.datalad.org/en/latest/glossary.html) in DataLad. 
 One of such super-datasets is provided from http://datasets.datalad.org and it 
 aggregates hundreds of neural datasets over 10TB in size altogether.
-To learn about DataLad, please refer to the [VCS lesson:DataLad](/02-vcs/#datalad).
+To learn about DataLad, please refer to the [VCS lesson:DataLad](../02-vcs/#Datalad).
 
 
 [conda]: https://en.wikipedia.org/wiki/Conda_(package_manager)

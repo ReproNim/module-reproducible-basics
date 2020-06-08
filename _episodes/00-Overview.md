@@ -3,12 +3,12 @@ title: "Module overview"
 teaching: 5
 exercises: 0
 questions:
-- "Why should I care ?"
-- "Who is this module for ?"
-- "How should I study it ?"
+- "Why should I care?"
+- "Who is this module for?"
+- "How should I study it?"
 objectives:
-- To think about reproducibility as an inherent part of research activities.
-- To use lesson materials as soon as possible.
+- To think about reproducibility as an inherent part of research activities
+- To use lesson materials as soon as possible
 keypoints:
 - "Efficient practices are the (more) reproducible ones"
 

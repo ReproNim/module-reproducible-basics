@@ -18,7 +18,7 @@ keypoints:
 - "VCS can be used directly or can serve a foundation for domain-specific tools"
 ---
 
-> ## You can skip this lesson if you can answer these questions --->
+> ## You can skip this lesson if you can answer these questions:
 >
 >  - How do you keep all your scripts, configuration, notes and data
 >    under version control systems and shareable with your collaborators?
@@ -82,11 +82,11 @@ control over your digital research artifacts and notes.
 > To gain good general working knowledge of VCSs and Git, please go through the following lessons and a tutorial:
 >
 > - [Software Carpentry: Version Control with Git (full: 2:30h, familiarize: 20m)](http://swcarpentry.github.io/git-novice/) --
->  a thorough lesson of the main git commands and workflows. Please
+>  a thorough lesson of the main Git commands and workflows. Please
 > complete the lesson until at least the `Licensing` submodule, which will be a
 > separate topic.
 > - [Curious Git: A Curious Tale (full: 30m, familiarize: 10m)](https://matthew-brett.github.io/curious-git/curious_journey.html)
->   -- useful read if you feel that "git internals" look like a black box to you. This example guides you through
+>   -- useful read if you feel that "Git internals" look like a black box to you. This example guides you through
 >   the principles of Git without talking about Git.
 > - (very optional, since this module is Git-based) [Software Carpentry: Version Control with Mercurial (full: 4h)](http://swcarpentry.github.io/hg-novice/)
 {: .callout}
@@ -118,12 +118,12 @@ control over your digital research artifacts and notes.
 >
 {: .challenge}
 
-> ## Exercise: exploiting git history
+> ## Exercise: exploiting Git history
 >
 > Goal: determine how estimate for the Left-Amygdala changed in the AnnArbor_sub16960
 > subject from release 1.0.0 to 1.1.0.
 > > ## Answer
-> > git diff allows us to see the differences between points in the git history
+> > git diff allows us to see the differences between points in the Git history
 > > and to optionally restrict the search to the specific file(s), so the answers to the 
 > > challenge were `git tag` and `git grep`:
 > >  ~~~
@@ -220,7 +220,7 @@ copy of the file, you can easily `get` it (which will download/copy that file
 under `.git/annex/objects`) or `drop` it (which will remove that file from 
 `.git/annex/objects`).
 
-As a result of git not containing the actual content of those large files, but 
+As a result of Git not containing the actual content of those large files, but
 instead containing just symlinks and information within the `git-annex` branch, it 
 becomes possible to
 
@@ -250,7 +250,7 @@ commands to merge the `git-annex` branch correctly.
 {: .callout}
 
 > ## How can we get data files controlled by git-annex?
->:
+>
 > Using git/git-annex commands
 > 
 > 1. “Download" a [BIDS](http://bids.neuroimaging.io) dataset from https://github.com/datalad/ds000114

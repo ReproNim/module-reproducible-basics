@@ -288,19 +288,15 @@ commands to merge the `git-annex` branch correctly.
 > If you want to 
 > [automate such "decision making"](http://git-annex.branchable.com/tips/largefiles/)
 > based on either files’ extensions
-> and/or their sizes, you can specify those rules within a `.gitattributes` file
-> (which in turn also needs to be `git add`-ed), e.g.
+> and/or their sizes, you can specify those rules within a `.gitattributes` file.
+> Adding the following two lines would instruct the `git annex add` command to add all non-text and all files having the `.dat` extension to `git-annex` and the rest to
+> git:
 > ~~~
-> % cat << EOF > .gitattributes
-> * annex.largefiles=(not(mimetype=text/*))
+> * annex.largefiles=((mimeencoding=binary)and(largerthan=0))
 > *.dat annex.largefiles=anything
-> EOF
 > ~~~
 > {: .bash}
-> would instruct the `git annex add` command to add all non-text (according to the 
-> auto-detected [MIME-type](https://en.wikipedia.org/wiki/Media_type) of their 
-> content) and all files having the `.dat` extension to `git-annex` and the rest to
-> git:
+> Note that the `.gitattributes` file needs to be added and committed in order to come into effect:
 > ~~~
 > % git add .gitattributes     # to add to git the new .gitattributes
 > % git annex add a.txt b.dat

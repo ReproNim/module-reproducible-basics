@@ -266,7 +266,7 @@ commands to merge the `git-annex` branch correctly.
 > > % cd ds000114
 > > % git annex get sub-*/anat/sub-*_T1w.nii.gz       # 2.
 > > % git annex get derivatives/freesurfer/sub-*/mri/T1.mgz  # 3. (should fail)
-> > % git remote add datalad datasets.datalad.org/workshops/nipype-2017/ds000114/.git
+> > % git remote add datalad http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git
 > > % git fetch datalad
 > > % git annex get derivatives/freesurfer/sub-*/mri/T1.mgz  # 4. (should succeed)
 > > ~~~
@@ -314,15 +314,19 @@ crawlers" for existing data portals, it provides unified access to over
 10TB of neural data from various initiatives (such as CRCNS, OpenfMRI, etc).
 
 > ## External teaching materials
+> - [The DataLad Handbook](https://handbook.datalad.org) is a code-along crash-course
+> on the basic and advanced principles of DataLad, and the most up-to-date and
+> most comprehensive user-documentation that exists for DataLad. The section
+> [Basics (Full: One day)](https://handbook.datalad.org/en/latest/basics/intro.html) demonstrates
+> and teaches the core commands of the tool, and the section
+>[usecases (each usecase: 10-30 min)](https://handbook.datalad.org/en/latest/usecases/intro.html)
+> gives  an overview of what is possible.
 > - [DataLad lecture and demo (Full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo)
 > This lecture describes the goals and basic principles of DataLad, and presents
 > the first of the demos on discovery and installation of the datasets.
 > - [DataLad demos of the features (Full: 30 min, review: 10 min)](http://datalad.org/features.html)
 > provides an [asciinema](http://asciinema.org) (and shell script versions) introduction
 > to major features of DataLad
-> - [This example of a DataLad collaborative workflow (Full: 10 min)](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html)
-> presents a simple workflow using DataLad to fully “version-control”
-> data code in the project and collaborate efficiently
 {: .callout}
 
 

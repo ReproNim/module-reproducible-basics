@@ -501,7 +501,7 @@ the shell, those history lines are appended to a file (by default in
 `~/.bash_history` for bash shell). This not
 only allows you to quickly recall commands you have run recently, but
 can effectively provide a "lab notebook" of the actions you have
-performed. Thhe shell history can be very useful for two reasons. Firstly, it can provide
+performed. The shell history can be very useful for two reasons. Firstly, it can provide
 a skeleton for your script and help you realize that automating
 your shell commands is worth the effort. Secondly, it helps you determine exactly
 which command you ran to perform any given operation.
@@ -607,7 +607,7 @@ used.
 
 If you intend to use some variable that might still be undefined
 you can either use `${var:-DEFAULT}` to provide an explicit `DEFAULT`
-value or define it on the conition that it doesn't already exist; e.g.:
+value or define it on the condition that it doesn't already exist; e.g.:
 
 ~~~
 % : ${notyetdefined:=1}
@@ -665,13 +665,13 @@ your script performs as expected.
 powerful paradigm to verify that pieces of your code (units) operate
 correctly in various scenarios, and that these assumptions are represented in
 the code. An interesting observation is that everyone does at least some
-"testing" by simply running their code/scrip on an input and checking
+"testing" by simply running their code/script on an input and checking
 that the output matches their expectations. Unit-testing just takes this
 workflow one step further: code such tests in a separate file so you can run
 them all at once later on (e.g., whenever you change your script) to verify
 that your script still performs correctly. In the simplest case, you can
 just copy your test commands into a separate script that would fail if
-any command within it fails (therfore effectively testing your target
+any command within it fails (therefore effectively testing your target
 script(s)).
 
 For example, the following script could be used to test basic correct operations

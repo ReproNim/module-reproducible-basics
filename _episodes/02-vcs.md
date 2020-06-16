@@ -79,11 +79,12 @@ control over your digital research artifacts and notes
 > To gain good general working knowledge of VCSs and Git, please go through the following lessons/tutorials:
 >
 > - [Software Carpentry: Version Control with Git (full: 2:30h, familiarize: 20m)](http://swcarpentry.github.io/git-novice/) --
->  a thorough lesson on the main git commands and workflows; please
-> complete the lesson until at least the `Licensing` submodule, which will be 
-> covered in a separate lesson.
+>  a thorough lesson of the main Git commands and workflows; please
+> complete the lesson until at least the `Licensing` submodule, which will be a
+> covered in a separate lecture.
 > - [Curious Git: A Curious Tale (full: 30m, familiarize: 10m)](https://matthew-brett.github.io/curious-git/curious_journey.html)
->   -- useful read if "git internals" feel like a black box to you; this example guides you through the principles of Git without talking about Git.
+>   -- useful read if you feel that "Git internals" look like a black box to you; this example guides you through
+>   the principles of Git without talking about Git.
 > - (very optional, since this module is Git-based) [Software Carpentry: Version Control with Mercurial (full: 4h)](http://swcarpentry.github.io/hg-novice/)
 {: .callout}
 
@@ -115,14 +116,14 @@ control over your digital research artifacts and notes
 >
 {: .challenge}
 
-> ## Exercise: exploiting git history
+> ## Exercise: exploiting Git history
 >
-> Determine how the estimate for the Left-Amygdala changed in AnnArbor_sub16960
-> from release 1.0.0 to 1.1.0.
-> > ## Solution
-> > git diff allows us to see the differences between points in the git history
-> > and to optionally restrict the search to the specific file(s); 
-> > use `git tag` and `git grep`:
+> Goal: determine how the estimate for the Left-Amygdala changed in the AnnArbor_sub16960
+> subject from release 1.0.0 to 1.1.0.
+> > ## Answer
+> > git diff allows us to see the differences between points in the Git history
+> > and to optionally restrict the search to the specific file(s), so the answers to the 
+> > challenge were `git tag` and `git grep`:
 > >  ~~~
 > > % git diff 1.0.0..1.1.0 -- expected_output/AnnArbor_sub16960/segstats.json
 > > ...
@@ -245,7 +246,7 @@ commands to merge the `git-annex` branch correctly.
 {: .callout}
 
 > ## Exercise: getting data files controlled by git-annex
->:
+>
 > Using git/git-annex commands
 > 
 > 1. “Download" a [BIDS](http://bids.neuroimaging.io) dataset from https://github.com/datalad/ds000114
@@ -259,9 +260,9 @@ commands to merge the `git-annex` branch correctly.
 > > ~~~
 > > % git clone https://github.com/datalad/ds000114          # 1.
 > > % cd ds000114
-> > % git annex get sub-\*/anat/sub-\*\_T1w.nii.gz              # 2.
+> > % git annex get sub-\*/anat/sub-\*\_T1w.nii.gz       # 2.
 > > % git annex get derivatives/freesurfer/sub-\*/mri/T1.mgz  # 3. (should fail)
-> > % git remote add datalad datasets.datalad.org/workshops/nipype-2017/ds000114/.git
+> > % git remote add datalad http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git
 > > % git fetch datalad
 > > % git annex get derivatives/freesurfer/sub-\*/mri/T1.mgz  # 4. (should succeed)
 > > ~~~
@@ -282,22 +283,18 @@ commands to merge the `git-annex` branch correctly.
 > ### Advanced method (for all future `git annex add` calls)
 > If you want to 
 > [automate such "decision making"](http://git-annex.branchable.com/tips/largefiles/)
-> based on either file extension
-> and/or size, you can specify those rules within a `.gitattributes` file
-> (which also needs to be `git add`-ed), e.g.:
+> based on either file extensions
+> and/or their sizes, you can specify those rules within a `.gitattributes` file.
+> Adding the following two lines would instruct the `git annex add` command to add all non-text and all files having the `.dat` extension to `git-annex` and the rest to
+> git:
 > ~~~
-> % cat << EOF > .gitattributes
-> * annex.largefiles=(not(mimetype=text/\*))
+> * annex.largefiles=((mimeencoding=binary)and(largerthan=0))
 > \*.dat annex.largefiles=anything
-> EOF
 > ~~~
 > {: .bash}
-> This instructs the `git annex add` command to add all non-text (according to the 
-> auto-detected [MIME-type](https://en.wikipedia.org/wiki/Media_type) of their 
-> content) and all files having the `.dat` extension to `git-annex` and the rest to
-> `git`:
+> Note that the `.gitattributes` file needs to be added and committed in order to come into effect:
 > ~~~
-> % git add .gitattributes     # to add to git the new .gitattributes
+> % git add .gitattributes     # to add the new .gitattributes to git
 > % git annex add a.txt b.dat
 > ~~~
 > {: .bash}
@@ -313,14 +310,19 @@ crawlers" for existing data portals, it provides unified access to over
 50TB of data from various initiatives (such as CRCNS, OpenfMRI, etc.).
 
 > ## External teaching materials
-> - [DataLad lecture and demo (full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo) --
-> describes the goals and basic principles of DataLad with demos on discovery and installation of datasets.
-> - [DataLad feature demos (full: 30 min, review: 10 min)](http://datalad.org/features.html) --
+> - [The DataLad Handbook](https://handbook.datalad.org) is a code-along crash-course
+> on the basic and advanced principles of DataLad, and the most up-to-date and
+> most comprehensive user-documentation that exists for DataLad. The section
+> [Basics (Full: One day)](https://handbook.datalad.org/en/latest/basics/intro.html) demonstrates
+> and teaches the core commands of the tool, and the section
+>[usecases (each usecase: 10-30 min)](https://handbook.datalad.org/en/latest/usecases/intro.html)
+> gives  an overview of what is possible.
+> - [DataLad lecture and demo (Full: 55 min)](https://www.youtube.com/watch?v=sDP1jhRkKRo)
+> This lecture describes the goals and basic principles of DataLad, and presents
+> the first of the demos on discovery and installation of the datasets.
+> - [DataLad demos of the features (Full: 30 min, review: 10 min)](http://datalad.org/features.html)
 > provides an [asciinema](http://asciinema.org) (and shell script versions) introduction
 > to major features of DataLad
-> - [Example of a DataLad collaborative workflow (full: 10 min)](http://docs.datalad.org/en/latest/generated/examples/3rdparty_analysis_workflow.html) --
-> presents a simple workflow using DataLad to fully version-control
-> data and collaborate efficiently
 {: .callout}
 
 

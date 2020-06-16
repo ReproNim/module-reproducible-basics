@@ -145,12 +145,12 @@ for installation and management.  Although largely Python-oriented,
 `conda` distributions are not limited to Python-based projects.
 
 > ## External teaching materials
-> - [Conda Cheatsheet (review: 5 min, print: 2 pages)](https://conda.io/docs/_downloads/conda-cheatsheet.pdf) -- 
->   a concise list of the most common conda commands.
-> - [Conda: Myths and Misconceptions by Jake Vanderplas (full: 20 min, review: 4 min)](https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/) --
+> - [Conda: Chatsheet (review: 5 min, print: 2 pages)](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)
+>   a concise list of the most common conda commands. 
+> - [Conda: Myths and Misconceptions by Jake Vanderplas (full: 20 min, review: 4 min)](https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/   )
 >   summarizes central features of conda and its relationship to 
->   Anaconda, pip, pypi; if you're not sure how these relate, we
->   recommend you read the post. 
+>   Anaconda, pip, and pypi; if you're not sure how these relate, we 
+>   recommend that you read the post. 
 
 
 ## DataLad
@@ -165,7 +165,7 @@ and a dataset containing other datasets is called a
 [superdataset](http://docs.datalad.org/en/latest/glossary.html) in DataLad. 
 One such super-dataset is provided from http://datasets.datalad.org and 
 aggregates hundreds of neuroscience datasets over 50TB in size altogether.
-To learn about DataLad, please refer to the [VCS lesson: DataLad](/02-vcs/#datalad).
+To learn about DataLad, please refer to the [VCS lesson:DataLad](../02-vcs/#datalad).
 
 
 [conda]: https://en.wikipedia.org/wiki/Conda_(package_manager)

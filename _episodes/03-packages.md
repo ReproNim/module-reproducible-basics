@@ -164,7 +164,7 @@ Aggregation of multiple datasets is done via the
 and a dataset containing other datasets is called a
 [superdataset](http://docs.datalad.org/en/latest/glossary.html) in DataLad.
 One such super-dataset is provided from http://datasets.datalad.org and
-aggregates hundreds of neuroscience datasets over 50TB in size altogether.
+aggregates hundreds of neuroscience datasets over 240TB in size altogether.
 To learn about DataLad, please refer to the [VCS lesson:DataLad](../02-vcs/#datalad).
 
 

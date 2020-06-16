@@ -307,7 +307,7 @@ The [DataLad] project relies on Git and git-annex to establish an
 integrated data monitoring, management, and distribution environment.
 As data distribution capitalizing on a number of "data
 crawlers" for existing data portals, it provides unified access to over
-50TB of data from various initiatives (such as CRCNS, OpenfMRI, etc.).
+240TB of data from various initiatives (such as CRCNS, OpenNeuro, etc.).
 
 > ## External teaching materials
 > - [The DataLad Handbook](https://handbook.datalad.org) is a code-along crash-course

@@ -3,7 +3,7 @@ title: "'Right to share'"
 teaching: 180
 exercises: TODO
 questions:
-- What legal considerations must be kept in mind to facilitate **sharing** and 
+- What legal considerations must be kept in mind to facilitate **sharing** and
   **reproducibility**?
 objectives:
 - Become familiar with aspects of ownership, licensing, and consent forms
@@ -44,7 +44,7 @@ keypoints:
 >
 > De-face an anatomical scan using your knowledge of VCSs to track your
 > actions according to best practices for reproducibility.
-> 
+>
 > 1. create sub-dataset `derivatives/demo-bet`
 > 2. TODO
 >

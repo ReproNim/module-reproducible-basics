@@ -3,7 +3,7 @@ title: "Version control systems"
 teaching: 300
 exercises: 40
 questions:
-- How do version control systems facilitate reproducibility, and 
+- How do version control systems facilitate reproducibility, and
   which systems should be used?
 objectives:
 - Become familiar with version control systems for
@@ -38,7 +38,7 @@ we do it in an ad-hoc manner:
 
 In general, a VCS helps you track **versions** of digital artifacts,
 such as code (scripts, source files), configuration files, images,
-documents, and data -- both original or derived (e.g., the outcome of an 
+documents, and data -- both original or derived (e.g., the outcome of an
 analysis). With proper annotation of changes, a VCS becomes the lab notebook
 for changing content in the digital world. Since all versions are stored,
 VCS makes it possible to provide any previous version at a later
@@ -122,7 +122,7 @@ control over your digital research artifacts and notes
 > subject from release 1.0.0 to 1.1.0.
 > > ## Answer
 > > git diff allows us to see the differences between points in the Git history
-> > and to optionally restrict the search to the specific file(s), so the answers to the 
+> > and to optionally restrict the search to the specific file(s), so the answers to the
 > > challenge were `git tag` and `git grep`:
 > >  ~~~
 > > % git diff 1.0.0..1.1.0 -- expected_output/AnnArbor_sub16960/segstats.json
@@ -143,11 +143,11 @@ control over your digital research artifacts and notes
 ## Third-party services
 
 As you learned in the [Remotes in GitHub](http://swcarpentry.github.io/git-novice/07-github/) section of the [Software Carpentry Git course](http://swcarpentry.github.io/git-novice/), the [GitHub] website provides you with public (or private) storage for your Git repositories on the web.
-The GitHub website also allows third-party websites to interact with your repositories 
+The GitHub website also allows third-party websites to interact with your repositories
 to provide additional services, typically in response to new changes
 to your repositories. Visit [GitHub Marketplace](https://github.com/marketplace) for an
 overview of the vast collection of such additional services.  Some services are free,
-some are "pay-for-service". Students can benefit from obtaining a 
+some are "pay-for-service". Students can benefit from obtaining a
 [Student Developer Pack](https://education.github.com/pack) to gain free access to
 some services which otherwise would require a fee.
 
@@ -167,25 +167,25 @@ For example, see [simple workflow](https://github.com/ReproNim/simple_workflow) 
 with [GitHub], and is free for publicly available projects.
 
 > ## External teaching materials
-> - [A quick Travis CI Tutorial for Node.js developers (full: 20m)](https://github.com/dwyl/learn-travis) -- 
+> - [A quick Travis CI Tutorial for Node.js developers (full: 20m)](https://github.com/dwyl/learn-travis) --
 > a good description of all necessary steps to enable Travis CI for your GitHub project;
 > although geared toward Node.js projects, the same principles apply to other platforms/languages.
-> - [Shablona - A template for small scientific python projects (review: 5m, optional)](https://github.com/uwescience/shablona) -- 
+> - [Shablona - A template for small scientific python projects (review: 5m, optional)](https://github.com/uwescience/shablona) --
 > a template for scientific Python projects; review its `.travis.yml` for an example
 > of a typical setup for a Python-based project.
-> - [Travis CI Documentation (familiarize: 10m, canonical reference)](https://docs.travis-ci.com/) -- 
+> - [Travis CI Documentation (familiarize: 10m, canonical reference)](https://docs.travis-ci.com/) --
 > documentation for Travis CI; review sections relevant to your language/platform.
 {: .callout}
 
 #### CircleCI
 
 > ## External teaching materials
-> - [CircleCI 1.0 Documentation (familiarize: 10m, canonical reference)](https://circleci.com/docs/1.0) -- 
+> - [CircleCI 1.0 Documentation (familiarize: 10m, canonical reference)](https://circleci.com/docs/1.0) --
 > documentation for CircleCI; review sections relevant to your language/platform.
 {: .callout}
 
 > ## External review materials
-> - [Continuous Integration in the Cloud: Comparing Travis, Circle and Codeship (review: 10m)](https://strongloop.com/strongblog/node-js-travis-circle-codeship-compare/) -- 
+> - [Continuous Integration in the Cloud: Comparing Travis, Circle and Codeship (review: 10m)](https://strongloop.com/strongblog/node-js-travis-circle-codeship-compare/) --
 > having acquainted yourself with the basics of two CIs, review the differences.
 > - [Side-by-side comparison of CI services: review 5m](https://www.slant.co/versus/625/2481/~circleci_vs_appveyor)
 {: .callout}
@@ -204,21 +204,21 @@ with [GitHub], and is free for publicly available projects.
 without committing the (large) content of those files directly under git.
 In a nutshell, [git-annex]
 
-- moves actual data file(s) under `.git/annex/objects` into a file typically 
-  named according to the [checksum](https://en.wikipedia.org/wiki/Checksum) of 
+- moves actual data file(s) under `.git/annex/objects` into a file typically
+  named according to the [checksum](https://en.wikipedia.org/wiki/Checksum) of
   the file's content, and in its place creates a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) (symlink) pointing to that new location
 - commits that symlink (not actual data) under git, so a file of any size
   has the same small footprint within git
 - within `git-annex` branch, the location of the data file (on which machine, clone, or
   web URL) is recorded
- 
+
 Later on, if you have access to the clones of the repository containing
 the file, you can easily `get` it (which will download/copy that file
-under `.git/annex/objects`) or `drop` it (which will remove that file from 
+under `.git/annex/objects`) or `drop` it (which will remove that file from
 `.git/annex/objects`).
 
-Since Git doesn't contain the actual content of large files, but 
-instead just contains symlinks and information in the `git-annex` branch, it 
+Since Git doesn't contain the actual content of large files, but
+instead just contains symlinks and information in the `git-annex` branch, it
 becomes possible to
 
 - have very lean Git repositories pointing to arbitrarily large files
@@ -230,16 +230,16 @@ becomes possible to
 ### Note
 
 Never manually `git merge` a `git-annex` branch; [git-annex] uses a special merge
-algorithm to merge data availability information, and you should use 
-[git annex merge](https://git-annex.branchable.com/git-annex-merge/) 
+algorithm to merge data availability information, and you should use
+[git annex merge](https://git-annex.branchable.com/git-annex-merge/)
 or [git annex sync](https://git-annex.branchable.com/git-annex-sync/)
 commands to merge the `git-annex` branch correctly.
 
 > ## External teaching materials
-> - [git-annex walkthrough from a cognitive scientist (full: 30 min)](https://github.com/jhamrick/git-annex-tutorial/blob/master/Tutorial%20on%20git-annex.ipynb) -- 
+> - [git-annex walkthrough from a cognitive scientist (full: 30 min)](https://github.com/jhamrick/git-annex-tutorial/blob/master/Tutorial%20on%20git-annex.ipynb) --
 > a Jupyter notebook; please go through all the items by running
 > the notebook cells or copy/pasting them into a terminal.
-> - [git-annex walkthrough (full: 10 min)](http://git-annex.branchable.com/walkthrough/) -- 
+> - [git-annex walkthrough (full: 10 min)](http://git-annex.branchable.com/walkthrough/) --
 > original git-annex walkthrough; go through all sections to see
 > which aspects previous walkthroughs did not cover.
 > - (optional) [Another walkthrough on a typical use-case for sync'ing)](https://writequit.org/articles/getting-started-with-git-annex.html)
@@ -248,7 +248,7 @@ commands to merge the `git-annex` branch correctly.
 > ## Exercise: getting data files controlled by git-annex
 >
 > Using git/git-annex commands
-> 
+>
 > 1. “Download" a [BIDS](http://bids.neuroimaging.io) dataset from https://github.com/datalad/ds000114
 > 2. `get` all non-preprocessed T1w anatomicals
 > 3. Try (and fail) to get all `T1.mgz` files
@@ -281,7 +281,7 @@ commands to merge the `git-annex` branch correctly.
 > {: .bash}
 >
 > ### Advanced method (for all future `git annex add` calls)
-> If you want to 
+> If you want to
 > [automate such "decision making"](http://git-annex.branchable.com/tips/largefiles/)
 > based on either file extensions
 > and/or their sizes, you can specify those rules within a `.gitattributes` file.
@@ -306,7 +306,7 @@ commands to merge the `git-annex` branch correctly.
 The [DataLad] project relies on Git and git-annex to establish an
 integrated data monitoring, management, and distribution environment.
 As data distribution capitalizing on a number of "data
-crawlers" for existing data portals, it provides unified access to over 
+crawlers" for existing data portals, it provides unified access to over
 50TB of data from various initiatives (such as CRCNS, OpenfMRI, etc.).
 
 > ## External teaching materials
@@ -339,11 +339,11 @@ crawlers" for existing data portals, it provides unified access to over
 >
 > Using DataLad commands, and starting with your existing clone of `ds000114`
 > from the preceding exercise, do the following:
-> 
+>
 > 1. Create sub-dataset `derivatives/demo-bet`
 > 2. Using a skull-stripping tool (e.g., `bet` from FSL) to produce a
 >    skull-stripped anatomical for each subject under the subdirectory
->    `derivatives/demo-bet`; use the `datalad run` command 
+>    `derivatives/demo-bet`; use the `datalad run` command
 >    (available in DataLad 0.9 or later) to keep a record of your analysis
 > 3. [Publish](http://docs.datalad.org/en/latest/generated/man/datalad-publish.html)
 >    your work to your fork of the repository on GitHub and upload data to your
@@ -363,7 +363,7 @@ crawlers" for existing data portals, it provides unified access to over
 > > % git annex initremote box.com type=webdav url=https://dav.box.com/dav/team/ds000114--demo-bet chunk=50mb encryption=none
 > > % datalad create-sibling-github --publish-depends box.com --access-protocol https ds000114--demo-bet
 > > % datalad publish --to github sub\*                          # 3/
-> > % 
+> > %
 > > ~~~
 > > {: .bash}
 > {: .solution}

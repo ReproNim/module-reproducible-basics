@@ -58,7 +58,7 @@ for loops, functions and conditions.  So, in contrast to GUIs (graphical
 user interfaces), such automation via scripting is a native feature of
 a CLI shell.  Unlike GUI-integrated environments with lots of
 functionality exposed in menu items and icons, shell is truly a "black
-box", with lots of powerful underlying features integral to efficient use. 
+box", with lots of powerful underlying features integral to efficient use.
 Since manipulating files is one of the main tasks in a shell, a shell usually
 comes with common commands (such as `cp`, `mv`, etc.) built in
 or provided by an additional package (e.g., `coreutils` in Debian).
@@ -95,7 +95,7 @@ failed interim execution.
 >
 > Relevant Books:
 >
->  - [Data Science at the Command Line](http://datascienceatthecommandline.com) -- 
+>  - [Data Science at the Command Line](http://datascienceatthecommandline.com) --
 >   contains a list of
 >   command line tools useful for “data science”
 {: .callout}
@@ -152,7 +152,7 @@ failed interim execution.
 
 
 > ## What is a shebang?
-> It is the first line in the script, which starts with `#!` and is 
+> It is the first line in the script, which starts with `#!` and is
 > followed by the command interpreting the script; e.g.,
 > if a file `blah` begins with the following:
 > ~~~
@@ -224,7 +224,7 @@ unintentionally run a different version than intended and end up with different 
 > ~~~
 > {: .bash}
 > Do not confuse this with the `locate` command, which (if available) would
-> find a file containing the specified word somewhere in the file name/path. 
+> find a file containing the specified word somewhere in the file name/path.
 {: .solution}
 
 
@@ -290,7 +290,7 @@ unintentionally run a different version than intended and end up with different 
 
 > ## Why is ${variable} is preferable over $variable?
 >
-> You use ${variable} to safely concatenate a variable with another string.  
+> You use ${variable} to safely concatenate a variable with another string.
 > For instance, if you had a variable `filename` that contains the value
 > `preciousfile`, `$filename_modified` would refer to the value of the
 > possibly undefined `filename_modified` variable; on the other hand, `${filename}_modified`
@@ -405,12 +405,12 @@ modules.
 
 ## Efficient use of the interactive shell
 
-A shell can be used quite efficiently once you become familiar with its 
+A shell can be used quite efficiently once you become familiar with its
 features and configure it to simplify common operations.
 
 ### aliases
 
-Aliases are shortcuts for commonly used commands and can add 
+Aliases are shortcuts for commonly used commands and can add
 options to calls for most common commands.  Please review useful aliases presented in
 [30 Handy Bash Shell Aliases For Linux / Unix / Mac OS X](https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html).
 
@@ -497,7 +497,7 @@ Some shortcuts can not only edit command line text, but also control the executi
 
 By default, a shell stores in memory a history of the commands you
 have run. You can access this log using the `history` command. When you exit
-the shell, those history lines are appended to a file (by default in 
+the shell, those history lines are appended to a file (by default in
 `~/.bash_history` for bash shell). This not
 only allows you to quickly recall commands you have run recently, but
 can effectively provide a "lab notebook" of the actions you have
@@ -664,7 +664,7 @@ your script performs as expected.
 [Unit-testing](https://en.wikipedia.org/wiki/Unit_testing) is a
 powerful paradigm to verify that pieces of your code (units) operate
 correctly in various scenarios, and that these assumptions are represented in
-the code. An interesting observation is that everyone does at least some 
+the code. An interesting observation is that everyone does at least some
 "testing" by simply running their code/scrip on an input and checking
 that the output matches their expectations. Unit-testing just takes this
 workflow one step further: code such tests in a separate file so you can run
@@ -673,7 +673,7 @@ that your script still performs correctly. In the simplest case, you can
 just copy your test commands into a separate script that would fail if
 any command within it fails (therfore effectively testing your target
 script(s)).
- 
+
 For example, the following script could be used to test basic correct operations
 of AFNI's `1dsum` command:
 

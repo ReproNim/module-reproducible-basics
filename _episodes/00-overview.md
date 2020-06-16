@@ -18,16 +18,16 @@ keypoints:
 
 The term "reproducibility" conjures a mental image of dedicated systems
 conducting automated and repeatable computations.  However, **you** can
-embrace reproducibility in your day-to-day research activities. 
-Neuroimaging is a heavily data- and software-driven field of science. 
+embrace reproducibility in your day-to-day research activities.
+Neuroimaging is a heavily data- and software-driven field of science.
 As a result, by learning best practices for the tools you already use daily,
 you will discover ways to improve your efficiency and increase the
 reproducibility of your research.
 
 Reproducibility requires us to know the **what**, **when**, and **how**
-for any particular analysis we carry out. The lessons in this module will 
-help us answer those questions. Before addressing these specific questions, 
-consult the referenced external materials (tutorials, lessons, etc.) to get a 
+for any particular analysis we carry out. The lessons in this module will
+help us answer those questions. Before addressing these specific questions,
+consult the referenced external materials (tutorials, lessons, etc.) to get a
 more generic and thorough treatment of the topics.
 
 
@@ -83,9 +83,9 @@ or recommended practices.**
 ### What are the lessons in this module?
 
 This module introduces three somewhat independent topics at the heart of
-efficient and reproducible scientific computing: command line/shell, 
+efficient and reproducible scientific computing: command line/shell,
 version control systems (for code and data), distribution package managers,
-and a few additional aspects such as bug reporting and licensing. It's 
+and a few additional aspects such as bug reporting and licensing. It's
 unlikely that you've managed to completely avoid those tools so far,
 but it's possible that you've under-utilized their capabilities.
 Gaining additional skills in any of these topics can not only help

@@ -27,10 +27,10 @@ some practices may seem insignificant, they add up.
 >
 > Additional materials:
 >
-> - [*How to Report Bugs Effectively* by Simon Tatham (1999) (10 min)](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) -- 
+> - [*How to Report Bugs Effectively* by Simon Tatham (1999) (10 min)](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) --
 >   a classic essay that remains apropos; provides an
 >   overview of "good" and "bad" bug reports and how they can be expanded to provide sufficient information.
-> - [Mozilla: Bug writing guidelines (15 min)](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Bug_writing_guidelines) -- 
+> - [Mozilla: Bug writing guidelines (15 min)](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Bug_writing_guidelines) --
 >   although geared toward Mozilla products, this provides generally applicable
 >   guidelines on how to structure bug reports
 >
@@ -52,7 +52,7 @@ Overall summary:
 - **Make sure that your example is complete**; i.e. that it's not just a
   a code snippet without the necessary context (e.g., imports) to
   reproduce the issue.
-  
+
   - Try to run it on another computer with a similar setup -- is it
     reproduce or not? Include that information in your report.
 
@@ -63,7 +63,7 @@ Overall summary:
   - the version of the software in question and how it was installed
     (e.g., via a package manager, or manually from a source tarball,
     or from a Git repository)
-  
+
   It's better to err on the side of being exhaustive.
 
 - Right before you are ready to submit, **(re-)read your report
@@ -79,12 +79,12 @@ that a verbal description alone, as typically condensed into a paper's
 Methods section, is rarely sufficient to reproduce an empirical
 result.
 
-This is why it's so important to share relevant data, code, computation environments, etc. 
+This is why it's so important to share relevant data, code, computation environments, etc.
 However, if you delay preparing your materials for sharing, you might
-find it difficult, if not impossible, to share your work later on -- 
-as your project has progressed forward or may even be 
+find it difficult, if not impossible, to share your work later on --
+as your project has progressed forward or may even be
 completed. Keeping the goal of sharing in mind right from the
-start will make sharing easier when you're actually 
+start will make sharing easier when you're actually
 ready or asked to share.
 
 > ## References

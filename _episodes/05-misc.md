@@ -3,14 +3,13 @@ title: "Other day-to-day reproducible practices"
 teaching: 25
 exercises: TODO
 questions:
-- How is *reproducibility* critical to fixing software bugs?
-- What steps can you take toward sharing your studies reproducibly?
+- "How is *reproducibility* critical to fixing software bugs?"
+- "What steps can you take toward sharing your studies reproducibly?"
 objectives:
-- Underestand best practices for submitting bug reports
+- "Underestand best practices for submitting bug reports"
 keypoints:
-- If *you* can't reproduce it, it's likely that nobody else can.
-- Having open sharing in mind from the beginning can simplify future reproducibility
----
+- "If *you* can't reproduce it, it's likely that nobody else can"
+- "Having open sharing in mind from the beginning can simplify future reproducibility"
 
 ---
 
@@ -29,7 +28,7 @@ some practices may seem insignificant, they add up.
 >
 > - [*How to Report Bugs Effectively* by Simon Tatham (1999) (10 min)](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) --
 >   a classic essay that remains apropos; provides an
->   overview of "good" and "bad" bug reports and how they can be expanded to provide sufficient information.
+>   overview of "good" and "bad" bug reports and how they can be expanded to provide sufficient information
 > - [Mozilla: Bug writing guidelines (15 min)](https://developer.mozilla.org/en-US/docs/Mozilla/QA/Bug_writing_guidelines) --
 >   although geared toward Mozilla products, this provides generally applicable
 >   guidelines on how to structure bug reports
@@ -46,15 +45,15 @@ Overall summary:
 
 - **Do not try to describe the problem in your own words** if you are not
   100% sure what the problem is. And even if you are sure -- **provide
-  a concise and reproducible example that demonstrates the problem**, be
-  it a script or a list of steps for a GUI-driven package.
+  a concise and reproducible example that demonstrates the problem**, such as
+  a script or a list of steps for a GUI-driven package.
 
 - **Make sure that your example is complete**; i.e. that it's not just a
   a code snippet without the necessary context (e.g., imports) to
   reproduce the issue.
 
   - Try to run it on another computer with a similar setup -- is it
-    reproduce or not? Include that information in your report.
+    reproduced or not? Include that information in your report.
 
 - **Provide relevant information**, such as:
 

@@ -3,19 +3,19 @@ title: "Version control systems"
 teaching: 300
 exercises: 40
 questions:
-- How do version control systems facilitate reproducibility, and
-  which systems should be used?
+- "How do version control systems facilitate reproducibility, and
+  which systems should be used?"
 objectives:
-- Become familiar with version control systems for
-  code and data, as well as relevant tools based on them
-- Learn how to use version control systems to obtain, maintain and
-  share code and data
-- Review available third party services and workflows that could be
-  used to help to guarantee reproducibility of results
+- "Become familiar with version control systems for
+  code and data, as well as relevant tools based on them"
+- "Learn how to use version control systems to obtain, maintain, and
+  share code and data"
+- "Review available third party services and workflows that could be
+  used to help to guarantee reproducibility of results"
 keypoints:
 - "Using VCS not only improves sharing and collaboration, but
-  is integral for guaranteeing reproducibility."
-- "VCS can be used directly or can serve as a foundation for domain-specific tools."
+  is integral for guaranteeing reproducibility"
+- "VCS can be used directly or can serve as a foundation for domain-specific tools"
 ---
 
 > ## You can skip this lesson if you can answer these questions:
@@ -24,7 +24,7 @@ keypoints:
 >    under version control systems and shareable with your collaborators?
 >  - How do you establish and use continuous integration systems to verify the correctness
 >    of reproduced results (where feasible)?
->  - What exactly did you do in your data analysis project X on a date Y?
+>  - What exactly did you do in your data analysis project X on date Y?
 {: .challenge}
 
 
@@ -55,19 +55,19 @@ Besides tracking changes, another main function of a VCS is
 **collaboration**. Any modern VCS supports
 transfer and aggregation of changes to your
 work among collaborators.  Public versioning and collaboration services
-(such as [GitHub]) allow you to integrate other online services
+(such as [GitHub](https://github.com/)) allow you to integrate other online services
 (such as [travis-ci](http://travis-ci.org)) that can be configured to
 automatically evaluate any new changes. Integration with such
 services, which allow data to be automatically reanalyzed
-and verified for expected results, play an important role in reproducibility.
+and verified for expected results, plays an important role in reproducibility.
 
 In this module we will learn about:
 
-- General use of [Git] as a VCS to maintain not-so-large files (code,
+- General use of [Git](https://git-scm.com/) as a VCS to maintain not-so-large files (code,
 configuration, text, etc.)
 - 3rd-party services that integrate with your VCS on
-public portals (e.g., on [GitHub])
-- VCS tools for managing data files ([git-annex], [DataLad])
+public portals (e.g., on [GitHub](https://github.com/))
+- VCS tools for managing data files ([git-annex](https://git-annex.branchable.com/), [DataLad](https://www.datalad.org/))
 - Additional VCS-based utilities that can help you to assert greater
 control over your digital research artifacts and notes
 
@@ -81,10 +81,10 @@ control over your digital research artifacts and notes
 > - [Software Carpentry: Version Control with Git (full: 2:30h, familiarize: 20m)](http://swcarpentry.github.io/git-novice/) --
 >  a thorough lesson of the main Git commands and workflows; please
 > complete the lesson until at least the `Licensing` submodule, which will be a
-> covered in a separate lecture.
+> covered in a separate lecture
 > - [Curious Git: A Curious Tale (full: 30m, familiarize: 10m)](https://matthew-brett.github.io/curious-git/curious_journey.html)
 >   -- useful read if you feel that "Git internals" look like a black box to you; this example guides you through
->   the principles of Git without talking about Git.
+>   the principles of Git without talking about Git
 > - (very optional, since this module is Git-based) [Software Carpentry: Version Control with Mercurial (full: 4h)](http://swcarpentry.github.io/hg-novice/)
 {: .callout}
 
@@ -118,8 +118,8 @@ control over your digital research artifacts and notes
 
 > ## Exercise: exploiting Git history
 >
-> Goal: determine how the estimate for the Left-Amygdala changed in the AnnArbor_sub16960
-> subject from release 1.0.0 to 1.1.0.
+> Goal: determine how the estimate for the Left-Amygdala in AnnArbor_sub16960
+> subject changed from release 1.0.0 to 1.1.0.
 > > ## Answer
 > > git diff allows us to see the differences between points in the Git history
 > > and to optionally restrict the search to the specific file(s), so the answers to the
@@ -142,7 +142,7 @@ control over your digital research artifacts and notes
 
 ## Third-party services
 
-As you learned in the [Remotes in GitHub](http://swcarpentry.github.io/git-novice/07-github/) section of the [Software Carpentry Git course](http://swcarpentry.github.io/git-novice/), the [GitHub] website provides you with public (or private) storage for your Git repositories on the web.
+As you learned in the [Remotes in GitHub](http://swcarpentry.github.io/git-novice/07-github/) section of the [Software Carpentry Git course](http://swcarpentry.github.io/git-novice/), the GitHub website provides you with public (or private) storage for your Git repositories on the web.
 The GitHub website also allows third-party websites to interact with your repositories
 to provide additional services, typically in response to new changes
 to your repositories. Visit [GitHub Marketplace](https://github.com/marketplace) for an
@@ -154,7 +154,7 @@ some services which otherwise would require a fee.
 ### Continuous integration
 
 A growing number of online services provide
-**continuous integration** ([CI]) services.  Although the free tier may not provide
+**continuous integration** (CI) services.  Although the free tier may not provide
 sufficient resources to carry out entire analyses on your data,
 we encourage using CIs. They help verify your code’s correct execution and the reproducibility of your results. CIs can be used to execute unit-tests on simulated data or a subset of the real data.
 For example, see [simple workflow](https://github.com/ReproNim/simple_workflow) code for
@@ -163,30 +163,30 @@ For example, see [simple workflow](https://github.com/ReproNim/simple_workflow) 
 
 #### Travis CI
 
-[Travis CI] was one of the first free continuous integration services integrated
-with [GitHub], and is free for publicly available projects.
+[Travis CI](https://travis-ci.org/) was one of the first free continuous integration services integrated
+with GitHub, and is free for publicly available projects.
 
 > ## External teaching materials
 > - [A quick Travis CI Tutorial for Node.js developers (full: 20m)](https://github.com/dwyl/learn-travis) --
 > a good description of all necessary steps to enable Travis CI for your GitHub project;
-> although geared toward Node.js projects, the same principles apply to other platforms/languages.
+> although geared toward Node.js projects, the same principles apply to other platforms/languages
 > - [Shablona - A template for small scientific python projects (review: 5m, optional)](https://github.com/uwescience/shablona) --
 > a template for scientific Python projects; review its `.travis.yml` for an example
-> of a typical setup for a Python-based project.
+> of a typical setup for a Python-based project
 > - [Travis CI Documentation (familiarize: 10m, canonical reference)](https://docs.travis-ci.com/) --
-> documentation for Travis CI; review sections relevant to your language/platform.
+> documentation for Travis CI; review sections relevant to your language/platform
 {: .callout}
 
 #### CircleCI
 
 > ## External teaching materials
 > - [CircleCI 1.0 Documentation (familiarize: 10m, canonical reference)](https://circleci.com/docs/1.0) --
-> documentation for CircleCI; review sections relevant to your language/platform.
+> documentation for CircleCI; review sections relevant to your language/platform
 {: .callout}
 
 > ## External review materials
 > - [Continuous Integration in the Cloud: Comparing Travis, Circle and Codeship (review: 10m)](https://strongloop.com/strongblog/node-js-travis-circle-codeship-compare/) --
-> having acquainted yourself with the basics of two CIs, review the differences.
+> having acquainted yourself with the basics of two CIs, review the differences
 > - [Side-by-side comparison of CI services: review 5m](https://www.slant.co/versus/625/2481/~circleci_vs_appveyor)
 {: .callout}
 
@@ -238,10 +238,10 @@ commands to merge the `git-annex` branch correctly.
 > ## External teaching materials
 > - [git-annex walkthrough from a cognitive scientist (full: 30 min)](https://github.com/jhamrick/git-annex-tutorial/blob/master/Tutorial%20on%20git-annex.ipynb) --
 > a Jupyter notebook; please go through all the items by running
-> the notebook cells or copy/pasting them into a terminal.
+> the notebook cells or copy/pasting them into a terminal
 > - [git-annex walkthrough (full: 10 min)](http://git-annex.branchable.com/walkthrough/) --
 > original git-annex walkthrough; go through all sections to see
-> which aspects previous walkthroughs did not cover.
+> which aspects previous walkthroughs did not cover
 > - (optional) [Another walkthrough on a typical use-case for sync'ing)](https://writequit.org/articles/getting-started-with-git-annex.html)
 {: .callout}
 
@@ -254,7 +254,7 @@ commands to merge the `git-annex` branch correctly.
 > 3. Try (and fail) to get all `T1.mgz` files
 > 4. Knowing that `yoh@falkor:/srv/datasets.datalad.org/www/workshops/nipype-2017/ds000114`
 > is available via http from `http://datasets.datalad.org/workshops/nipype-2017/ds000114/.git`,
-> get those `T1.mgz` files
+> get the `T1.mgz` files
 >
 > > ## Solution
 > > ~~~
@@ -284,7 +284,7 @@ commands to merge the `git-annex` branch correctly.
 > If you want to
 > [automate such "decision making"](http://git-annex.branchable.com/tips/largefiles/)
 > based on either file extensions
-> and/or their sizes, you can specify those rules within a `.gitattributes` file.
+> and/or file size, you can specify those rules within a `.gitattributes` file.
 > Adding the following two lines would instruct the `git annex add` command to add all non-text and all files having the `.dat` extension to `git-annex` and the rest to
 > git:
 > ~~~
@@ -305,7 +305,7 @@ commands to merge the `git-annex` branch correctly.
 
 The [DataLad] project relies on Git and git-annex to establish an
 integrated data monitoring, management, and distribution environment.
-As data distribution capitalizing on a number of "data
+As a data distribution capitalizing on a number of "data
 crawlers" for existing data portals, it provides unified access to over
 240TB of data from various initiatives (such as CRCNS, OpenNeuro, etc.).
 
@@ -322,7 +322,7 @@ crawlers" for existing data portals, it provides unified access to over
 > the first of the demos on discovery and installation of the datasets.
 > - [DataLad demos of the features (Full: 30 min, review: 10 min)](http://datalad.org/features.html)
 > provides an [asciinema](http://asciinema.org) (and shell script versions) introduction
-> to major features of DataLad
+> to major features of DataLad.
 {: .callout}
 
 
@@ -347,19 +347,19 @@ crawlers" for existing data portals, it provides unified access to over
 >    (available in DataLad 0.9 or later) to keep a record of your analysis
 > 3. [Publish](http://docs.datalad.org/en/latest/generated/man/datalad-publish.html)
 >    your work to your fork of the repository on GitHub and upload data to your
->    preferred host (ssh/http server, box.com, dropbox, etc.)
+>    preferred host (an ssh/http server, [box.com](https://www.box.com/), [Zenodo](https://zenodo.org/), [Dropbox](https://www.dropbox.com/), etc.)
 >
 >
 > > ## Solution
 > > ~~~
 > > % cd ds000114
 > > % datalad create -d . derivatives/demo-bet                   # 1.
-> > % # a somewhat long but fully automated and "protocoled" by run solution:
+> > % # a somewhat long but fully automated and "protocoled" run solution:
 > > % datalad run 'for f in sub-\*/anat/sub-\*\_T1w.nii.gz; do d=$(dirname $f); od=derivatives/demo-bet/$d; mkdir -p $od; bet $f derivatives/demo-bet/$f; done'  # 2.
-> > % # establish a folder on box.com access to which would be shared in the group
+> > % # establish a folder on box.com with access shared among your group
 > > % export WEBDAV_USERNAME=secret WEBDAV_PASSWORD=secret
 > > % cd derivatives/demo-bet
-> > % # see https://git-annex.branchable.com/special_remotes for more supported git-annex special remotes
+> > % # see https://git-annex.branchable.com/special_remotes for other supported git-annex special remotes
 > > % git annex initremote box.com type=webdav url=https://dav.box.com/dav/team/ds000114--demo-bet chunk=50mb encryption=none
 > > % datalad create-sibling-github --publish-depends box.com --access-protocol https ds000114--demo-bet
 > > % datalad publish --to github sub\*                          # 3/
@@ -373,21 +373,21 @@ crawlers" for existing data portals, it provides unified access to over
 
 - [sumatra](http://neuralensemble.org/sumatra) -- manages
   and tracks projects based on numerical simulation or analysis,
-  with the aim of supporting reproducible research; It can be thought
+  with the aim of supporting reproducible research; it can be thought
   of as an "automated electronic lab notebook" for
-  simulation/analysis projects.
+  simulation/analysis projects
 
 - [noworkflow](https://github.com/gems-uff/noworkflow) -- captures a
-  variety of provenance information and provides some analyses such
+  variety of provenance information and provides some analyses, such
   as graph-based visualization, differencing over provenance trails,
-  and inference queries.
+  and inference queries
 
 - [etckeeper](http://etckeeper.branchable.com/) -- a helper tool for
   administering Linux-based systems, which stores and
-  automatically commits any changes within `/etc` into a VCS of your
-  choice; with its help you can track changes in your system
-  configuration, and that can be indispensable during system malfunction
-  troubleshooting.
+  automatically commits any changes in `/etc` into a VCS of your
+  choice; you can track changes in your system
+  configuration, which can be indispensable during system malfunction
+  troubleshooting
 
 
 ### Neuroimaging ad-hoc "versioning"

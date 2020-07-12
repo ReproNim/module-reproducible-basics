@@ -18,8 +18,8 @@ keypoints:
   neuroimaging tools may use specific shells and thus provide
   instructions that are not compatible with your current shell."
 - "A command line shell is a powerful tool and learning additional
- 'tricks' can help make its use much more efficient, less
- error-prone, and thus more reproducible."
+  'tricks' can help make its use much more efficient, less
+  error-prone, and thus more reproducible."
 - "Shell scripting is the most accessible tool to automate execution of
   arbitrary set of commands; this avoids manual retyping of the
   same commands and in turn avoids typos and erroneous analyses."
@@ -43,7 +43,7 @@ keypoints:
 
 - For Windows OS users: If you do not have a remote or virtual
   environment with Unix or Linux system, you can
-  [enable a "native" Linux bash shell on your Windows 10 system](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/).
+  [enable a "native" Linux shell on your Windows 10 system](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
 
 ## What is a “shell”?
@@ -54,7 +54,7 @@ manipulate "environment variables" and to execute external
 commands. Because desired actions are expressed as typed commands, it
 is possible to script (program) sets of those commands to be
 (re-)executed repetitively or conditionally. For example, it provides constructs
-for loops, functions and conditions.  So, in contrast to GUIs (graphical
+for loops, functions, and conditions.  So, in contrast to GUIs (graphical
 user interfaces), such automation via scripting is a native feature of
 a CLI shell.  Unlike GUI-integrated environments with lots of
 functionality exposed in menu items and icons, shell is truly a "black
@@ -90,34 +90,32 @@ failed interim execution.
 > various shells, please review the materials under following external links:
 >
 >  - ["Teaching Notes" of the above "The Unix Shell" lesson](https://swcarpentry.github.io/shell-novice/guide/) --
->    provides a number of hints and links to interesting related resources.
+>    provides a number of hints and links to interesting related resources
 >  - [Wikipedia:Unix shell](https://en.wikipedia.org/wiki/Unix_shell)
 >
-> Relevant Books:
+> Relevant books:
 >
 >  - [Data Science at the Command Line](http://datascienceatthecommandline.com) --
->   contains a list of
->   command line tools useful for “data science”
+>   contains a list of command line tools useful for “data science”
 {: .callout}
 
 
 ## Commonly used shells and their relevance to existing neuroimaging projects
 
-
-- **sh** - a POSIX-compliant shell; this is a generic name and doesn’t refer to a specific project.
-   - Most portable shell (since it's the standard)
-   - Many FSL scripts use this shell
-- **ksh** - KornSHell; based on older bash, but also became a root for tcsh, zsh and others.
+- **sh** - a [POSIX](https://en.wikipedia.org/wiki/POSIX)-compliant shell; this is a generic name and doesn’t refer to a specific project.
+   - most portable shell (since it's the standard)
+   - many FSL scripts use this shell
+- **ksh** - KornSHell; based on older bash, but also became a root for tcsh, zsh, and others.
 - **dash** - Debian Almquist SHell; an implementation of a POSIX-compliant shell (**sh**).
-   - You will not see it used directly in a shebang
+   - you will not see it used directly in a shebang
 - **bash** - Bourne Again SHell; default shell for Mac OS and many Linux distributions.
-   - (Optionally) POSIX-compliant but with additional features from **ksh** and **csh**
-   - Next most portable and most popular for shell scripting (after
+   - (optionally) POSIX-compliant but with additional features from **ksh** and **csh**
+   - next most portable and most popular for shell scripting (after
      **sh**) and generally available (in contrast to **zsh**)
 - **csh/tcsh** - C SHell/Tenex C SHell; shell that aims to provide an interface similar to the C programming language.
-   - Heavily used by FreeSurfer and AFNI (primarily @ scripts)
-- **zsh** - Powerful, but not POSIX/bash-compatible; inspired by many features from **ksh** and **tcsh**.
-   - Rarely used for generic scripting
+   - heavily used by FreeSurfer and AFNI (primarily @ scripts)
+- **zsh** - powerful, but not POSIX/bash-compatible; inspired by many features from **ksh** and **tcsh**.
+   - rarely used for generic scripting
 
 > ## References
 > Additional materials
@@ -186,7 +184,7 @@ failed interim execution.
 
 ## Environment variables
 
-Environment variables are not a feature of `a shell` per se. Every
+Environment variables are not a feature of a shell per se. Every
 process on any operating system inherits some "environment variables"
 from its parent process. A shell just streamlines manipulation of those
 environments and also uses some of them to guide its own
@@ -203,8 +201,8 @@ implementations or versions of the same command available at different
 locations, which may be specified within the PATH variable (separated
 with a colon). Although this is a very simple concept, it is a workhorse
 for "overlay distributions" (such as [conda](https://conda.io)). It is
-also a workhorse for "overlay environments” such as [virtualenv](https://virtualenv.pypa.io)
-in Python, or the [modules](http://modules.sourceforge.net/) on servers.
+also a workhorse for "overlay environments" such as [virtualenv](https://virtualenv.pypa.io)
+in Python, or [modules](http://modules.sourceforge.net/) on servers.
 It can also be a source of much confusion in cases where an unintended
 command is run. This is why any tool which aims to capture the
 state of the computational environment for later re-execution
@@ -254,12 +252,12 @@ unintentionally run a different version than intended and end up with different 
 {: .callout}
 
 
-> ## Exercise: add a new path where the shell will look for commands
+> ## Exercise: add a new path where the shell will look for commands...
 >
-> 1. So that those commands take precedence over identically named commands
+> 1. such that those commands take precedence over identically named commands
 > available elsewhere on the `PATH`?
 >
-> 2. So those commands are run only if not found elsewhere
+> 2. such that those commands are run only if not found elsewhere
 > on the `PATH`? (rarely needed/used case)
 >
 > > ## Solution
@@ -269,7 +267,7 @@ unintentionally run a different version than intended and end up with different 
 > {: .solution}
 {: .challenge}
 
-> ## Exercise: determine the environment variables used by a process?
+> ## Exercise: determine the environment variables used by a process
 >
 > Since each process inherits and possibly changes environment
 > variables so that its child processes inherit them in turn, it can
@@ -279,7 +277,7 @@ unintentionally run a different version than intended and end up with different 
 >
 > > ## Solution
 > > 1. By looking into `/proc/PID/environ` file on Unix/Linux
-> > systems.  Exercise:  find the entries in that file separated with the byte
+> > systems.  Try finding the entries in that file separated with the byte
 > > `0`. Use the `tr` command to separate them with a line.
 > > 2. `ps e PID` will list all environment variables along with their
 > > values
@@ -290,13 +288,12 @@ unintentionally run a different version than intended and end up with different 
 
 > ## Why is ${variable} is preferable over $variable?
 >
-> You use ${variable} to safely concatenate a variable with another string.
+> Use `${variable}` to safely concatenate a variable with another string.
 > For instance, if you had a variable `filename` that contains the value
 > `preciousfile`, `$filename_modified` would refer to the value of the
 > possibly undefined `filename_modified` variable; on the other hand, `${filename}_modified`
 > will produce the desired value of `preciousfile_modified`.
 {: .solution}
-
 
 
 ### LD_LIBRARY_PATH - determine which dynamic library is used
@@ -307,7 +304,7 @@ shared libraries. The particular list of dynamic libraries that an
 executable needs is often stored without full paths as well. Thus,
 `ld.so` (e.g., `/lib/ld-linux.so.2` on recent Debian systems), which
 takes care of executing those binaries, needs to determine which
-particular libraries to load. Like the way `PATH` variable resolves
+particular libraries to load. The same way the `PATH` variable resolves
 paths for the execution of commands, the `LD_LIBRARY_PATH`
 environment variable resolves paths for loading dynamic
 libraries. Unlike `PATH`, however, `ld.so` does assume a list of
@@ -318,7 +315,7 @@ even explicitly set it in your environment!
 > ## How can you discover which library is used?
 >
 > `ldd EXEC` and `ldd LIBRARY` list libraries of a given binary. If a
-> library is linked, they can provide a full path if it finds them
+> library is linked, a full path is provided if found
 > using `ld`'s default paths or the `LD_LIBRARY_PATH` variable. For example:
 > ~~~
 > % ldd /usr/lib/afni/bin/afni | head
@@ -337,7 +334,7 @@ even explicitly set it in your environment!
 > -- the calls your program makes to the core of the operating system (i.e., kernel).
 > This way you can discover what files any given program tries to
 > access or open for writing, which other commands it tries to run,
-> etc. Try running  `strace -e open` and provide some command to be
+> etc. Try running `strace -e open` and provide some command to be
 > executed.
 >
 {: .callout}
@@ -349,7 +346,7 @@ even explicitly set it in your environment!
 > `LD_LIBRARY_PATH` points to libraries from another environment,
 > which can cause either incorrect or hard-to-diagnose
 > behavior later on. In general, you should avoid manually manipulating
-> those two variables.
+> these two variables.
 {: .callout}
 
 
@@ -363,11 +360,11 @@ modules.
 > ## Possible side-effect
 >
 > Having a mix of system-wide and user-specific installed
-> apps/modules with custom installations in virtualenv environments
+> applications/modules with custom installations in virtualenv environments
 > can cause unexpected use of modules.
 >
 > You can use `python -c 'import sys; print(sys.path)'` to output a
-> list of paths your current default Python process would consult
+> list of paths your current default Python process will consult
 > to find Python libraries.
 >
 {: .callout}
@@ -434,7 +431,7 @@ major modes of operation which are inspired by
 Use **set -o emacs** to enter emacs mode (default) and **set -o vi** to
 enter vi mode. Subsequent discussion and examples refer to the default,
 **emacs** mode. Learning navigation shortcuts can increase your
-efficiency of working shell tenfold, so let's review most common ones
+efficiency with the shell tenfold, so let's review most common ones
 to edit the command line text:
 
 `Ctrl-a` | Go to the beginning of the line you are currently typing on
@@ -460,14 +457,14 @@ Hints:
   counterparts is more efficient since it doesn't require you to move
   away your hands from the main alphanumeric portion of the keyboard.
 - Many people find the need to use `Ctrl` key more often than
-  `CapsLock` (originally used to assist FORTRAN and other languages
-  programmers where all keywords had to be CAPITALIZED).  You can
+  `CapsLock` (which was originally used to assist with FORTRAN and other languages
+  where all keywords had to be CAPITALIZED). You can
   [change your environment settings](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
   to either swap them or to make `CapsLock` into another `Ctrl` key.
 
 If you need a more powerful way to edit your current command line, use
 
-`Ctrl-x Ctrl-e` | (or `Alt-e` in **zsh**) -- Edit command line text in the editor (as defined by `VISUAL` environment variable)
+`Ctrl-x Ctrl-e` (or `Alt-e` in **zsh**) | Edit command line text in the editor (as defined by `VISUAL` environment variable)
 
 
 Some shortcuts can not only edit command line text, but also control the execution of processes:
@@ -488,7 +485,7 @@ Some shortcuts can not only edit command line text, but also control the executi
 > "previous" finding to identify the corresponding section.
 > For example, use `set -o noclobber` which can be used to forbid
 > overwriting of previously existing files. `>|` could be used to
-> explicitly instruct the overwriting of an already existing file. “A shell
+> explicitly instruct the overwriting of an already existing file. "A shell
 > redirect ate my results file" should no longer be given as a valid excuse.
 >
 {: .challenge}
@@ -501,9 +498,9 @@ the shell, those history lines are appended to a file (by default in
 `~/.bash_history` for bash shell). This not
 only allows you to quickly recall commands you have run recently, but
 can effectively provide a "lab notebook" of the actions you have
-performed. The shell history can be very useful for two reasons. Firstly, it can provide
+performed. The shell history can be very useful for two reasons. First, it can provide
 a skeleton for your script and help you realize that automating
-your shell commands is worth the effort. Secondly, it helps you determine exactly
+your shell commands is worth the effort. Second, it helps you determine exactly
 which command you ran to perform any given operation.
 
 > ## Eternal history
@@ -526,7 +523,7 @@ Some of the main keyboard shortcuts to navigate shell history are:
 `Ctrl-n` | Next line in the history
 `Ctrl-r` | Bring up next match backwards in shell history
 
-You can hit `Ctrl-r` and start typing some portion of the command you
+You can hit `Ctrl-r` ("reverse-i-search") and start typing some portion of the command you
 remember running. Subsequent use of `Ctrl-r` will bring up the next match, and so
 on. You will leave "search" mode as soon as you use some other
 command line navigation command (e.g., `Ctrl-e`).
@@ -552,7 +549,7 @@ and so on.
 By default, your shell script might execute even if some
 command within it fails.  This might lead to some very bad side effects:
 
-- operating on incorrect results (e.g., if command to reproduce
+- operating on incorrect results (e.g., if the command to reproduce
   results failed, but script continued)
 - polluting the terminal screen (or log file) with output hiding a
   point of failure
@@ -599,8 +596,8 @@ or undesirable side-effects:
 
 - "using" mistyped variable names
 - "using" variables that were not defined yet due to the logic
-  of the script. For example, imagine the effects of `sudo rm -rf ${PREFIX}/` if the
-  `PREFIX` variable was not defined for some reason. (**Do not copy this into your terminal!**)
+  of the script; for example, imagine the effects of `sudo rm -rf ${PREFIX}/` if the
+  `PREFIX` variable was not defined for some reason (**Do not copy this into your terminal!**)
 
 The `set -u` option instructs the shell to fail if an undefined variable is
 used.
@@ -629,8 +626,8 @@ value or define it on the condition that it doesn't already exist; e.g.:
 ### Run-time testing
 
 To some degree you can consider the `set -u` feature to be a "run-time
-test" -- i.e., "test if variable is defined, and if not, fail".  **bash**
-and other shells do actually provide a command called `test`, which
+test" -- i.e., "test if variable is defined, and if not, fail". In fact, **bash**
+and other shells provide a command called `test`, which
 can perform various basic checks and return with a non-0 exit code if the
 condition is not satisfied. For undefined variables, use `test -v`:
 
@@ -642,7 +639,7 @@ condition is not satisfied. For undefined variables, use `test -v`:
 {: .bash}
 
 See the “CONDITIONAL EXPRESSIONS" section of the `man bash` page for more
-conditions, such as
+conditions, such as:
 
 -a file   | True if file exists
 -w file   | True if file exists and is writable

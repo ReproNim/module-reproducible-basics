@@ -1,0 +1,161 @@
+<?xml version="1.0" ?>
+<quiz>
+  <qstiii>This child contains text.</qstiii>
+  <qst>another child contains text.</qst>
+  <question type="multichoice">
+    <questiontext format="html">
+      <text>Shebang is the first line in the script, which starts with &quot;#!&quot; and is followed by the command interpreting the script.</text>
+    </questiontext>
+    <name>
+      <text>Question 1</text>
+    </name>
+    <single>true</single>
+    <answer fraction="100">
+      <text>True</text>
+      <feedback>
+        <text>Correct answer!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>False</text>
+      <feedback>
+        <text>Wrong answer</text>
+      </feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <questiontext format="html">
+      <text>You need to use shebang to be able to run a bash script.</text>
+    </questiontext>
+    <name>
+      <text>Question 2</text>
+    </name>
+    <single>true</single>
+    <answer fraction="0">
+      <text>True</text>
+      <feedback>
+        <text>Wrong answer</text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>False</text>
+      <feedback>
+        <text>Correct answer!</text>
+      </feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <questiontext format="html">
+      <text>How can you determine the full path of a command? (select all that apply)</text>
+    </questiontext>
+    <name>
+      <text>Question 3</text>
+    </name>
+    <single>false</single>
+    <answer fraction="0">
+      <text>locate &lt;command&gt;</text>
+      <feedback>
+        <text>Wrong answer</text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>which &lt;command&gt;</text>
+      <feedback>
+        <text>Correct answer!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>where &lt;command&gt;</text>
+      <feedback>
+        <text>Wrong answer</text>
+      </feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <questiontext format="html">
+      <text>How can you add a new path in which shell will look for commands? (select all that apply)</text>
+    </questiontext>
+    <name>
+      <text>Question 4</text>
+    </name>
+    <single>false</single>
+    <answer fraction="50">
+      <text>PATH=/a/b/c:$PATH</text>
+      <feedback>
+        <text>Correct answer!</text>
+      </feedback>
+    </answer>
+    <answer fraction="50">
+      <text>PATH=$PATH:/a/b/c</text>
+      <feedback>
+        <text>Correct answer!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>PATH=/a/b/c</text>
+      <feedback>
+        <text>Wrong answer</text>
+      </feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <questiontext format="html">
+      <text>Version Control System does: (select all that apply)</text>
+    </questiontext>
+    <name>
+      <text>Question 5</text>
+    </name>
+    <single>false</single>
+    <answer fraction="50">
+      <text>track changes of files</text>
+      <feedback>
+        <text>Correct answer!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>tests your code</text>
+      <feedback>
+        <text>Wrong answer</text>
+      </feedback>
+    </answer>
+    <answer fraction="50">
+      <text>allows for transfer and aggregation of work among collaborators</text>
+      <feedback>
+        <text>Correct answer!</text>
+      </feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <questiontext format="html">
+      <text>When do you need to use git-annex in addition to git? (select the best option)</text>
+    </questiontext>
+    <name>
+      <text>Question 6</text>
+    </name>
+    <single>true</single>
+    <answer fraction="0">
+      <text>when you have many small files</text>
+      <feedback>
+        <text>Wrong answer</text>
+      </feedback>
+    </answer>
+    <answer fraction="100">
+      <text>when you have large data files</text>
+      <feedback>
+        <text>Correct answer!</text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>when you want to hide some of the files from collaborators</text>
+      <feedback>
+        <text>Wrong answer</text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>

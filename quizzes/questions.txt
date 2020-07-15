@@ -1,0 +1,48 @@
+qst| Shebang is the first line in the script, which starts with "#!" and is followed by the command interpreting the script.
+A| True
+B| False
+Answer| A
+
+####
+
+
+qst| You need to use shebang to be able to run a bash script.
+A| True
+B| False
+Answer|	B
+
+####
+
+
+Qst| How can you determine the full path of a command? (select all that apply)
+A| locate <command>
+B| which <command>
+C| where <command>
+Answer| B
+type| multi
+
+####
+
+Qst| How can you add a new path in which shell will look for commands? (select all that apply)
+A| PATH=/a/b/c:$PATH
+B| PATH=$PATH:/a/b/c
+C| PATH=/a/b/c
+Answer| a, b
+type| multi
+
+#####
+
+Qst| Version Control System does: (select all that apply)
+A| track changes of files
+B| tests your code 
+C| allows for transfer and aggregation of work among collaborators
+Answer|	a, c
+type| multi
+
+#####
+
+Qst| When do you need to use git-annex in addition to git? (select the best option)
+A| when you have many small files
+B| when you have large data files
+C| when you want to hide some of the files from collaborators
+Answer| b

@@ -692,7 +692,7 @@ To have better management over a collection of such tests, testing
 frameworks were developed for shell scripts. Notable ones are:
 
 - [shunit2: xUnit based unit testing for Unix shell scripts](https://code.google.com/archive/p/shunit2/)
-- [Bats: Bash Automated Testing System](https://github.com/sstephenson/bats)
+- [Bats: Bash Automated Testing System](https://github.com/bats-core/bats-core)
 
 In general, they provide helpers with the means to execute tests.
 Helpers then report which ones passed and failed as they run a collection
